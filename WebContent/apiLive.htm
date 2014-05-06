@@ -304,6 +304,7 @@
 							<td><a href="#update_charge_code">updateChargeCode</a></td>
 							<td></td>
 							</tr>
+							
 							<tr>
 							<td><a href="#tax_map">TaxMap</a></td>
 							<td>taxmaps</td>
@@ -368,6 +369,98 @@
 								<td><a href="#price_template">Retrieve a Price Template</a></td>
 								<td></td>
 								<td></td>
+							</tr>
+								<tr>
+								<td><a href="#configs">Currency</a></td>
+								<td>currencies</td>
+								<td></td>
+								<td><a href="#configs_currencyretrieve">Retrieve
+										Currency Configuration</a></td>
+								<td><a href="#configs_currencyupdate">Update Currency
+										Configuration</a></td>
+								<td></td>
+							</tr>
+							<tr class="alt">
+								<td><a href="#discount_details">Discount</a></td>
+								<td>discounts/{discountId}</td>
+								<td></td>
+								<td><a href="#retrieve_discount">Retrieve
+										discount detais</a></td>
+								<td><a href="#discount_update">Update discount
+										details</a></td>
+								<td><a href="#discount_delete">Delete discount</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>discounts</td>
+								<td><a href="#discount_create">Create discount</a></td>
+								<td><a href="#discount_list">list of discounts</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="alt">
+								<td></td>
+								<td>discounts/template</td>
+								<td></td>
+								<td><a href="#discount_template">discount templatedata</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><a href="#invoice_details">Invoice</a></td>
+								<td>billingorder</td>
+								<td><a href="#invoice_create">Create Invoice</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="alt">
+								<td><a href="#region_details">Regions</a></td>
+								<td>regions</td>
+								<td><a href="#region_create">Create region</a></td>
+								<td><a href="#region_list">list of regions</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>regions/template</td>
+								<td></td>
+								<td><a href="#region_template">region template</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="alt">
+								<td></td>
+								<td>regions/{regionId}</td>
+								<td></td>
+								<td><a href="#region_retrieve">retrieve region</a></td>
+								<td><a href="#region_update">update a region</a></td>
+								<td><a href="#region_delete">delete a region</a></td>
+							</tr>
+							<tr>
+								<td><a href="#promotioncode_details">Promotion Code</a></td>
+								<td>promotioncode</td>
+								<td><a href="#promotioncode_create">Create Promotion Code</a></td>
+								<td><a href="#promotioncode_list">list of promotioncodes</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+						    <tr class="alt">
+								<td></td>
+								<td>promotioncode/template</td>
+								<td></td>
+								<td><a href="#promotioncode_template">promotioncode template</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>promotion/{promoId}</td>
+								<td></td>
+								<td><a href="#promotioncode_retrieve">Retrieve Promotioncode</a></td>
+								<td><a href="#promotioncode_update">update a promotioncode</a></td>
+								<td><a href="#promotioncode_delete">delete a promotioncode</a></td>
 							</tr>
 						</table>
 					</div>
@@ -1540,16 +1633,7 @@
 								<td><a href="#currency_delete">Delete a CountryCurrency</a></td>
 							</tr>
 							
-							<tr class="alt">
-								<td><a href="#configs">Currency</a></td>
-								<td>currencies</td>
-								<td></td>
-								<td><a href="#configs_currencyretrieve">Retrieve
-										Currency Configuration</a></td>
-								<td><a href="#configs_currencyupdate">Update Currency
-										Configuration</a></td>
-								<td></td>
-							</tr>
+						
 							<tr class="alt">
 								<td><a href="#configs_global">Global Configuration</a></td>
 								<td>configurations</td>
@@ -5165,10 +5249,6 @@ https://domainname/obsplatform/api/v1/epgprogramguide/{channelName}/{counter}
 				</div>
 			</div>
 			
-Rahman End
-			
-			
-			
 			<!-- plan API-->
 			<a id="plan_details" name="plan_details" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
@@ -6556,8 +6636,926 @@ No Request Body:
 					</code>
 				</div>
 			</div>
+			
+			
+<!-- Disount Api -->
 
-<!-- start of Loan charges content-->
+<a id="discount_details" name="discount_details" class="old-syle-anchor">&nbsp;</a>kiran
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Discount Details</h3>
+					<p>Discount details have the follwing fields
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Field Descriptions</div></td>
+						</tr>
+						<tr class=alt>
+							<td>discountId</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>The discountId associated with this discount. It is auto generated </td>
+						</tr>
+						<tr class=alt>
+							<td>discountCode</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent the discountCode<br> 
+								it must be unique.
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>discountDescription</td>
+						</tr>
+						<tr>
+							<td class=fielddesc> For providing helpful description of discount.</td>
+						</tr>
+						<tr class=alt>
+							<td>startDate</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent startDate of discount actviated</td>
+						</tr>
+						<tr class=alt>
+							<td>discountRate</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>amount of discount<br>
+							
+							</td>
+							
+						</tr>
+						<tr class=alt>
+							<td>discountType</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent the type of discount i.e flat or percentage</td>
+						</tr>
+						
+						<tr class=alt>
+							<td>status</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>represent status of discount</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<a id="discount_template"	name="discount_template" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve discount Template</h4>
+					<p>This is a convenience resource. It can be useful when
+						building maintenance user interface screens for client
+						applications. The template data returned consists of any or all
+						of:
+					<ul>
+						<li class=normalli>Field Defaults</li>
+						<li class=normalli>Allowed Value Lists</li>
+					</ul>
+					</p>
+					
+					<p>Example Request:</p>
+					<div>discounts/template</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/discounts/template"
+					</code>
+					<code class="method-response">
+{
+	"id": 0,
+	"status": [{
+		"id": 1,
+		"code": "deposit.interest.compounding.period.CategoryType.active",
+		"value": "ACTIVE"
+	},
+	{
+		"id": 2,
+		"code": "deposit.interest.compounding.period.CategoryType.inactive",
+		"value": "INACTIVE"
+	}],
+	"discounTypeData": [{
+		"id": 55,
+		"mCodeValue": "Flat"
+	},
+	{
+		"id": 56,
+		"mCodeValue": "Percentage"
+	}]
+}
+					</code>
+				</div>
+			</div>
+
+				<a id="discount_list" name="discount_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List of discounts</h4>
+					<p>returns  <i>list</i> of discounts.</p>
+									
+					<p>Example Requests:</p>
+					<div>discounts</div>
+   				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/obsplatform/api/v1/discounts
+					</code>
+					<code class="method-response">
+
+[{
+	"id": 1,
+	"discountCode": "FULL",
+	"discountDescription": "100Percentage",
+	"discounType": "Percentage",
+	"discountRate": 100,
+	"discountStartDate": [2013,
+	12,
+	1],
+	"discountAmount": 0,
+	"discountedChargeAmount": 0,
+	"discountstatus": "ACTIVE"
+},
+{
+	"id":2,
+	"discountCode": "MCC",
+	"discountDescription": "MCC",
+	"discounType": "Flat",
+	"discountRate": 10,
+	"discountStartDate": [2014,
+	4,
+	23],
+	"discountAmount": 0,
+	"discountedChargeAmount": 0,
+	"discountstatus": "ACTIVE"
+}}
+					</code>
+				</div>
+			</div>
+
+
+            <a id="retrieve_discount" name="retrieve_discount" class="old-syle-anchor">&nbsp;</a>
+            <div class="method-section">
+                <div class="method-description">
+                    <h4>Retrieve a discount</h4>
+                    <p>Returns single discount details</p>
+                    <p>Example Requests:</p>
+					<div>discounts/1</div>
+                </div>
+                <div class="method-example">
+                    <code class="method-declaration">
+                        GET https://DomainName/api/v1/discounts/{discountId}
+                    </code>
+                    <code class="method-request">
+                        GET discounts/1
+                        Content-Type: application/json
+                        
+                    </code>
+                    <code class="method-response">
+                       {
+	"id": 0,
+	"discountCode": "FULL",
+	"discountDescription": "100Percentage",
+	"discounType": "Percentage",
+	"discountRate": 100,
+	"discountStartDate": [2013,
+	12,
+	1],
+	"discountMasterId": 2,
+	"discountAmount": 0,
+	"discountedChargeAmount": 0,
+	"status":"ACTIVE"
+	}
+
+                    </code>
+                </div>
+            </div>
+
+<a id="discount_create" name="discount_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a Discount</h4>
+					<p>Add a new discount.</p>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>discountCode,discountDescription,startDate,discountRate,discountType,status</td>
+						</tr>
+					</table>
+					<br/>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/discounts
+					</code>
+					<code class="method-request">
+POST discounts
+Content-Type: application/json 
+Request body:
+{
+	"discountCode": "FULL",
+	"discountDescription": "100Percentage",
+	"discountRate": 100,
+	"status": "ACTIVE",
+	"locale": "en",
+	"dateFormat": "dd MMMM yyyy",
+	"startDate": "01 December 2013",
+	"discountType": "Percentage"
+}
+				</code>
+					<code class="method-response">
+{
+	"resourceId": 3,
+	"changes": {
+		
+	}
+}
+					</code>
+					
+				</div>
+			</div>
+			
+		<a id="discount_update" name="discount_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update a Discount </h4>
+					<p>Updates the details of a discount.</p>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/discounts/{discountId}
+
+					</code>
+					<code class="method-request">
+PUT discounts/3
+ Content-Type: application/json 
+Request Body: 
+{
+	"discountCode": "FULL",
+	"discountDescription": "100Percentage",
+	"discountRate": 50,
+	"status": "ACTIVE",
+	"locale": "en",
+	"dateFormat": "dd MMMM yyyy",
+	"startDate": "01 December 2013",
+	"discountType": "Flat"
+}
+					</code>
+					<code class="method-response">
+{
+	"resourceId": 3,
+	"changes": {
+		"discountRate": 50,
+		"discountType": "Flat"
+	}
+}
+					</code>
+				</div>
+			</div>
+			
+			<a id="discount_delete" name="discount_delete" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Delete a discount</h4>
+					
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+DELETE https://DomainName/api/v1/discounts/{discountId}
+					</code>
+					<code class="method-request">
+DELETE discount/1
+Content-Type: application/json 
+No Request Body:
+					</code>
+					<code class="method-response">
+{
+	"resourceId": 3
+}				</code>
+				</div>
+			</div>
+			
+
+
+<!-- End of Discount Api -->
+
+
+<!--Billing order APi  -->
+<a id="invoice_details" name="invoice_details" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Invoice</h3>
+					<p>The Api concet of <b>Invoice</b> models generate a bills to the customers based on billing frequency
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Field Descriptions</div></td>
+						</tr>
+						<tr class=alt>
+							<td>processDate</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent the processdate to invoice </td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<a id="invoice_create" name="invoice_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Generate a invoice</h4>
+					<p>create a new invoice.</p>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>processDate</td>
+						</tr>
+					</table>
+					<br/>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/billingorder/{clientId}
+					</code>
+					<code class="method-request">
+POST billingorder/8
+Content-Type: application/json 
+Request body:
+{
+	"locale": "en",
+	"dateFormat": "dd MMMM yyyy",
+	"systemDate": "06 May 2014"
+}
+				</code>
+					<code class="method-response">
+{
+	"resourceId": 8,
+	"changes": {
+		
+	}
+}
+					</code>
+					
+				</div>
+			</div>
+			
+<!-- End of Billing order -->
+
+<!-- Start of regions -->
+<a id="region_details" name="region_details" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Region Details</h3>
+					<p>Regions are selected when creating price for the plans.client regions are identified by client's State
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Field Descriptions</div></td>
+						</tr>
+						<tr class=alt>
+							<td>regionCode</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent the regionCode<br> 
+								it must be unique.
+							</td>
+						</tr>
+						<tr>
+							<td>regionName</td>
+						</tr>
+						<tr>
+							<td class=fielddesc> For providing helpful description of region.</td>
+						</tr>
+						<tr class=alt>
+							<td>states</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent selected states of region</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<a id="region_template"	name="region_template" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve region Template</h4>
+					<p>This is a convenience resource. It can be useful when
+						building maintenance user interface screens for client
+						applications. The template data returned consists of any or all
+						of:
+					<ul>
+						<li class=normalli>Field Defaults</li>
+						<li class=normalli>Allowed Value Lists</li>
+					</ul>
+					</p>
+					
+					<p>Example Request:</p>
+					<div>regions/template</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/regions/template"
+					</code>
+					<code class="method-response">
+{
+	"countryData": [{
+		"id": 1,
+		"countryName": "India"
+	},
+	{
+		"id": 2,
+		"countryName": "France"
+	}],
+	"isDefault": "\u0000"
+}
+					</code>
+				</div>
+<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/regions/getstates/{countryId}"
+					</code>
+					<code class="method-response">
+{
+	"countryId": 1,
+	"countryData": [{
+		"id": 1,
+		"countryName": "India"
+	},
+	{
+		"id": 2,
+		"countryName": "France"
+	}],
+	"statesData": [{
+		"id": 1,
+		"stateName": "Andhra Pradesh"
+	}],
+	"isDefault": "\u0000"
+}
+					</code>
+				</div>				
+			</div>
+
+				<a id="region_list" name="region_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List of regions</h4>
+					<p>returns  <i>list</i> of regions.</p>
+									
+					<p>Example Requests:</p>
+					<div>regions</div>
+   				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/obsplatform/api/v1/regions
+					</code>
+					<code class="method-response">
+
+[{
+	"id": 1,
+	"regionCode": "Default",
+	"regionName": "Default Region",
+	"isDefault": "\u0000"
+}]
+					</code>
+				</div>
+			</div>
+
+
+            <a id="region_retrieve" name="region_retrieve" class="old-syle-anchor">&nbsp;</a>
+            <div class="method-section">
+                <div class="method-description">
+                    <h4>Retrieve a region</h4>
+                    <p>Returns single region details</p>
+                    <p>Example Requests:</p>
+					<div>regions/1</div>
+                </div>
+                <div class="method-example">
+                    <code class="method-declaration">
+                        GET https://DomainName/api/v1/regions/{regionId}
+                    </code>
+                    <code class="method-request">
+                        GET regions/1
+                        Content-Type: application/json
+                        
+                    </code>
+                    <code class="method-response">
+                      {
+	"id": 1,
+	"regionCode": "Default",
+	"regionName": "Default Region",
+	"countryId": 1,
+	"countryData": [{
+		"id": 1,
+		"countryName": "India"
+	},
+	{
+		"id": 2,
+		"countryName": "France"
+	}],
+	"statesData": [],
+	"regionDetails": [],
+	"isDefault": "Y"
+}
+
+                    </code>
+                </div>
+            </div>
+
+<a id="region_create" name="region_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a Region</h4>
+					<p>Add a new Region.</p>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>regionCode,regionName,countryId,states</td>
+						</tr>
+					</table>
+					<br/>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/regions
+					</code>
+					<code class="method-request">
+POST regions
+Content-Type: application/json 
+Request body:
+{
+	"regionCode": "South",
+	"regionName": "South region",
+	"countryId": 1,
+	"states": ["1"]
+	
+}
+				</code>
+					<code class="method-response">
+{
+	"resourceId": 3,
+	"changes": {
+		
+	}
+}
+					</code>
+					
+				</div>
+			</div>
+			
+		<a id="region_update" name="region_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update a Region</h4>
+					<p>Updates the details of a Region.</p>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/regions/{regionId}
+
+					</code>
+					<code class="method-request">
+PUT regions/3
+ Content-Type: application/json 
+Request Body: 
+{
+	"regionCode": "North",
+	"regionName": "South region",
+	"countryId": 1,
+	"states": ["1"]
+}
+					</code>
+					<code class="method-response">
+{
+	"resourceId": 3,
+	"changes": {
+		"regionCode": "North",
+		"states": ["3"]
+	}
+}
+					</code>
+				</div>
+			</div>
+			
+			<a id="region_delete" name="region_delete" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Delete a Region</h4>
+					
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+DELETE https://DomainName/api/v1/regions/{regionId}
+					</code>
+					<code class="method-request">
+DELETE regions/1
+Content-Type: application/json 
+No Request Body:
+					</code>
+					<code class="method-response">
+{
+	"resourceId": 2
+}				</code>
+				</div>
+			</div>
+
+<!-- End of Regions -->
+
+<!-- Start of Promotion code Api -->
+<a id="promotioncode_details" name="promotioncode_details" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Promotion Codes</h3>
+					<p>Promotion codes are applied after  order booking to the client
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Field Descriptions</div></td>
+						</tr>
+						<tr class=alt>
+							<td>promotionCode</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent the promotionCode<br> 
+								it must be unique.
+							</td>
+						</tr>
+						<tr>
+							<td>promotiondescription</td>
+						</tr>
+						<tr>
+							<td class=fielddesc> For providing helpful description of Promotion.</td>
+						</tr>
+						<tr class=alt>
+							<td>durationtype</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent type of Duration i.e months or weeks</td>
+						</tr>
+						<tr class=alt>
+							<td>duration</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent  Duration period</td>
+						</tr>
+						<tr class=alt>
+							<td>discountType</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent type of discounts i.e Flat or percantage</td>
+						</tr>
+						<tr class=alt>
+							<td>discountRate</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent amount of discount flat amount or percentage value</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<a id="promotioncode_template"	name="promotioncode_template" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve promotioncode Template</h4>
+					<p>This is a convenience resource. It can be useful when
+						building maintenance user interface screens for client
+						applications. The template data returned consists of any or all
+						of:
+					<ul>
+						<li class=normalli>Field Defaults</li>
+						<li class=normalli>Allowed Value Lists</li>
+					</ul>
+					</p>
+					
+					<p>Example Request:</p>
+					<div>promotioncode/template</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/promotion/template"
+					</code>
+					<code class="method-response">
+{
+	"discounTypeData": [{
+		"id": 55,
+		"mCodeValue": "Flat"
+	},
+	{
+		"id": 56,
+		"mCodeValue": "Percentage"
+	}],
+	"contractTypedata": [{
+		"subscriptionType": "Month(s)",
+		"dayName": "Month(s)"
+	}]
+}
+					</code>
+				</div>
+</div>
+				<a id="promotioncode_list" name="promotioncode_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List of promotioncodes</h4>
+					<p>returns  <i>list</i> of promotioncode.</p>
+									
+					<p>Example Requests:</p>
+					<div>promotioncode</div>
+   				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/obsplatform/api/v1/promotioncode
+					</code>
+					<code class="method-response">
+[{
+	"id": 1,
+	"promotionCode": "Promo1",
+	"promotionDescription": "Promotion",
+	"durationType": "Month(s)",
+	"duration": 1,
+	"discountType": "Flat",
+	"discountRate": 50
+},
+{
+	"id": 2,
+	"promotionCode": "Promo2",
+	"promotionDescription": "Promotion2",
+	"durationType": "Month(s)",
+	"duration": 6,
+	"discountType": "Percantage",
+	"discountRate": 10
+}
+]
+					</code>
+				</div>
+			</div>
+			
+			
+
+
+            <a id="promotioncode_retrieve" name="promotioncode_retrieve" class="old-syle-anchor">&nbsp;</a>
+            <div class="method-section">
+                <div class="method-description">
+                    <h4>Retrieve a promotioncode</h4>
+                    <p>Returns single promotioncode details</p>
+                    <p>Example Requests:</p>
+					<div>promotioncode/1</div>
+                </div>
+                <div class="method-example">
+                    <code class="method-declaration">
+                        GET https://DomainName/api/v1/promotioncode/{promotioncodeId}
+                    </code>
+                    <code class="method-request">
+                        GET promotioncode/1
+                        Content-Type: application/json
+                        
+                    </code>
+                    <code class="method-response">
+            {
+	"id": 1,
+	"promotionCode": "Promo1",
+	"promotionDescription": "Promotion",
+	"durationType": "Month(s)",
+	"duration": 1,
+	"discountType": "Flat",
+	"discountRate": 50,
+	"discounTypeData": [{
+		"id": 55,
+		"mCodeValue": "Flat"
+	},
+	{
+		"id": 56,
+		"mCodeValue": "Percentage"
+	}],
+	"contractTypedata": [{
+		"subscriptionType": "Month(s)",
+		"dayName": "Month(s)"
+	}]
+}
+
+                    </code>
+                </div>
+            </div>
+<a id="promotioncode_create" name="promotioncode_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a promotioncode</h4>
+					<p>Add a new promotioncode.</p>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>promotionCode,promotionDescription,durationType,duration,discountType,startDate,discountRate</td>
+						</tr>
+					</table>
+					<br/>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/promotioncode
+					</code>
+					<code class="method-request">
+POST regions
+Content-Type: application/json 
+Request body:
+{
+	"promotionCode": "Promo1",
+	"discountType": "Flat",
+	"description": "Promotion",
+	"durationType": "Month(s)",
+	"discountRate": "50",
+	"duration": "1",
+	"locale": "en",
+	"dateFormat": "dd MMMM yyyy",
+	"startDate": "06 May 2014"
+}
+				</code>
+					<code class="method-response">
+{
+	"resourceId": 3,
+	"changes": {
+		
+	}
+}
+					</code>
+					
+				</div>
+			</div>
+			
+		<a id="promotioncode_update" name="promotioncode_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update a promotioncode</h4>
+					<p>Updates the details of a promotioncode.</p>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/promotioncode/{promotionId}
+
+					</code>
+					<code class="method-request">
+PUT regions/3
+ Content-Type: application/json 
+Request Body: 
+{
+
+    "promotionCode": "Promo1",
+	"discountType": "Percentage",
+	"description": "Promotion",
+	"durationType": "Month(s)",
+	"discountRate": "10",
+	"duration": "1",
+	"locale": "en",
+	"dateFormat": "dd MMMM yyyy",
+	"startDate": "06 May 2014"
+}
+					</code>
+					<code class="method-response">
+{
+	"resourceId": 3,
+	"changes": {
+		"discountType": "Percentage",
+		"discountRate": "10",
+	}
+}
+					</code>
+				</div>
+			</div>
+			
+			<a id="promotioncode_delete" name="promotioncode_delete" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Delete a promotioncode</h4>
+					
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+DELETE https://DomainName/api/v1/promotioncode/{promotioncodeId}
+					</code>
+					<code class="method-request">
+DELETE promotioncode/1
+Content-Type: application/json 
+No Request Body:
+					</code>
+					<code class="method-response">
+{
+	"resourceId": 2
+}				</code>
+				</div>
+			</div>
+			
+			
+			
+
+
+<!-- End of Promotion code Api -->
+			
+
+<!-- start of orders content-->
 			<a id="order_details" name="order_details" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
 				<div class="method-description">
