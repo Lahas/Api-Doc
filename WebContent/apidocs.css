@@ -65,7 +65,7 @@
     	color: rgb(240, 240, 255);
 }
 
-.mifosXHeading2 {
+.billingHeading2 {
 	color: white;
 	font-weight: bold;
 	//font-size: 125%
@@ -255,21 +255,38 @@ body {
 	position:absolute;
 	left:-290px;
 }
+#toc-menu-jobs{
+	position:absolute;
+	left:-690px;
+}
 #toc-menu-accounting {
 	position:absolute;
 	left:-370px;
 }
 #toc-menu-org {
 	position:absolute;
+	left:-710px;
+}
+#toc-menu-cms{
+	position:absolute;
+	left:-410px;
+}
+#toc-menu-crm{
+	position:absolute;
+	left:-350px;
+}
+
+#toc-menu-finance {
+	position:absolute;
 	left:-450px;
 }
 #toc-menu-user {
 	position:absolute;
-	left:-530px;
+	left:-300px;
 }
 #toc-menu-system {
 	position:absolute;
-	left:-610px;
+	left:-300px;
 }
 #toc-menu-noncore {
 	position:absolute;
@@ -277,7 +294,7 @@ body {
 }
 #toc-menu-report {
 	position:absolute;
-	left:-770px;
+	left:-750px;
 }
 #toc-menu-template {
 	position:absolute;
