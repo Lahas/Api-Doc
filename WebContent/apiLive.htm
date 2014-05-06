@@ -548,6 +548,38 @@
 								<td></td>
 								<td></td>
 							</tr>
+							<tr class="alt">
+							<td><a href="#user_chat">User Chat Message</a></td>
+							<td>User Chat</td>
+							<td><a href="#create_userChat">Create User Chat</a></td>
+							<td><a href="#retrive_userChat">Retrive All User Chat Details</a></td>
+							<td></td>
+							<td></td>
+							</tr>
+							<tr>
+							<td></td>
+							<td>User SentMessages</td>
+							<td></td>
+							<td><a href="#retrive_userSentMessages">Retrive All User Sent Messages Details</a></td>
+							<td></td>
+							<td></td>
+							</tr>
+							<tr  class="alt">
+								<td></td>
+								<td>userchats/{messageId}</td>
+								<td></td>
+								<td></td>
+								<td><a href="#userChat_update">Update Chat Message</a></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>userchats/{messageId}</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><a href="#userChat_delete">Delete Chat Message</a></td>
+							</tr>
 						</table>
 					</div>
 				</div>
@@ -4886,6 +4918,215 @@ Request Body:
 					</code>
 				</div>
 			</div>
+<!-- start of user chat -->
+					<a id="user_chat" name="user_chat" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>User Chat</h3>
+					<p>This API provides the functionality for chating purpose .</p>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Field Descriptions</div></td>
+						</tr>
+						<tr class=alt>
+							<td>User Name</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Name of User</td>
+						</tr>
+						<tr class=alt>
+							<td>System Date and Time</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>System Date And Time.</td>
+						</tr>
+						<tr class=alt>
+							<td>Descripition</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Chat Description.</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		
+		<a id="create_userChat" name="create_userChat" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create User Chat</h4>
+					<p>Creates a Message </p>
+					<p><b>Note:</b>Following fields are mandatory
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>User Name,Sytem Date and Time,Description</td>
+						</tr>
+					</table>
+					</p>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/userchats
+					</code>
+					<code class="method-request">
+POST userchats
+Content-Type: application/json
+Request Body:
+{
+	"userName":"anji",
+	"locale":"en",
+	"dateFormat":"dd MMMM yyyy",
+	"message":"its working",
+	"messageDate":"06 May 2014"
+}
+					</code>
+				</div>
+			</div>
+			
+		<a id="retrive_userChat" name="retrive_userChat" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve all User Chat Details</h4>
+					<p>This will retrive All User Chat Details </p>
+					<p>Example Request:</p>
+					<div>userchats</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/userchats
+					</code>
+					<code class="method-response">
+userChatDatas: [
+
+{
+   "id": 18,
+  "userName": "billing",
+   "message": "N55100074461 is pending",
+   "messageDate": [
+        2014,
+        2,
+        15
+      ],
+   "createdByUser": "tenes",
+   "isRead": true
+},
+{
+   "id": 21,
+    "userName": "billing",
+    "message": "Sir, pls assist me i have made a mistake in posting adjustment N55100361066",
+    "messageDate": [
+        2014,
+        2,
+        15
+      ],
+     "createdByUser": "tenes",
+     "isRead": true
+ }]
+					
+					</code>
+				</div>
+			</div>	
+			<a id="retrive_userSentMessages" name="retrive_userSentMessages" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve all User SentMessages Details</h4>
+					<p>This will retrive All User SentMessages Details </p>
+					<p>Example Request:</p>
+					<div>userchats/sentmessages</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/userchats/sentmessages
+					</code>
+					<code class="method-response">
+ userChatDatas: [
+{
+   "id": 18,
+   "userName": "billing",
+    "message": "N55100074461 is pending",
+    "messageDate": [
+        2014,
+        2,
+        15
+      ],
+     "createdByUser": "tenes",
+     "isRead": true
+ }
+ appUserDatas: [
+{
+   "id": 12,
+   "username": "anji",
+   "officeId": 1,
+   "officeName": "Head Quaters",
+    "firstname": "Anji",
+    "lastname": "Babu",
+    "email": ""
+ }]
+					
+					</code>
+				</div>
+			</div>		
+					
+<a id="userChat_update" name="userChat_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update UserChat Message</h4>
+					<p>Updates a Message details</p>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>None</td>
+						</tr>
+					</table>
+					<br/>
+					
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/userchats{messagetId}
+
+					</code>
+					<code class="method-request">
+POST userchats/{messageId}
+Content-Type: application/json 
+Request body:
+{ 
+   "messageId":24
+}
+				</code>
+					<code class="method-response">
+{ 
+ "resourceId":3
+ }
+					</code>
+				</div>
+			</div>
+			<a id="userChat_delete" name="userChat_delete" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Delete a chat Message</h4>
+					
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+DELETE https://DomainName/api/v1/userchats/{messageId}
+					</code>
+					<code class="method-request">
+DELETE userchats/{messageId}
+Content-Type: application/json 
+No Request Body:
+					</code>
+					<code class="method-response">
+{
+	"resourceId": 25
+}				</code>
+				</div>
+			</div>			
+<!-- end of user chat -->
 			
 			
 			<a id="epg_programming_guide" name="epg_programming_guide" class="old-syle-anchor">&nbsp;</a>
