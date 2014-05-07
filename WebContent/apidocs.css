@@ -280,6 +280,10 @@ body {
 	position:absolute;
 	left:-450px;
 }
+#toc-menu-portfolio{
+	position:absolute;
+	left:-470px;
+}
 #toc-menu-user {
 	position:absolute;
 	left:-300px;
