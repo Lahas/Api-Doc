@@ -1376,24 +1376,24 @@
 								<td></td>
 								<td>orders/reconnect/{orderId}</td>
 								<td></td>
-								<td><a href="#order_reconnect">Reconnect Order</a></td>
 								<td></td>
+								<td><a href="#order_reconnect">Reconnect Order</a></td>
 								<td></td>
 							</tr>
 							<tr class="alt">
 								<td></td>
 								<td>orders/changePlan/{orderId}</td>
 								<td></td>
-								<td><a href="#order_changeplan">Change Plan</a></td>
 								<td></td>
+								<td><a href="#order_changeplan">Change Plan</a></td>
 								<td></td>
 							</tr>
 							<tr>
 								<td></td>
 								<td>orders/applypromo/{orderId}</td>
 								<td></td>
-								<td><a href="#order_applypromo">Apply Promo</a></td>
 								<td></td>
+								<td><a href="#order_applypromo">Apply Promo</a></td>
 								<td></td>
 							</tr>
 								<tr class="alt">
@@ -1530,16 +1530,16 @@
 							<tr class="alt">
 								<td></td>
 								<td>scheduler?command=stop</td>
-								<td><a href="#suspend_scheduler">Suspend a scheduler service</td>
+								<td><a href="#suspend_scheduler">Suspend a scheduler service</a></td>
 								<td></td>
 								<td></td>
 								<td></td>
 							</tr>
 							
 							 <tr  class="alt">
-								<td><a href="#collaterals_retrieve">Uploads</a></td></td>
+								<td><a href="#uploads_details">Uploads</a></td></td>
 								<td>uploadstatus/documents</td>
-								<td><a href="#collaterals_retrieve">Upload File</a></td>
+								<td><a href="#uploads_create">Upload File</a></td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -1548,7 +1548,7 @@
 								<td></td>
 								<td>uploadstatus/getData</td>
 								<td></td>
-								<td><a href="#collaterals_retrieve">List Uploads</a></td>
+								<td><a href="#uploads_list">List Uploads</a></td>
 								<td></td>
 								<td></td>
 							</tr>
@@ -1557,7 +1557,7 @@
 								<td>uploadstatus/{uploadStatusId}</td>
 								<td></td>
 								<td></td>
-								<td><a href="#collaterals_retrieve">Processing Upload File</a></td>
+								<td><a href="#uploads_process">Processing Upload File</a></td>
 								<td></td>
 							</tr>
 						</table>
@@ -1666,7 +1666,7 @@
 								<td>permissions</td>
 								<td></td>
 								<td><a href="#permissions_list">List Application Permissions</a></td>
-								<td><a href="#permissions_update">Enable/Disable Permissions for Maker Checker</a></td>
+								<td><!-- <a href="#permissions_update">Enable/Disable Permissions for Maker Checker</a> --></td>
 								<td></td>
 							</tr>
 							<tr class="alt">
@@ -11769,6 +11769,173 @@ POST scheduler?command=stop
 					</code>
 				</div>
 			</div>
+<!-- Start of Uploads -->
+<a id="uploads_details" name="uploads_details" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Bulk Upload </h3>
+					<p>The current Api provides support for the documents for bulk data upload.adjustments,payemnts,epg data..<br>
+					Allowed formats:CSV
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Field Descriptions</div></td>
+						</tr>
+						<tr class=alt>
+							<td>Name</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent the upload document data.i.e adjustments,payments </td>
+						</tr>
+						<tr>
+							<td>description</td>
+						</tr>
+						<tr>
+							<td class=fielddesc> For providing helpful description of plan offering.</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<a id="uploads_list" name="uploads_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List uploads</h4>
+					<p>returns  <i>list</i> of uploaded Documents.</p>
+									
+					<p>Example Requests:</p>
+					<div>uploads/getdata</div>
+   				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/obsplatform/api/v1/uploads/getdata
+					</code>
+					<code class="method-response">
+
+[{
+	"id": 31,
+	"uploadProcess": "Epg",
+	"uploadFilePath": "C:\\Users\\hu......\\Epg-1.csv",
+	"processDate": [2014,
+	4,
+	18],
+	"processStatus": "NEW",
+	"processRecords": 0,
+	"flag": false,
+	"unprocessRecords": 0,
+	"totalRecords": 0
+},
+{
+	"id": 30,
+	"uploadProcess": "Epg",
+	"uploadFilePath": "C:\\Users\\hu......\\Epg-10.csv",
+	"processDate": [2014,
+	4,
+	18],
+	"processStatus": "Failed",
+	"processRecords": 0,
+	"errorMessage": "Processing failed",
+	"flag": false,
+	"unprocessRecords": 1,
+	"totalRecords": 1
+},
+{
+	"id": 29,
+	"uploadProcess": "Adjustments",
+	"uploadFilePath": "/usr/share/......\\Adjustments_first.txt",
+	"processDate": [2014,
+	2,
+	7],
+	"processStatus": "NEW",
+	"processRecords": 0,
+	"flag": false,
+	"unprocessRecords": 0,
+	"totalRecords": 0
+}]
+					</code>
+				</div>
+			</div>
+
+<a id="uploads_create" name="uploads_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Upload a File</h4>
+					<p>Uploade new File.</p>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>name,description,file</td>
+						</tr>
+					</table>
+					<br/>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/uploadstatus/document
+					</code>
+					<code class="method-request">
+POST uploadstatus/document
+Content-Type: application/json 
+Request body:
+{
+	-----------------------------152652939617558Content-Disposition: form-data;name="file";
+	filename="Adjustments1.csv"Content-Type: text/csvClientId,
+AdjustmentDate,
+AdjustmentCode,
+AdjustmentType,
+Amount,
+Note1,
+31-Dec-13,
+Migration,
+CREDIT,
+7,
+MigrationCorrectionEOF,
+,
+,
+,
+,
+-----------------------------152652939617558Content-Disposition: form-data;name="status
+"Adjustments-----------------------------152652939617558Content-Disposition: form-data;
+name="description"adjustment data-----------------------------152652939617558--
+}
+				</code>
+					<code class="method-response">
+{
+	"resourceId": 32,
+	"changes": {
+		
+	}
+}
+					</code>
+				</div>
+			</div>
+			
+		<a id="uploads_process" name="uploads_process" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Process Uploaded File</h4>
+					<p></p>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/uploadstatus/{uploadId}
+
+					</code>
+					<code class="method-request">
+PUT uploadstatus/1
+ Content-Type: application/json 
+				</code>
+					<code class="method-response">
+{
+	"resourceId": 28,
+	"changes": {
+		
+	}
+}
+					</code>
+				</div>
+			</div>
+<!-- End of Uploads -->			
 			<!-- start of Notes api docs -->
 			<a id="notes" name="notes" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
