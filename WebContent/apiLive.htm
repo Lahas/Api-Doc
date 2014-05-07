@@ -1754,6 +1754,140 @@
 								<td><a href="#configs_codes_codevalues_retrieve">Retrieve a Code Value</a></td>
 								<td><a href="#configs_codes_codevalues_update">Update a Code Value</a></td>
 							</tr>
+							<tr>
+								<td><a href="#messages">Messages</a></td>
+								<td>messages/data</td>
+								<td></td>
+								<td><a href="#messages_list">List all Messages</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>messages</td>
+								<td><a href="#messages_create">Create message</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>messages/template</td>
+								<td></td>
+								<td><a href="#messages_template">message Template</a></td>
+							</tr>
+							 <tr class="alt">
+								<td></td>
+								<td>messages/{messageId}</td>
+								<td></td>
+								<td><a href="#messages_retrieve">Retrieve a Message data</a></td>
+								<td><a href="#messages_update">Update a Message</a></td>
+								<td><a href="#messages_delete">Delete a Message</a></td>
+							</tr>
+							<tr>
+								<td><a href="#randomgenerators">Randomgenerator</a></td>
+								<td>randomgenerators</td>
+								<td><a href="#randomgenerators_create">Create Randomgenerator</a></td>
+								<td><a href="#randomgenerators_list">List all Randomgenerators</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>randomgenerators/template</td>
+								<td></td>
+								<td><a href="#randomgenerators_template">Randomgenerator Template</a></td>
+							</tr>
+							<tr>
+								<td><a href="#hardwaremapping">Hardware Plan Mapping</a></td>
+								<td>hardwaremapping</td>
+								<td><a href="#hardwaremapping_create">Create Hardware Plan Mapping</a></td>
+								<td><a href="#hardwaremapping_list">List all Hardware Plan Mappings</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>hardwaremapping/template</td>
+								<td></td>
+								<td><a href="#hardwaremapping_template">Hardware Plan Mapping Template</a></td>
+							</tr>
+							<tr class="alt">
+								<td></td>
+								<td>hardwaremapping/{hardwaremappingId}</td>
+								<td></td>
+								<td><a href="#hardwaremapping_retrieve">Retrieve a Hardware Plan Mapping data</a></td>
+								<td><a href="#hardwaremapping_update">Update a Hardware Plan Mapping</a></td>
+							</tr>
+							<tr>
+								<td><a href="#smartsearch">Smart Search</a></td>
+								<td>smartsearch</td>
+								<td></td>
+								<td><a href="#smartsearch_list">List all smartsearch</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><a href="#ippooling">Ippooling</a></td>
+								<td>Ippooling</td>
+								<td><a href="#ippooling_create">Create Ippooling</a></td>
+								<td><a href="#ippooling_list">List all Ippoolings</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><a href="#address">Address</a></td>
+								<td>address</td>
+								<td></td>
+								<td><a href="#address_list">List all address</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>address/country/new</td>
+								<td><a href="#address_country_create">Create Country</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>address/country/{countryId}</td>
+								<td></td>
+								<td></td>
+								<td><a href="#address_country_update">Update Country</a></td>
+								<td><a href="#address_country_delete">Delete Country</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>address/state/new</td>
+								<td><a href="#address_state_create">Create Country</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>address/state/{stateId}</td>
+								<td></td>
+								<td></td>
+								<td><a href="#address_state_update">Update State</a></td>
+								<td><a href="#address_state_delete">Delete State</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>address/city/new</td>
+								<td><a href="#address_city_create">Create City</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>address/city/{cityId}</td>
+								<td></td>
+								<td></td>
+								<td><a href="#address_city_update">Update City</a></td>
+								<td><a href="#address_city_delete">Delete City</a></td>
+							</tr>
 						</table>
 					</div>
 				</div>
@@ -11335,6 +11469,1101 @@ Content-Type: application/json
 					</code>
 				</div>
 			</div>
+			
+	<!-- code values contents end here!! -->
+			
+<!-- 	messages content start here!!		 -->
+
+			<a id="messages" name="messages" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Messages</h3>
+					<p>An API capability to creating messages using message templates.</p>
+				</div>
+			</div>
+			
+			<a id="messages_list" name="messages_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List Messages</h4>
+					<p>Example Requests:</p>
+					<div>Messages</div>
+					<br>
+					<br>
+					<div>messages/data</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/messages/data
+					</code>
+					<code class="method-response">
+[
+  {
+       "templateDescription": "SMS",
+       "subject": "sms",
+       "header": "",
+       "body": "We want our customer to avail the Christmas offer",
+       "footer": "",
+       "id": 1,
+       "deleteButtonId": 0,
+       "messageType": "M"
+   }
+]
+					</code>
+				</div>
+			</div>
+			
+			<a id="messages_create" name="messages_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a New Message</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>message type, subject, template description</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/messages
+					</code>
+					<code class="method-request">
+POST roles 
+Content-Type: application/json 
+Request body:
+{
+	"messageParams":[],
+	"messageType":"M",
+	"templateDescription":"mesasge",
+	"subject":"New",
+	"body":"This is message"
+}
+					</code>
+					<code class="method-response">{ "resourceId": 1} </code>
+				</div>
+			</div>
+			
+		<a id="messages_template" name="messages_template" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve Message Template</h4>
+					<p>This is a convenience resource. It can be useful when
+						building maintenance user interface screens for client
+						applications.
+					</p>
+					
+					<p>Example Requests:</p>
+					<div>messages/template</div>
+					<br>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/messages/template
+					</code>
+					<code class="method-request">
+GET messages/template
+
+
+					</code>
+					<code class="method-response">
+{
+  "messageTypes": [
+    {
+      "id": "E",
+      "code": "Email",
+      "value": "EMAIL"
+    },
+    {
+      "id": "M",
+      "code": "Message",
+      "value": "MESSAGE"
+    },
+    {
+      "id": "O",
+      "code": "OSDMessage",
+      "value": "OSDMESSAGE"
+    }
+  ],
+  "deleteButtonId": 0,
+  "messageType": "\u0000"
+}
+					</code>
+				</div>
+			</div>	
+			
+			<a id="messages_retrieve" name="message_retrieve" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve a Message</h4>
+					<p>Example Requests:</p>
+					<div>messages/{messageId}</div>
+					<br>
+					<br>
+					<div>messages/1</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/messages/{messageId}
+					</code>
+					<code class="method-response">
+{
+  "templateDescription": "SMS_DELETED1",
+  "subject": "sms",
+  "header": "",
+  "body": "We want our customer to avail the Christmas offer",
+  "footer": "",
+  "id": 1,
+  "messageParams": [],
+  "messageTypes": [
+    {
+      "id": "E",
+      "code": "Email",
+      "value": "EMAIL"
+    },
+    {
+      "id": "M",
+      "code": "Message",
+      "value": "MESSAGE"
+    },
+    {
+      "id": "O",
+      "code": "OSDMessage",
+      "value": "OSDMESSAGE"
+    }
+  ],
+  "deleteButtonId": 0,
+  "messageType": "M"
+}
+					</code>
+				</div>
+			</div>
+			
+			<a id="messages_update" name="messages_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update a Message</h4>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/messages/{messageId}
+					</code>
+					<code class="method-request">
+PUT messages/1
+Content-Type: application/json 
+Request body: 
+{
+	"templateDescription":"Email Info",
+	"subject":"Dear customer",
+	"header":"Newletter",
+	"body":"We are glad to inform that we are lunching these services of TING officially from this December.",
+	"footer":"Thanks",
+	"id":2,
+	"messageParams":[{"parameter":"Customer","deleteButtonId":13,"messageType":"\u0000"}],
+	"messageTypes":
+			[
+				{"id":"E","code":"Email","value":"EMAIL"},
+				{"id":"M","code":"Message","value":"MESSAGE"},
+				{"id":"O","code":"OSDMessage","value":"OSDMESSAGE"}
+			],
+	"deleteButtonId":0,
+	"messageType":"E"
+}
+					</code>
+					<code class="method-response">
+{
+	"resourceId":2
+}
+					</code>
+				</div>
+			</div>	
+			
+		<a id="messages_delete" name="messages_delete"
+				class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Delete a Message</h4>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+DELETE https://DomainName/api/v1/messages/{messageId}
+					</code>
+					<code class="method-request">
+DELETE messages/1
+Content-Type: application/json 
+No Request Body:
+					</code>
+					<code class="method-response">
+{
+    "resourceId": 1
+}
+					</code>
+				</div>
+			</div>
+			
+			
+<!------- 	   messages content end here!!		-------->
+
+<!-- Randomgenerator content starts here -->
+	
+			<a id="randomgenerators" name="randomgenerators" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Randomgenerators</h3>
+					<p>An API capability to generates random values (Alpha,Numeric,AlphaNumeric).</p>
+				</div>
+			</div>
+			
+			<a id="randomgenerators_list" name="randomgenerators_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List Randomgenerators</h4>
+					<p>Example Requests:</p>
+					<div>Randomgenerators</div>
+					<br>
+					<br>
+					<div>randomgenerators</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/randomgenerators
+					</code>
+					<code class="method-response">
+[
+  {
+    "id": 1,
+    "batchName": "New",
+    "batchDescription": "New",
+    "length": 2,
+    "pinCategory": "ALPHANUMERIC",
+    "pinType": "VALUE",
+    "quantity": 2,
+    "serialNo": "2",
+    "expiryDate": [
+      2014,
+      5,
+      6
+    ],
+    "beginWith": "a",
+    "pinValue": "10.0 Rs."
+  }
+]
+					</code>
+				</div>
+			</div>
+			
+			<a id="randomgenerators_create" name="randomgenerators_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a New Randomgenerator</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>Batch Name, Batch Description, length, Pin Category, Begin With, Quantity, Pin Type, SerialNo,</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/randomgenerators
+					</code>
+					<code class="method-request">
+POST roles 
+Content-Type: application/json 
+Request body:
+{
+	"batchName":"New",
+	"length":"2",
+	"pinCategory":"ALPHANUMERIC",
+	"serialNo":"2",
+	"batchDescription":"New",
+	"beginWith":"a",
+	"quantity":"2",
+	"pinType":"VALUE",
+	"pinValue":"10",
+	"locale":"en",
+	"dateFormat":"dd MMMM yyyy",
+	"expiryDate":"06 May 2014",
+	"pinExtention":"Rs."
+}
+					</code>
+					<code class="method-response">{"resourceId":1,"changes":{},"resourceIdentifier":"1"} </code>
+				</div>
+			</div>
+			
+		<a id="randomgenerators_template" name="randomgenerators_template" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve Randomgenerators Template</h4>
+					<p>This is a convenience resource. It can be useful when
+						building maintenance user interface screens for client
+						applications.
+					</p>
+					
+					<p>Example Requests:</p>
+					<div>randomgenerators/template</div>
+					<br>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/randomgenerators/template
+					</code>
+					<code class="method-request">
+GET randomgenerators/template
+
+
+					</code>
+					<code class="method-response">
+					
+{
+  "pinCategoryData": [
+    {
+      "id": 1,
+      "code": "deposit.interest.compounding.period.PinCategory.numeric",
+      "value": "NUMERIC"
+    },
+    {
+      "id": 2,
+      "code": "deposit.interest.compounding.period.PinCategory.alpha",
+      "value": "ALPHA"
+    },
+    {
+      "id": 3,
+      "code": "deposit.interest.compounding.period.CategoryType.alphanumeric",
+      "value": "ALPHANUMERIC"
+    }
+  ],
+  "pinTypeData": [
+    {
+      "id": 1,
+      "code": "deposit.interest.compounding.period.PinType.value",
+      "value": "VALUE"
+    },
+    {
+      "id": 2,
+      "code": "deposit.interest.compounding.period.PinType.duration",
+      "value": "DURATION"
+    }
+  ]
+}
+
+					</code>
+				</div>
+			</div>	
+					
+				
+<!-- Ramdomgenerator content ends here -->
+
+
+
+
+
+<!-- HarwarePlanMapping contents start here!! -->
+
+		<a id="hardwaremapping" name="hardwaremapping" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Hardware Plan Mapping</h3>
+					<p>An API hardwaremapping maps between hardwares and plans</p>
+				</div>
+			</div>
+			
+			<a id="hardwaremapping_list" name="hardwaremapping_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List hardwaremappings</h4>
+					<p>Example Requests:</p>
+					<div>hardwaremapping</div>
+					<br>
+					<br>
+					<div>hardwaremapping</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/hardwaremapping
+					</code>
+					<code class="method-response">
+[
+  [
+  {
+    "id": 1,
+    "planCode": "40CH",
+    "itemCode": "AAL003"
+  },
+  {
+    "id": 2,
+    "planCode": "40CH",
+    "itemCode": "AAL001"
+  },
+  {
+    "id": 3,
+    "planCode": "40CH",
+    "itemCode": "AAL002"
+  },
+  {
+    "id": 4,
+    "planCode": "40CH",
+    "itemCode": "AALHD"
+  }
+
+]
+					</code>
+				</div>
+			</div>
+			
+			<a id="hardwaremapping_create" name="hardwaremapping_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a New Hardwaremapping</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td> Plan Code,  Item Code</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/hardwaremapping
+					</code>
+					<code class="method-request">
+POST roles 
+Content-Type: application/json 
+Request body:
+{
+	"planCode":"SAT",
+	"itemCode":"AAL001"
+}
+					</code>
+					<code class="method-response">{"resourceId":5,"changes":{},"resourceIdentifier":"5"} </code>
+				</div>
+			</div>
+			
+		<a id="hardwaremapping_template" name="hardwaremapping_template" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve hardwaremapping Template</h4>
+					<p>This is a convenience resource. It can be useful when
+						building maintenance user interface screens for client
+						applications.
+					</p>
+					
+					<p>Example Requests:</p>
+					<div>hardwaremapping/template</div>
+					<br>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/hardwaremapping/template
+					</code>
+					<code class="method-request">
+GET hardwaremapping/template
+
+
+					</code>
+					<code class="method-response">
+					
+{
+  "itemDatas": [
+    {
+      "id": 1,
+      "itemCode": "AAL003",
+      "itemDescription": "AAL003  Sat Decoder",
+      "warranty": 0
+    },
+    {
+      "id": 2,
+      "itemCode": "AAL001",
+      "itemDescription": "AAL001 DTT",
+      "warranty": 0
+    },
+    {
+      "id": 3,
+      "itemCode": "AAL002",
+      "itemDescription": "AAL002 DTT with PVR",
+      "warranty": 0
+    }
+  ],
+  "planDatas": [
+    {
+      "id": 1,
+      "planCode": "40CH",
+      "planDescription": "Ting Classic"
+    },
+    {
+      "id": 2,
+      "planCode": "18CH",
+      "planDescription": "Ting Regular"
+    },
+    {
+      "id": 3,
+      "planCode": "SAT",
+      "planDescription": "SAT Classic"
+    }
+  ]
+}
+					</code>
+				</div>
+			</div>	
+			
+		<a id="hardwaremapping_retrieve" name="hardwaremapping_retrieve" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve a Hardwaremapping</h4>
+					<p>Example Requests:</p>
+					<div>hardwaremapping/{hardwaremappingId}</div>
+					<br>
+					<br>
+					<div>hardwaremapping/5</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/hardwaremapping/{hardwaremappingId}
+					</code>
+					<code class="method-response">
+{
+  "id": 13,
+  "planCode": "NewBasic",
+  "itemCode": "AAL001",
+  "itemDatas": [
+    {
+      "id": 1,
+      "itemCode": "AAL003",
+      "itemDescription": "AAL003  Sat Decoder",
+      "warranty": 0
+    },
+    {
+      "id": 2,
+      "itemCode": "AAL001",
+      "itemDescription": "AAL001 DTT",
+      "warranty": 0
+    },
+    {
+      "id": 3,
+      "itemCode": "AAL002",
+      "itemDescription": "AAL002 DTT with PVR",
+      "warranty": 0
+    },
+    {
+      "id": 4,
+      "itemCode": "AALHD",
+      "itemDescription": "AALHD DVB-T2",
+      "warranty": 0
+    }
+  ],
+  "planDatas": [
+    {
+      "id": 1,
+      "planCode": "40CH",
+      "planDescription": "Ting Classic"
+    },
+    {
+      "id": 2,
+      "planCode": "18CH",
+      "planDescription": "Ting Regular"
+    },
+    {
+      "id": 3,
+      "planCode": "SAT",
+      "planDescription": "SAT Classic"
+    },
+    {
+      "id": 4,
+      "planCode": "BASICPLAN",
+      "planDescription": "Platinium Package"
+    },
+    {
+      "id": 5,
+      "planCode": "NETPLAN",
+      "planDescription": "NET PLAN"
+    }
+  ]
+}					</code>
+				</div>
+			</div>
+			
+			<a id="hardwaremapping_update" name="hardwaremapping_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update a Hardwaremapping</h4>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/hardwaremapping/{hardwaremappingId}
+					</code>
+					<code class="method-request">
+PUT hardwaremapping/1
+Content-Type: application/json 
+Request body: 
+
+{
+	"planCode":"NewBasic",
+	"itemCode":"AAL001"
+}
+
+					</code>
+					<code class="method-response">
+{
+	"resourceId":5,
+	"changes":{}
+}
+					</code>
+				</div>
+			</div>	
+				
+	
+<!-- HarwarePlanMapping contents end here!! -->
+
+<!-- Smart search conetent starts here -->
+
+			<a id="smartsearch" name="smartsearch" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Smartsearch</h3>
+					<p>An API Smartsearch searches list of clients based on receipt number</p>
+				</div>
+			</div>
+			
+			<a id="smartsearch_list" name="smartsearch_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List Smartsearch</h4>
+					<p>Example Requests:</p>
+					<div>smartsearch?dateFormat=dd+MMMM+yyyy&fromDate=2014-05-01&limit=15&locale=en&offset=0&toDate=2014-05-07</div>
+					<br>
+					<br>
+					<div>smartsearch?dateFormat=dd+MMMM+yyyy&limit=15&locale=en&offset=0</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/smartsearch?dateFormat=dd+MMMM+yyyy&fromDate=2014-05-01&limit=15&locale=en&offset=0&toDate=2014-05-07
+					</code>
+					<code class="method-response">
+{
+  "totalFilteredRecords": 1,
+  "pageItems": [
+    {
+      "id": 607373,
+      "clientId": 1,
+      "clientName": "Test Client Anji",
+      "paymenttype": "M-pesa",
+      "receiptNo": "BP140430.1039.C00180",
+      "paymentDate": [
+        2014,
+        5,
+        2
+      ],
+      "amount": 8000
+    }
+  ]
+}
+					</code>
+				</div>
+			</div>	
+
+<!-- Smart search conetent ends here -->
+
+<!-- IP Pooling content starts here -->
+
+			<a id="ippooling" name="ippooling" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Ippooling</h3>
+					<p>An IP Pool is basicly a holding tank for a range of IP's</p>
+				</div>
+			</div>
+			
+			<a id="ippooling_list" name="ippooling_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List ippooling</h4>
+					<p>Example Requests:</p>
+					<div>ippooling?limit=15&offset=0</div>
+					<br>
+					<br>
+					<div>ippooling</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/ippooling
+					</code>
+					<code class="method-response">
+{
+  "totalFilteredRecords": 2,
+  "pageItems": [
+    {
+      "id": 1,
+      "ipAddress": "192.168.1.100",
+      "ipPoolDescription": "VLAN",
+      "status": "F",
+      "clientId": 0
+    },
+     {
+      "id": 2,
+      "ipAddress": "136.136.136.137",
+      "ipPoolDescription": "Rakesh",
+      "status": "F",
+      "clientId": 0
+    }
+
+]
+					</code>
+				</div>
+			</div>
+			
+			<a id="ippooling_create" name="ippooling_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a New Ippooling</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td> Description,  ipAddress, Subnet</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/ippooling
+					</code>
+					<code class="method-request">
+POST roles 
+Content-Type: application/json 
+Request body:
+{
+	"ipPoolDescription":"New",
+	"ipAddress":"146.146.146.146",
+	"subnet":"29"
+}
+					</code>
+				</div>
+			</div>
+			
+
+<!-- IP Pooling content starts here -->
+
+<!-- Address content starts here!! -->
+
+			<a id="address" name="address" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Address</h3>
+					<p>An Api Address used for Managing Addresses</p>
+				</div>
+			</div>
+			
+			<a id="address_list" name="address_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List address</h4>
+					<p>Example Requests:</p>
+					<div>address?limit=15&offset=0</div>
+					<br>
+					<br>
+					<div>address</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/address
+					</code>
+					<code class="method-response">
+					
+{
+  "totalFilteredRecords": 15,
+  "pageItems": [
+    {
+      "countryCode": "TZ",
+      "countryName": "Tanzania",
+      "cityCode": "C1",
+      "cityName": "Dar es Salaam",
+      "stateCode": "DAR",
+      "stateName": "Dar es Salaam",
+      "cityId": 1,
+      "countryId": 1,
+      "stateId": 1
+    },
+    {
+      "countryCode": "TZ",
+      "countryName": "Tanzania",
+      "cityCode": "C2",
+      "cityName": "Mwanza",
+      "stateCode": "MWA",
+      "stateName": "Mwanza",
+      "cityId": 2,
+      "countryId": 1,
+      "stateId": 2
+    }
+ }
+					</code>
+				</div>
+			</div>
+			
+			<a id="address_country_create" name="address_country_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a New Country</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td> Country Code,  Country Name</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/address/country/new
+					</code>
+					<code class="method-request">
+POST roles 
+Content-Type: application/json 
+Request body:
+{
+	"entityCode":"IN",
+	"entityName":"India"
+}
+					</code>
+					<code class="method-response">{"resourceId":9,"changes":{},"resourceIdentifier":"9"} </code>
+				</div>
+			</div>
+			
+				<a id="address_country_update" name="address_country_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update a Country</h4>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/address/country/{countryId}
+					</code>
+					<code class="method-request">
+PUT country/9
+Content-Type: application/json 
+Request body: 
+{
+	"entityCode":"IN",
+	"entityName":"India"
+}
+
+					</code>
+					<code class="method-response">
+{
+	"resourceId":9,
+	"changes":{},
+	"resourceIdentifier":"9"
+}
+					</code>
+				</div>
+			</div>	
+			
+		<a id="address_country_delete" name="address_country_delete"
+				class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Delete a Country</h4>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+DELETE https://DomainName/api/v1/address/country/{countryId}
+					</code>
+					<code class="method-request">
+DELETE country/9
+Content-Type: application/json 
+No Request Body:
+					</code>
+					<code class="method-response">
+{
+	"resourceId":9,
+	"changes":{},
+	"resourceIdentifier":"9"
+}
+					</code>
+				</div>
+			</div>
+		
+		
+					<a id="address_state_create" name="address_state_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a New State</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td> State Code,  State Name</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/address/state/new
+					</code>
+					<code class="method-request">
+POST roles 
+Content-Type: application/json 
+Request body:
+{
+	"entityCode":"Ap",
+	"entityName":"Andhrapradesh",
+	"parentEntityId":"9"
+}
+					</code>
+					<code class="method-response">{"resourceId":31,"changes":{},"resourceIdentifier":"31"} </code>
+				</div>
+			</div>
+			
+				<a id="address_state_update" name="address_state_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update a State</h4>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/address/state/{stateId}
+					</code>
+					<code class="method-request">
+PUT state/31
+Content-Type: application/json 
+Request body: 
+{
+	"entityCode":"Ap",
+	"entityName":"Andhrapradesh"
+}
+
+					</code>
+					<code class="method-response">
+{
+	"resourceId":31,
+	"changes":{},
+	"resourceIdentifier":"31"
+}
+					</code>
+				</div>
+			</div>	
+			
+		<a id="address_state_delete" name="address_state_delete"
+				class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Delete a State</h4>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+DELETE https://DomainName/api/v1/address/state/{stateId}
+					</code>
+					<code class="method-request">
+DELETE state/31
+Content-Type: application/json 
+No Request Body:
+					</code>
+					<code class="method-response">
+{
+	"resourceId":31,
+	"changes":{},
+	"resourceIdentifier":"31"
+}
+					</code>
+				</div>
+			</div>	
+	
+	
+		<a id="address_city_create" name="address_city_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a New City</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td> City Code,  City Name</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/address/city/new
+					</code>
+					<code class="method-request">
+POST roles 
+Content-Type: application/json 
+Request body:
+{
+	"entityCode":"HYD",
+	"entityName":"Hyderabad",
+	"parentEntityId":"31"
+}
+					</code>
+					<code class="method-response">{"resourceId":34,"changes":{},"resourceIdentifier":"34"} </code>
+				</div>
+			</div>
+			
+				<a id="address_city_update" name="address_city_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update a City</h4>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/address/city/{cityId}
+					</code>
+					<code class="method-request">
+PUT city/34
+Content-Type: application/json 
+Request body: 
+{
+	"entityCode":"HYD",
+	"entityName":"Hyderabad"
+}
+
+					</code>
+					<code class="method-response">
+{
+	"resourceId":34,
+	"changes":{},
+	"resourceIdentifier":"34"
+}
+					</code>
+				</div>
+			</div>	
+			
+		<a id="address_city_delete" name="address_city_delete"
+				class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Delete a City</h4>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+DELETE https://DomainName/api/v1/address/city/{cityId}
+					</code>
+					<code class="method-request">
+DELETE city/34
+Content-Type: application/json 
+No Request Body:
+					</code>
+					<code class="method-response">
+{
+	"resourceId":34,
+	"changes":{},
+	"resourceIdentifier":"34"
+}
+
+					</code>
+				</div>
+			</div>
+<!-- Address content ends here!! -->
+
 <a id="scheduler_jobs" name="scheduler_jobs_list"
 				class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
