@@ -1078,18 +1078,17 @@
 							<tr class="alt">
 							<td><a href="#inventory">Inventory</a></td>
 							<td>itemdetails</td>
-							<td><a href="#add_itemdetails">Add Item Details</a></td>
-							<td><a href="#retrive_item_details">Retrive Item Details</a></td>
+							<td><a href="#itemdetails_add">Add Item Details</a></td>
+							<td><a href="#itemdetails_list">List Item Details</a></td>
 							<td></td>
 							<td></td>
 							</tr>
 							
-							
 							<tr>
 							<td></td>
 							<td>itemdetails/addgrn</td>
-							<td><a href="#add_grndetails">Add Grn Details</td>
-							<td></a></td>
+							<td><a href="#grn_add">Add Grn Details</a></td>
+							<td><a href="#addgrn">addGrn</a></td>
 							<td></td>
 							<td></td>
 							</tr>
@@ -1097,7 +1096,7 @@
 							<tr class="alt">
 							<td></td>
 							<td>itemdetails/allocation</td>
-							<td><a href="#allocate_hardware">allocateHardware</a></td>
+							<td><a href="#onetimesale_allocation">allocateHardware</a></td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -1107,20 +1106,11 @@
 							<td></td>
 							<td>itemdetails/template</td>
 							<td></td>
-							<td><a href="#grn_template">grnTemplate</a></td>
+							<td><a href="#itemdetails_template">Itemdetails Template</a></td>
 							<td></td>
 							<td></td>
 							</tr>
-							
-							<tr class="alt">
-							<td></td>
-							<td>itemdetails/addgrn</td>
-							<td></td>
-							<td><a href="#addgrn">addGrn</a></td>
-							<td></td>
-							<td></td>
-							</tr>
-							
+								
 							<tr>
 							<td></td>
 							<td>itemdetails/{oneTimeSaleId}</td>
@@ -1134,7 +1124,7 @@
 							<td></td>
 							<td>itemdetails/grn/template</td>
 							<td></td>
-							<td><a href="#retrive_grnids">retriveGrnIds</a></td>
+							<td><a href="#itemdetails_grn_template">retriveGrnIds</a></td>
 							<td></td>
 							<td></td>
 							</tr>		
@@ -1143,7 +1133,7 @@
 							<td></td>
 							<td>itemdetails/grn</td>
 							<td></td>
-							<td><a href="#retrive_grn_details">retriveGrnDetails</a></td>
+							<td><a href="#itemdetails_grn">retriveGrnDetails</a></td>
 							<td></td>
 							<td></td>
 							</tr>		
@@ -1151,8 +1141,8 @@
 							<tr class="alt">
 							<td><a href="#items">Items</a></td>
 							<td>items</td>
-							<td><a href="#create_new_item">createNewItem</a></td>
-							<td><a href="#retrive_all_itmes">retrieveAllItems</a></td>
+							<td><a href="#items_create">createNewItem</a></td>
+							<td><a href="#items_list">retrieveAllItems</a></td>
 							<td></td>
 							<td></td>
 							</tr>
@@ -1162,7 +1152,7 @@
 							<td></td>
 							<td>items/template</td>
 							<td></td>
-							<td><a href="#retrive_single_item_data">retrieveItemTemplateData</a></td>
+							<td><a href="#items_template">retrieveItemTemplateData</a></td>
 							<td></td>
 							<td></td>
 							</tr>
@@ -1171,36 +1161,16 @@
 							<td></td>
 							<td>items/{itemId}</td>
 							<td></td>
-							<td><a href="#item_template_data">retrieveSingletemData</a></td>
-							<td></td>
-							<td></td>
+							<td><a href="#items_retrieve_single">retrieveSingletemData</a></td>
+							<td><a href="#items_update">updateItem</a></td>
+							<td><a href="#items_delete">deleteItem</a></td>
 							</tr>
-							
-							
-							<tr>
-							<td></td>
-							<td>items/{itemId}</td>
-							<td></td>
-							<td></td>
-							<td><a href="#update_item">updateItem</a></td>
-							<td></td>
-							</tr>
-							
-							<tr class="alt">
-							<td></td>
-							<td>items/{itemId}</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td><a href="#delete_item">deleteItem</a></td>
-							</tr>
-							
 							
 							<tr>
 							<td><a href="#ownedhardware">OwnedHardware</a></td>
 							<td>ownedhardware/{clientId}</td>
-							<td><a href="#create_ownedhardware">createOwnedHardware</a></td>
-							<td><a href="#retrive_ownedhardwaredata">retriveOwnedHardwareData</a></td>
+							<td><a href="#ownedhardware_create">createOwnedHardware</a></td>
+							<td><a href="#ownedhardware_list">retriveOwnedHardwareData</a></td>
 							<td></td>
 							<td></td>
 							</tr>
@@ -1209,9 +1179,18 @@
 							<td></td>
 							<td>ownedhardware/template</td>
 							<td></td>
-							<td><a href="#retrive_ownedhardwaretemplate">retriveOwnedHardwareTemplate</a></td>
+							<td><a href="#ownedhardware_template">retriveOwnedHardwareTemplate</a></td>
 							<td></td>
 							<td></td>
+							</tr>
+							
+							<tr>
+							<td></td>
+							<td>ownedhardware/own/{ownhardwareId}</td>
+							<td></td>
+							<td><a href="#ownedhardware_retrieve">retriveOwnedHardwareRecord</a></td>
+							<td><a href="#ownedhardware_update">updateOwnedHardware</a></td>
+							<td><a href="#ownedhardware_delete">deleteOwnedHardware</a></td>
 							</tr>
 							
 						</table>
@@ -6278,6 +6257,8 @@ https://domainname/obsplatform/api/v1/epgprogramguide/{channelName}/{counter}
 				</div>
 			</div>
 			
+			<!-- Inventory Content starts here!! -->
+			
 		 	<a id="inventory" name="inventory" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
 				<div class="method-description">
@@ -6438,6 +6419,870 @@ https://domainname/obsplatform/api/v1/epgprogramguide/{channelName}/{counter}
 					</table>
 				</div>
 			</div>
+				
+				<a id="itemdetails_add" name="itemdetails_add" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Add Item Details</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>GrnId, Serial Number, Provisioning SerialNumber</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/itemdetails
+					</code>
+					<code class="method-request">
+POST itemdetails 
+Content-Type: application/json 
+Request body:
+{
+	"grnId":6,
+	"locale":"en",
+	"serialNumber":"SSNN",
+	"quality":"Good",
+	"provisioningSerialNumber":"SSNN",
+	"status":"New",
+	"remarks":"No",
+	"itemMasterId":1
+}
+					</code>
+					<code class="method-response">{"resourceId":50256} </code>
+				</div>
+			</div>
+				
+		<a id="itemdetails_list" name="itemdetails_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List itemdetails</h4>
+					<p>Example Requests:</p>
+					<div>itemdetails</div>
+					<br>
+					<br>
+					<div>itemdetails?limit=15&offset=0</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/itemdetails?limit=15&offset=0
+					</code>
+					<code class="method-response">
+					
+{
+  "totalFilteredRecords": 50193,
+  "pageItems": [
+    {
+      "id": 1,
+      "itemMasterId": 1,
+      "serialNumber": "N55100104169",
+      "grnId": 1,
+      "provisioningSerialNumber": "5510010416",
+      "quality": "Good",
+      "status": "Used",
+      "clientId": 1,
+      "warranty": 0,
+      "remarks": "None",
+      "itemDescription": "AAL003  Sat Decoder",
+      "supplier": "SMT",
+      "officeName": "Head Quaters",
+      "accountNumber": "000000001"
+    },
+    {
+      "id": 2,
+      "itemMasterId": 1,
+      "serialNumber": "N55100104177",
+      "grnId": 1,
+      "provisioningSerialNumber": "5510010417",
+      "quality": "Good",
+      "status": "NEW",
+      "clientId": 0,
+      "warranty": 0,
+      "remarks": "None",
+      "itemDescription": "AAL003  Sat Decoder",
+      "supplier": "SMT",
+      "officeName": "Head Quaters"
+    }
+]
+					</code>
+				</div>
+			</div>
+			
+			<a id="grn_add" name="grn_add" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Add GRN</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>Supplier Code, Office Id, Item Code, Ordered Quantity</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/grn
+					</code>
+					<code class="method-request">
+POST grn 
+Content-Type: application/json 
+Request body:
+{
+	"purchaseDate":"08 May 2014",
+	"locale":"en",
+	"dateFormat":"dd MMMM yyyy",
+	"supplierId":1,
+	"officeId":8,
+	"itemMasterId":1,
+	"orderdQuantity":"1"
+}
+					</code>
+					<code class="method-response">{"resourceId":7} </code>
+				</div>
+			</div>
+			
+			
+			<a id="addgrn" name="addgrn" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Template Add GRN</h4>
+					<p>Example Requests:</p>
+					<div>addgrn</div>
+					<br>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/addgrn
+					</code>
+					<code class="method-response">
+					
+{
+  "itemData": [
+    {
+      "id": 1,
+      "itemCode": "AAL003",
+      "units": "NUMBERS",
+      "chargeCode": "OTC",
+      "unitPrice": 200000,
+      "itemDescription": "AAL003  Sat Decoder",
+      "warranty": 12,
+      "itemClass": "HARDWARE"
+    },
+    {
+      "id": 2,
+      "itemCode": "AAL001",
+      "units": "NUMBERS",
+      "chargeCode": "OTC",
+      "unitPrice": 60000,
+      "itemDescription": "AAL001 DTT",
+      "warranty": 12,
+      "itemClass": "HARDWARE"
+    }
+  ],
+  "officeData": [
+    {
+      "id": 18,
+      "name": "46456",
+      "nameDecorated": "........46456"
+    },
+    {
+      "id": 4,
+      "name": "Arusha",
+      "nameDecorated": "....Arusha"
+    }
+  ],
+  "supplierData": [
+    {
+      "id": 1,
+      "supplierCode": "SMT",
+      "supplierDescription": "SMT",
+      "supplierAddress": "Mainland,China"
+    },
+    {
+      "id": 2,
+      "supplierCode": "new",
+      "supplierDescription": "new supplier",
+      "supplierAddress": "sup adress"
+    }
+  ]
+}
+ 					</code>
+				</div>
+			</div>
+	
+		<a id="itemdetails_template" name="itemdetails_template" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Template Itemdetails</h4>
+					<p>Example Requests:</p>
+					<div>itemdetails/template</div>
+					<br>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/itemdetails/template
+					</code>
+					<code class="method-response">
+					
+{
+  "purchaseDate": [
+    2014,
+    5,
+    8
+  ]
+}
+ 					</code>
+				</div>
+			</div>
+			
+			<a id="itemdetails_grn_template" name="itemdetails_grn_template" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Template GRN</h4>
+					<p>Example Requests:</p>
+					<div>itemdetails/grn/template</div>
+					<br>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/itemdetails/grn/template
+					</code>
+					<code class="method-response">
+					
+[
+  {
+    "testId": 7,
+    "itemDescription": "AAL003  Sat Decoder"
+  },
+  {
+    "testId": 6,
+    "itemDescription": "AAL003  Sat Decoder"
+  },
+  {
+    "testId": 4,
+    "itemDescription": "AALHD DVB-T2"
+  },
+  {
+    "testId": 3,
+    "itemDescription": "AAL002 DTT with PVR"
+  },
+  {
+    "testId": 2,
+    "itemDescription": "AAL001 DTT"
+  },
+  {
+    "testId": 1,
+    "itemDescription": "AAL003  Sat Decoder"
+  }
+]
+
+ 					</code>
+				</div>
+			</div>
+			
+	<a id="itemdetails_grn" name="itemdetails_grn" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List GRN</h4>
+					<p>Example Requests:</p>
+					<div>itemdetails/grn</div>
+					<br>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/itemdetails/grn?limit=15&offset=0
+					</code>
+					<code class="method-response">
+					
+{
+  "totalFilteredRecords": 7,
+  "pageItems": [
+    {
+      "id": 1,
+      "purchaseDate": [
+        2013,
+        11,
+        1
+      ],
+      "supplierId": 1,
+      "itemMasterId": 1,
+      "orderdQuantity": 10000,
+      "receivedQuantity": 5275,
+      "balanceQuantity": 4725,
+      "itemDescription": "AAL003  Sat Decoder",
+      "supplierName": "SMT",
+      "officeName": "Head Quaters"
+    },
+    {
+      "id": 2,
+      "purchaseDate": [
+        2013,
+        11,
+        1
+      ],
+      "supplierId": 1,
+      "itemMasterId": 2,
+      "orderdQuantity": 10000,
+      "receivedQuantity": 6049,
+      "balanceQuantity": 3951,
+      "itemDescription": "AAL001 DTT",
+      "supplierName": "SMT",
+      "officeName": "Head Quaters"
+    }
+  ]
+}
+
+ 					</code>
+				</div>
+			</div>
+			
+	<!-- Inventory Content ends here!! -->
+	
+	<!-- Items Content starts here!! -->
+	
+			<a id="items" name="items" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Items</h3>
+					<p>An API Items</p>
+				</div>
+			</div>
+			
+			<a id="items_list" name="items_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List Items</h4>
+					<p>Example Requests:</p>
+					<div>items</div>
+					<br>
+					<br>
+					<div>items?limit=15&offset=0</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/items?limit=15&offset=0
+					</code>
+					<code class="method-response">
+{
+  "totalFilteredRecords": 2,
+  "pageItems": [
+    {
+      "id": 1,
+      "itemCode": "AAL003",
+      "units": "NUMBERS",
+      "chargeCode": "OTC",
+      "unitPrice": 200000,
+      "itemDescription": "AAL003  Sat Decoder",
+      "warranty": 12,
+      "itemClass": "HARDWARE"
+    },
+    {
+      "id": 2,
+      "itemCode": "AAL001",
+      "units": "NUMBERS",
+      "chargeCode": "OTC",
+      "unitPrice": 60000,
+      "itemDescription": "AAL001 DTT",
+      "warranty": 12,
+      "itemClass": "HARDWARE"
+    }
+  ]
+}
+					</code>
+				</div>
+			</div>
+			
+			<a id="items_create" name="items_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a New Item</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>Item Code, Item Description, Charge Code, Warranty, Item Class, Units, Units Price </td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/items
+					</code>
+					<code class="method-request">
+POST items 
+Content-Type: application/json 
+Request body:
+{
+	"locale":"en",
+	"itemCode":"MWM",
+	"itemDescription":"MWM",
+	"chargeCode":"OTC",
+	"warranty":"1",
+	"itemClass":"HARDWARE",
+	"units":"METERS",
+	"unitPrice":"10"
+}
+					</code>
+					<code class="method-response">{ "resourceId": 9} </code>
+				</div>
+			</div>
+			
+		<a id="items_template" name="items_template" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve Item Template</h4>
+					<p>This is a convenience resource. It can be useful when
+						building maintenance user interface screens for client
+						applications.
+					</p>
+					
+					<p>Example Requests:</p>
+					<div>items/template</div>
+					<br>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/items/template
+					</code>
+					<code class="method-request">
+GET items/template
+
+
+					</code>
+					<code class="method-response">
+{
+  "itemClassData": [
+    {
+      "id": 1,
+      "code": "deposit.interest.compounding.period.CategoryType.Hardware",
+      "value": "HARDWARE"
+    },
+    {
+      "id": 3,
+      "code": "deposit.interest.compounding.period.CategoryType.prepaid Card",
+      "value": "PREPAID CARD"
+    }
+  ],
+  "unitData": [
+    {
+      "id": 1,
+      "code": "deposit.interest.compounding.period.CategoryType.meters",
+      "value": "METERS"
+    },
+    {
+      "id": 2,
+      "code": "deposit.interest.compounding.period.CategoryType.numbers",
+      "value": "NUMBERS"
+    }
+  ],
+  "chargesData": [
+    {
+      "id": 8,
+      "chargeCode": "OTC",
+      "chargeDescription": "One Time"
+    }
+  ],
+  "warranty": 0
+}
+					</code>
+				</div>
+			</div>	
+			
+	
+		<a id="items_retrieve_single" name="message_retrieve_single" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve a Items</h4>
+					<p>Example Requests:</p>
+					<div>items/{itemId}</div>
+					<br>
+					<br>
+					<div>items/1</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/items/{itemId}
+					</code>
+					<code class="method-response">
+{
+  "id": 1,
+  "itemCode": "AAL003",
+  "units": "NUMBERS",
+  "chargeCode": "OTC",
+  "unitPrice": 200000,
+  "itemClassData": [
+    {
+      "id": 1,
+      "code": "deposit.interest.compounding.period.CategoryType.Hardware",
+      "value": "HARDWARE"
+    },
+    {
+      "id": 3,
+      "code": "deposit.interest.compounding.period.CategoryType.prepaid Card",
+      "value": "PREPAID CARD"
+    }
+  ],
+  "unitData": [
+    {
+      "id": 1,
+      "code": "deposit.interest.compounding.period.CategoryType.meters",
+      "value": "METERS"
+    },
+    {
+      "id": 2,
+      "code": "deposit.interest.compounding.period.CategoryType.numbers",
+      "value": "NUMBERS"
+    }
+  ],
+  "chargesData": [
+    {
+      "id": 8,
+      "chargeCode": "OTC",
+      "chargeDescription": "One Time"
+    }
+  ],
+  "itemDescription": "AAL003  Sat Decoder",
+  "warranty": 12,
+  "itemClass": "HARDWARE"
+}
+					</code>
+				</div>
+			</div>
+			
+			<a id="items_update" name="items_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update an Item</h4>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/items/{itemId}
+					</code>
+					<code class="method-request">
+PUT item/1
+Content-Type: application/json 
+Request body: 
+{
+	"itemCode":"AAL003",
+	"units":"NUMBERS",
+	"chargeCode":"OTC",
+	"unitPrice":200000,
+	"itemDescription":"AAL003 Sat Decoder",
+	"warranty":12,
+	"itemClass":"HARDWARE",
+	"locale":"en"
+}
+					</code>
+					<code class="method-response">
+{
+	"resourceId":1
+}
+					</code>
+				</div>
+			</div>	
+			
+		<a id="items_delete" name="items_delete"
+				class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Delete an Item</h4>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+DELETE https://DomainName/api/v1/items/{itemId}
+					</code>
+					<code class="method-request">
+DELETE items/1
+Content-Type: application/json 
+No Request Body:
+					</code>
+					<code class="method-response">
+{
+    "resourceId": 1
+}
+					</code>
+				</div>
+			</div>
+		
+	
+	<!-- Items content ends here! -->!
+	
+	<!-- OwnedHardware content starts here!! -->
+	
+			<a id="ownedhardware" name="ownedhardware" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Items</h3>
+					<p>An API Ownedhardware</p>
+				</div>
+			</div>
+			
+			<a id="ownedhardware_list" name="ownedhardware_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List Ownedhardware</h4>
+					<p>Example Requests:</p>
+					<div>ownedhardware</div>
+					<br>
+					<br>
+					<div>ownedhardware/{clientId}</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/ownedhardware/{clientId}
+					</code>
+					<code class="method-response">
+[
+  {
+    "id": 7,
+    "clientId": 2,
+    "serialNumber": "N54555",
+    "provisioningSerialNumber": "N54555",
+    "allocationDate": [
+      2014,
+      5,
+      8
+    ],
+    "status": "ACTIVE",
+    "itemType": "AAL001 DTT"
+  }
+]
+					</code>
+				</div>
+			</div>
+			
+			<a id="ownedhardware_create" name="ownedhardware_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a New Ownedhardware</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>Item Type, Serial Number, Provisioning SerialNumber </td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/ownedhardware/{clientId}
+					</code>
+					<code class="method-request">
+POST ownedhardware/2 
+Content-Type: application/json 
+Request body:
+{
+	"locale":"en",
+	"dateFormat":"dd MMMM yyyy",
+	"allocationDate":"08 May 2014",
+	"status":"ACTIVE",
+	"itemType":2,
+	"serialNumber":"N54555",
+	"provisioningSerialNumber":"N54555"
+}
+					</code>
+					<code class="method-response">{ "resourceId": 7} </code>
+				</div>
+			</div>
+			
+		<a id="ownedhardware_template" name="ownedhardware_template" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve Ownedhardware Template</h4>
+					<p>This is a convenience resource. It can be useful when
+						building maintenance user interface screens for client
+						applications.
+					</p>
+					
+					<p>Example Requests:</p>
+					<div>ownedhardware/template</div>
+					<br>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/ownedhardware/template
+					</code>
+					<code class="method-request">
+GET ownedhardware/template
+
+
+					</code>
+					<code class="method-response">
+{
+  "itemDatas": [
+    {
+      "id": 1,
+      "itemCode": "",
+      "units": "",
+      "chargeCode": "",
+      "unitPrice": 0,
+      "itemDescription": "AAL003  Sat Decoder",
+      "warranty": 0,
+      "itemClass": ""
+    },
+    {
+      "id": 2,
+      "itemCode": "",
+      "units": "",
+      "chargeCode": "",
+      "unitPrice": 0,
+      "itemDescription": "AAL001 DTT",
+      "warranty": 0,
+      "itemClass": ""
+    },
+    {
+      "id": 3,
+      "itemCode": "",
+      "units": "",
+      "chargeCode": "",
+      "unitPrice": 0,
+      "itemDescription": "AAL002 DTT with PVR",
+      "warranty": 0,
+      "itemClass": ""
+    }
+  ],
+  "warranty": 0
+}
+
+					</code>
+				</div>
+			</div>	
+			
+			<a id="ownedhardware_retrieve" name="ownedhardware_retrieve" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve a OwnedHardware</h4>
+					<p>Example Requests:</p>
+					<div>ownedhardware/own/{ownnedhardwareId}</div>
+					<br>
+					<br>
+					<div>ownedhardware/own/7</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/ownedhardware/own/{ownedhardwareId}
+					</code>
+					<code class="method-response">
+{
+  "itemDatas": [
+    {
+      "id": 1,
+      "itemCode": "",
+      "units": "",
+      "chargeCode": "",
+      "unitPrice": 0,
+      "itemDescription": "AAL003  Sat Decoder",
+      "warranty": 0,
+      "itemClass": ""
+    },
+    {
+      "id": 2,
+      "itemCode": "",
+      "units": "",
+      "chargeCode": "",
+      "unitPrice": 0,
+      "itemDescription": "AAL001 DTT",
+      "warranty": 0,
+      "itemClass": ""
+    },
+    {
+      "id": 3,
+      "itemCode": "",
+      "units": "",
+      "chargeCode": "",
+      "unitPrice": 0,
+      "itemDescription": "AAL002 DTT with PVR",
+      "warranty": 0,
+      "itemClass": ""
+    }
+  ],
+  "ownedHardwareDatas": [
+    {
+      "id": 7,
+      "clientId": 2,
+      "serialNumber": "N54555",
+      "provisioningSerialNumber": "N54555",
+      "allocationDate": [
+        2014,
+        5,
+        8
+      ],
+      "status": "ACTIVE",
+      "itemType": "2"
+    }
+  ]
+}
+					</code>
+				</div>
+			</div>
+			
+			<a id="ownedhardware_update" name="ownedhardware_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update an Ownedhardware</h4>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/ownedhardware/own/{ownedhardwareId}
+					</code>
+					<code class="method-request">
+PUT ownedhardware/own/7
+Content-Type: application/json 
+Request body: 
+{
+	"serialNumber":"N54555",
+	"provisioningSerialNumber":"N54555",
+	"allocationDate":"08 May 2014",
+	"status":"ACTIVE",
+	"itemType":2,
+	"locale":"en",
+	"dateFormat":"dd MMMM yyyy"
+}
+					</code>
+					<code class="method-response">
+{
+	"resourceId":7,
+	"changes":{},
+	"resourceIdentifier":"7"
+}
+					</code>
+				</div>
+			</div>	
+			
+		<a id="ownedhardware_delete" name="ownedhardware_delete"
+				class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Delete an Ownedhardware</h4>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+DELETE https://DomainName/api/v1/ownedhardware/own/{ownedhardwareId}
+					</code>
+					<code class="method-request">
+DELETE ownedhardware/own/7
+Content-Type: application/json 
+No Request Body:
+					</code>
+					<code class="method-response">
+{
+	"resourceId":7,
+	"changes":{},
+	"resourceIdentifier":"7"
+}
+					</code>
+				</div>
+			</div>
+			
+	
+	<!-- Ownedhardware content ends here! -->
 			
 			<!-- plan API-->
 			<a id="plan_details" name="plan_details" class="old-syle-anchor">&nbsp;</a>
@@ -12329,7 +13174,7 @@ GET https://DomainName/api/v1/messages/data
 POST https://DomainName/api/v1/messages
 					</code>
 					<code class="method-request">
-POST roles 
+POST messages 
 Content-Type: application/json 
 Request body:
 {
@@ -12570,7 +13415,7 @@ GET https://DomainName/api/v1/randomgenerators
 POST https://DomainName/api/v1/randomgenerators
 					</code>
 					<code class="method-request">
-POST roles 
+POST randomgenerators 
 Content-Type: application/json 
 Request body:
 {
@@ -12725,7 +13570,7 @@ GET https://DomainName/api/v1/hardwaremapping
 POST https://DomainName/api/v1/hardwaremapping
 					</code>
 					<code class="method-request">
-POST roles 
+POST hardwaremapping 
 Content-Type: application/json 
 Request body:
 {
@@ -13027,7 +13872,7 @@ GET https://DomainName/api/v1/ippooling
 POST https://DomainName/api/v1/ippooling
 					</code>
 					<code class="method-request">
-POST roles 
+POST ippooling 
 Content-Type: application/json 
 Request body:
 {
@@ -13116,7 +13961,7 @@ GET https://DomainName/api/v1/address
 POST https://DomainName/api/v1/address/country/new
 					</code>
 					<code class="method-request">
-POST roles 
+POST address/country/new 
 Content-Type: application/json 
 Request body:
 {
@@ -16490,7 +17335,7 @@ GET https://DomainName/api/v1/search?query=000000111
 							
 							 <tr class="alt">
 							<td><a href="#inventory">Inventory</a></td>
-							<td>itemdetails</td>
+							<td>itemdetails1</td>
 							<td><a href="#add_itemdetails">Add Item Details</a></td>
 							<td><a href="#retrive_item_details">Retrive Item Details</a></td>
 							<td></td>
