@@ -725,9 +725,9 @@
 									</table></td>
 							</tr>
 							 <tr  class="alt">
-								<td><a href="#collaterals_retrieve">Media Assets</a></td>
+								<td><a href="#mediaAssets_details">Media Assets</a></td>
 								<td>assets</td>
-								<td><a href="#collaterals_retrieve">Create New Asset</a></td>
+								<td><a href="#mediaAssets_create">Create New Asset</a></td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -736,15 +736,15 @@
 								<td></td>
 								<td>assets/template</td>
 								<td></td>
-								<td><a href="#collaterals_retrieve">Retrieve Media Template</a></td>
+								<td><a href="#mediaAssets_template">Retrieve Media Template</a></td>
 								<td></td>
 								<td></td>
 							</tr>
 							<tr  class="alt">
 								<td></td>
-								<td>assets?deviceId={deviceId}&pageNo={no}&filterType={filterType}</td>
+								<td>assets/mediadata</td>
 								<td></td>
-								<td><a href="#collaterals_retrieve">List Media Assets</a></td>
+								<td><a href="#mediaAssets_list">List Media Assets</a></td>
 								<td></td>
 								<td></td>
 							</tr>
@@ -752,15 +752,31 @@
 								<td></td>
 								<td>assets/{mediaId}</td>
 								<td></td>
-								<td><a href="#collaterals_retrieve">Retrieve Media Details</a></td>
-								<td><a href="#collaterals_retrieve">Update Media Details</a></td>
-								<td><a href="#collaterals_retrieve">Delete Media</a></td>
+								<td><a href="#mediaAssets_retrieve">Retrieve Media Details</a></td>
+								<td><a href="#mediaAssets_update">Update Media Details</a></td>
+								<td></td>
 							</tr>
-							 <tr  class="alt">
-								<td><a href="#collaterals_retrieve">Media Device</a></td>
+							<tr class="alt">
+								<td></td>
+								<td>assets/{mediaId}</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><a href="#mediaAssets_delete">Delete Media</a></td>
+							</tr>
+							 <tr>
+								<td><a href="#mediaDevice_details">Media Device</a></td>
+								<td>mediadevices</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr >
+							<tr class="alt">
+								<td></td>
 								<td>mediadevices/{deviceId}</td>
 								<td></td>
-								<td><a href="#collaterals_retrieve">Retrieve Device Details</a></td>
+								<td><a href="#mediaDevice_retrieve">Retrieve Device Details</a></td>
 								<td></td>
 								<td></td>
 							</tr>
@@ -768,37 +784,59 @@
 								<td></td>
 								<td>mediadevices/{clientId}/prepaid</td>
 								<td></td>
-								<td><a href="#collaterals_retrieve">Retrieve Prepaid Plans</a></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr  class="alt">
-								<td></td>
-								<td>mediadevices/{clientId}/postpaid</td>
-								<td></td>
-								<td><a href="#collaterals_retrieve">Retrieve Postpaid Plans</a></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><a href="#collaterals_retrieve">Plan Services</a></td>
-								<td>planservices/{clientId}?serviceType={serviceType}</td>
-								<td></td>
-								<td><a href="#collaterals_retrieve">List PlanServices</a></td>
+								<td><a href="#mediaDevice_prepaid">Retrieve Prepaid Plans</a></td>
 								<td></td>
 								<td></td>
 							</tr>
 							<tr class="alt">
-								<td><a href="#collaterals_retrieve">Event Order</a></td>
-								<td>eventorder/{clientId}</td>
-								<td><a href="#collaterals_retrieve">Create Event Order</a></td>
+								<td></td>
+								<td>mediadevices/{clientId}/postpaid</td>
+								<td></td>
+								<td><a href="#mediaDevice_postpaid">Retrieve Postpaid Plans</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><a href="#planServices_Details">Plan Services</a></td>
+								<td>planservices</td>
+								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
 							</tr>
-							
-					
-							 <tr>
+							<tr class="alt">
+								<td></td>
+								<td>planservices/{clientId}?serviceType={serviceType}</td>
+								<td></td>
+								<td><a href="#planServices_retrieve">List PlanServices</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><a href="#eventOrder_details">Event Order</a></td>
+								<td>eventorder</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="alt">
+								<td></td>
+								<td>eventorder</td>
+								<td><a href="#eventOrder_create">Create Event Order</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>eventorder/{clientId}</td>
+								<td></td>
+								<td><a href="#eventOrder_retrieve">Retreive Event Order</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							 <tr class="alt">
 							<td><a href="#epg_programming_guide">EpgProgramguide</a></td>
 							<td>epgprogramguide</td>
 							<td></td>
@@ -806,7 +844,7 @@
 							<td></td>
 							<td></td>
 							</tr>							
-							<tr  class="alt">
+							<tr>
 							<td></td>
 							<td>epgprogramguide/{channelName}/{resultset}/{dateandtime}</td>
 							<td></td>
@@ -5345,7 +5383,737 @@ No Request Body:
 				</div>
 			</div>			
 <!-- end of user chat -->
+<!-- strat of Media Asset -->
+
+<a id="mediaAssets_details" name="mediaAssets_details" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Media Assets Details</h3>
+					<p>Media Assets helps to create Media Event</p>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="mifosXHeading2">Field Descriptions</div></td>
+						</tr>
+						<tr class=alt>
+							<td>Media Title</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Name of the Media 
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Media Type</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Type of the Media
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Category</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Category of Media
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Poster</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Poster for Media
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Movie Duration</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Duration of Movie
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Genre</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Genre of Movie
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Content Provider</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Movie Content
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Rated</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Movie Rated
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Rating</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Rating of Movie
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Status</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Movie Status
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Release Date</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Movie Releasing date 
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Subject</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Movie Subject
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Overview</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Movie Overview
+							</td>
+						</tr>
+						
+					</table>
+				</div>
+			</div>
+		
+<a id="mediaAssets_create" name="mediaAssets_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create Media Asset</h4>
+					
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="mifosXHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>Media Title,Media Type,Category,Movie Duaration,Genre,Content 
+							Provider,Rated,Satus,Subject,atleast one Media Details,atleast one Media Location</td>
+						</tr>
+					</table>
+					<br/>
+					
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/assets
+					</code>
+					<code class="method-request">
+POST assets
+Content-Type: application/json 
+Request body:
+{
+     "locale":"en",
+     "dateFormat":"dd MMMM yyyy",
+     "releaseDate":"23 April 2014",
+     "mediaAssetLocations":
+                             [{
+                                 "languageId":57,
+                                 "formatType":"HD",
+                                  "location":"India"
+                             }],
+     "mediaassetAttributes":                                                                                                               
+    [{
+    	 "attributeType":"Cast",
+    	 "attributeName":33,
+    	 "attributevalue":"Ramarao",
+    	 "attributeNickname":"NTR",
+    	 "attributeImage":"ntr.jpg"
+    }],
+     "mediaTitle":"Title1",
+     "mediatype":"M",
+     "contentProvider":"Provider1",
+     "rated":"3.5",
+     "catageoryId":18,
+     "mediaRating":"3.5",
+     "mediaImage":"Poster1",
+     "status":"ACTIVE",
+     "duration":"2.30",
+     "genre":"Gerne1",
+     "subject":"Subject1",
+     "overview":"nice one"
+ }
+				</code>
+					<code class="method-response">
+{
+	"resourceId":2,
+	"changes":{},
+	"resourceIdentifier":"2"
+}
+					</code>
+				</div>
+			</div>
 			
+<a id="mediaAssets_template"	name="mediaAssets_template" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve Media Assets Details Template</h4>
+					<p>This is a convenience resource. It can be useful when
+						 we create maintenance media asset.
+						 The template data returned consists of any or all
+						of:
+					<ul>
+						<li class=normalli>Field Defaults</li>
+						<li class=normalli>Allowed Value Lists</li>
+					</ul>
+					</p>
+					
+					<p>Example Request:</p>
+					<div class=apiClick>assets/template</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/assets/template"
+					</code>
+					<code class="method-response">
+{
+  "mediaStatus": [
+    {
+      "id": 1,
+      "code": "deposit.interest.compounding.period.CategoryType.active",
+      "value": "ACTIVE"
+    },
+    {
+      "id": 2,
+      "code": "deposit.interest.compounding.period.CategoryType.inactive",
+      "value": "INACTIVE"
+    }
+  ],
+  "mediaAttributes": [
+    {
+      "id": 33,
+      "mediaName": "Actor"
+    },
+    {
+      "id": 35,
+      "mediaName": "Director"
+    },
+  ],
+  "mediaFormat": [
+    {
+      "id": 41,
+      "mediaName": "HD"
+    },
+  ],
+  "mediaTypeData": [
+    {
+      "id": "TV",
+      "code": "deposit.interest.compounding.period.CategoryType.tvserials",
+      "value": "TV SERIALS"
+     }
+  ],
+  "mediaCategeorydata": [
+    {
+      "id": 18,
+      "mCodeValue": "Movie"
+    }
+  ],
+  "mediaLanguageData": [
+    {
+      "id": 57,
+      "mCodeValue": "English"
+    }
+  ]
+}
+					</code>
+				</div>
+			</div>
+			
+<a id="mediaAssets_list" name="mediaAssets_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List Media Assets</h4>
+					<p>Returns <i>list</i> of Media Assets</p>
+					<p>Example Requests:</p>
+					<div class=apiClick>assets/mediadata</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/assets/mediadata
+					</code>
+					<code class="method-response">
+[
+  {
+    "mediaId": 1,
+    "mediaTitle": "Title1",
+    "mediaRating": 3.5,
+    "status": "ACTIVE",
+    "releaseDate": [
+      2014,
+      4,
+      23
+    ]
+  },
+ {
+    "mediaId": 2,
+    "mediaTitle": "Title2",
+    "mediaRating": 3,
+    "status": "ACTIVE",
+    "releaseDate": [
+      2014,
+      4,
+      2
+    ]
+  },
+  {
+    "mediaId": 3,
+    "mediaTitle": "Title3",
+    "mediaRating": 3.25,
+    "status": "ACTIVE",
+    "releaseDate": [
+      2014,
+      2,
+      1
+    ]
+  },
+]
+					</code>
+				</div>
+			</div>
+			
+
+<a id="mediaAssets_retrieve" name="mediaAssets_retrieve" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve a Media Asset</h4>
+					<p>Example Requests:</p>
+					<div class=apiClick>assets/{mediaId}</div>
+					
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/assets/{mediaId}?template=true
+					</code>
+					<code class="method-response">
+{
+  
+  "mediaAssetData": {
+    "mediaId": 1,
+    "mediaTitle": "Title1",
+    "mediaImage": "Poster1",
+    "mediaRating": 3.5,
+    "status": "ACTIVE",
+    "releaseDate": [
+      2014,
+      4,
+      23
+    ],
+    "mediatype": "M",
+    "genre": "Gerne1",
+    "catageoryId": 18,
+    "subject": "Subject1",
+    "overview": "nice one",
+    "contentProvider": "Provider1",
+    "rated": "3.5",
+    "rating": 3.5,
+    "duration": "2.30",
+    "ratingCount": 0
+  },
+  "mediaLocationData": [
+    {
+      "languageId": 57,
+      "formatType": "HD",
+      "location": "India"
+    }
+  ],
+  "mediaassetAttributes": [
+    {
+      "attributeType": "Cast",
+      "attributeName": 33,
+      "attributeValue": "Ramarao",
+      "attributeNickname": "NTR",
+      "attributeImage": "ntr.jpg",
+      "id": 3
+    }
+  ]
+}
+	</code>
+				</div>
+			</div>
+
+<a id="mediaAssets_update" name="mediaAssets_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update a Media Asset</h4>
+					<p>Updates a Media Asset Details</p>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/assets/{mediaId}
+					</code>
+					<code class="method-request">
+PUT countrycurrencys/2
+Content-Type: application/json 
+Request Body: 
+{
+  "mediaTitle":"Title1",
+  "mediaImage":"Poster1",
+  "mediaRating":3.5,
+  "status":"ACTIVE",
+  "releaseDate":"23 April 2014",
+  "mediatype":"M",
+  "genre":"Gerne1",
+  "catageoryId":18,
+  "subject":"Subject1",
+  "overview":"nice one",
+  "contentProvider":"Provider1",
+  "rated":"3.5",
+  "duration":"2.30",
+  "ratingCount":0,
+  "dateFormat":"dd MMMM yyyy",
+  "locale":"en",
+  "mediaassetAttributes":[
+    {
+      "attributeType":"Cast",
+      "attributeName":33,
+      "attributevalue":"Ramarao",
+      "attributeNickname":"NTR",
+      "attributeImage":"ntr.jpg"
+    }
+  ],
+  "mediaAssetLocations":[
+    {
+      "languageId":57,
+      "formatType":"HD",
+      "location":"India"
+     }
+   ]
+ }
+					</code>
+					<code class="method-response">
+{
+   "resourceId":2,
+   "changes":{},
+   "resourceIdentifier":"2"
+}
+					</code>
+				</div>
+			</div>
+
+<a id="mediaAssets_delete" name="mediaAssets_delete" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Remove a Media Asset</h4>
+				
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+DELETE https://DomainName/api/v1/assets/{mediaId}
+					</code>
+					<code class="method-request">
+DELETE https://DomainName/api/v1/assets/{mediaId}
+Content-Type: application/json 
+No Request Body:
+					</code>
+					<code class="method-response">
+{ 
+  "resourceId":2,
+  "changes":{},"res
+  ourceIdentifier":"2"
+}
+					</code>
+				</div>
+			</div>
+<!-- end of media asset -->	
+<!-- start of  media device-->
+<a id="mediaDevice_details" name="mediaDevice_details" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Media Device Details</h3>
+					<p>Media Device helps to Retrieve Device Ids which helps in Clients</p>
+				</div>
+			</div>
+<a id="mediaDevice_retrieve" name="mediaDevice_retrieve" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve Media Devices</h4>
+					<p>Example Requests:</p>
+					<div class=apiClick>mediadevices/{deviceId}</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/mediadevices/{deviceId}
+					</code>
+					<code class="method-response">
+{
+  "deviceId": 11407,
+  "clientId": 2,
+  "clientType": "Normal",
+  "clientTypeId": 20,
+  "balanceAmount": 386652.15
+}
+   
+	</code>
+				</div>
+			</div>
+<a id="mediaDevice_prepaid" name="mediaDevice_prepaid" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve Media Devices Prepaid Plans</h4>
+					<p>Example Requests:</p>
+					<div class=apiClick>mediadevices/{clientId}/prepaid</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/mediadevices/{clientId}/prepaid
+					</code>
+					<code class="method-response">
+{
+  "statusname": 0,
+  "isActive": true,
+  "planCount": 2,
+  "data": [
+    {
+      "id": 1,
+      "planCode": "40CH",
+      "planDescription": "Ting Classic",
+      "statusname": 0,
+      "isActive": false,
+      "planCount": 0
+    }
+  ]
+}
+   
+	</code>
+				</div>
+			</div>
+<a id="mediaDevice_postpaid" name="mediaDevice_postpaid" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve Media Devices Postpaid Plans</h4>
+					<p>Example Requests:</p>
+					<div class=apiClick>mediadevices/{clientId}/postpaid</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/mediadevices/{clientId}/postpaid
+					</code>
+					<code class="method-response">
+{
+  "statusname": 0,
+  "isActive": true,
+  "planCount": 2,
+  "data": [
+    {
+      "id": 2,
+      "planCode": "SAT",
+      "planDescription": "SAT Classic",
+      "statusname": 0,
+      "isActive": false,
+      "planCount": 0
+    }
+  ]
+}
+   
+	</code>
+  </div>
+</div>
+<!-- end od media device -->
+<!-- start of  plan services-->
+<a id="planServices_Details" name="planServices_Details" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Plan Services Details</h3>
+					<p>Plan services helps to Retrieve Services for particular plan</p>
+				</div>
+			</div>
+<a id="planServices_retrieve" name="planServices_retrieve" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve List of Plan Services</h4>
+					<p>Example Requests:</p>
+					<div class=apiClick>planservices/{clientId}?serviceType={serviceType}</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/planservices/{clientId}?serviceType={serviceType}
+					</code>
+					<code class="method-response">
+[
+  {
+    "serviceId": 1,
+    "clientId": 8,
+    "channelName": "Classic Channels",
+    "image": "NSC001.jpg",
+    "url": "NSC001"
+  },
+  {
+    "serviceId": 2,
+    "clientId": 8,
+    "channelName": "Regular Channels",
+    "image": "NSC003.jpg",
+    "url": "NSC003"
+  }
+]
+   
+	</code>
+  </div>
+</div>			
+<!-- end of plan services -->				
+<!-- strat of event order -->
+
+<a id="eventOrder_details" name="eventOrder_details" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Event Order Details</h3>
+					<p>Event Order helps to create an Event</p>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="mifosXHeading2">Field Descriptions</div></td>
+						</tr>
+						<tr class=alt>
+							<td>Event Date</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Creation Date of Event 
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Device Id</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Id for Device
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Event</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Name of the Event
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Format Type</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Event Format Type Ex:HD/SD
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>Opt Type</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Event Option Type Ex:Rent/Own
+							</td>
+						</tr>
+					</table>
+			</div>
+		</div>
+
+<a id="eventOrder_create" name="eventOrder_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create Event Order</h4>
+					
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="mifosXHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>Event Date,Device Id,Event,Format Type,Opt Type</td>
+						</tr>
+					</table>
+					<br/>
+					
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/eventorder
+					</code>
+					<code class="method-request">
+POST eventorder
+Content-Type: application/json 
+Request body:
+{
+	"locale":"en",
+	"dateFormat":"dd MMMM yyyy",
+	"eventBookedDate":"07 May 2014",
+	"deviceId":"N55100000029",
+	"eventId":2,
+	"formatType":"HD",
+	"optType":"RENT"
+}
+				</code>
+					<code class="method-response">
+{
+	"resourceId":2,
+	"changes":{},
+	"resourceIdentifier":"2"
+}
+					</code>
+				</div>
+			</div>	
+<a id="eventOrder_retrieve" name="eventOrder_retrieve" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve Event Order Details</h4>
+					<p>Example Requests:</p>
+					<div class=apiClick>eventorder/{clientId}</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/eventorder/{clientId}
+					</code>
+					<code class="method-response">
+{
+  "devices": [
+    {
+      "serialNumber": "N55100108905"
+    },
+    {
+      "serialNumber": "N55100104300"
+    }
+  ],
+   "events": [
+    {
+      "id": 1,
+      "eventName": "New",
+      "eventDescription": "New",
+      "status": "ACTIVE",
+      "createdDate": [
+        2014,
+        5,
+        3
+      ]
+    }
+  ],
+  "optType": [
+    {
+      "id": 1,
+      "code": "optType.Category.Rent",
+      "value": "RENT"
+    }
+  ],
+  "codes": [
+    {
+      "id": 40,
+      "mCodeValue": "SD"
+    }
+  ],
+  "clientType": [
+    {
+      "id": 20,
+      "type": "Normal"
+    }
+  ]
+}
+	</code>
+  </div>
+</div>				
+<!-- end of event order -->	
 			
 			<a id="epg_programming_guide" name="epg_programming_guide" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
@@ -10176,30 +10944,36 @@ GET https://DomainName/api/v1/tickets/alltickets?limit=15&offset=0
 							<td><div class="billingHeading2">Field Descriptions</div></td>
 						</tr>
 						<tr class=alt>
+							<td>Office name</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Name of the Office</td>
+						</tr>
+						<tr class=alt>
+							<td>Office Type</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Type of the Office</td>
+						</tr>
+						<tr class=alt>
+							<td>Parent Office</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Parent Name of the Office</td>
+						</tr>
+						<tr class=alt>
+							<td>Opened On</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Office Opened Date</td>
+						</tr>
+						<tr class=alt>
 							<td>externalId</td>
 						</tr>
 						<tr>
 							<td class=fielddesc>A place to put an external reference for
 								this office e.g. The ID another system uses for it.<br> If
 								provided, it must be unique.
-							</td>
-						</tr>
-						<tr class=alt>
-							<td>hierarchy</td>
-						</tr>
-						<tr>
-							<td class=fielddesc>This field is a system generated
-								convenience field. It can't be set.<br> It uses "dot
-								notation" to define where an office stands in the office
-								hierarchy.<br> For example, the system default office (id =
-								1) has a hierarchy value of '.'<br> An office (id = 12)
-								placed directly underneath this default office has a hierarchy
-								value of '.12.'<br> And if a further office (id = 78) is
-								placed directly under office (id = 12) its hierarchy value is
-								'.12.78.'<br>
-							<br> The hierarchy value is useful when you need to display
-								offices in 'hierarchy' order (perhaps indented in a drop down
-								list box).
 							</td>
 						</tr>
 					</table>
@@ -10222,18 +10996,19 @@ GET https://DomainName/api/v1/offices
 					</code>
 					<code class="method-response">
 [
-    {
-        "id": 1,
-        "name": "Head Office",
-        "nameDecorated": "Head Office",
-        "externalId": "1",
-        "openingDate": [
-            2009,
-            1,
-            1
-        ],
-        "hierarchy": "."
-    }
+  {
+    "id": 1,
+    "name": "Head Quaters",
+    "nameDecorated": "Head Quaters",
+    "externalId": "1",
+    "openingDate": [
+      2009,
+      1,
+      1
+    ],
+    "hierarchy": ".",
+    "officeType": "Office"
+  }
 ]
 					</code>
 				</div>
@@ -10262,18 +11037,34 @@ GET https://DomainName/api/v1/offices/template
 					</code>
 					<code class="method-response">
 {
-    "openingDate": [
-        2013,
-        2,
-        4
-    ],
-    "allowedParents": [
-        {
-            "id": 1,
-            "name": "Head Office",
-            "nameDecorated": "Head Office"
-        }
-    ]
+  "openingDate": [
+    2014,
+    5,
+    7
+  ],
+  "allowedParents": [
+    {
+      "id": 18,
+      "name": "46456",
+      "nameDecorated": "........46456"
+    },
+    {
+      "id": 4,
+      "name": "Arusha",
+      "nameDecorated": "....Arusha"
+    }
+    "officeTypes": [
+    {
+      "id": 115,
+      "name": "Office",
+      "position": 1
+    },
+    {
+      "id": 116,
+      "name": "Agent",
+      "position": 2
+    }
+  ]
 }
 					</code>
 				</div>
@@ -10299,16 +11090,17 @@ GET https://DomainName/api/v1/offices/1
 					</code>
 					<code class="method-response">
 {
-    "id": 1,
-    "name": "Head Office",
-    "nameDecorated": "Head Office",
-    "externalId": "1",
-    "openingDate": [
-        2009,
-        1,
-        1
-    ],
-    "hierarchy": "."
+  "id": 1,
+  "name": "Head Quaters",
+  "nameDecorated": "Head Quaters",
+  "externalId": "1",
+  "openingDate": [
+    2009,
+    1,
+    1
+  ],
+  "hierarchy": ".",
+  "officeType": "Office"
 }
 					</code>
 				</div>
@@ -10323,7 +11115,7 @@ GET https://DomainName/api/v1/offices/1
 							<td><div class="billingHeading2">Mandatory Fields</div></td>
 						</tr>
 						<tr class=alt>
-							<td>name, openingDate, parentId</td>
+							<td>Office Name, Office Type, Parent Office,Opened On,External Id</td>
 						</tr>
 					</table>
 				</div>
@@ -10336,12 +11128,13 @@ POST offices
 Content-Type: application/json 
 Request Body: 
 {
-    "name": "Example New Branch",
-    "dateFormat": "dd MMMM yyyy",
-    "locale": "en",
-    "openingDate": "01 July 2007",
-    "parentId": 2,
-    "externalId": "SYS54-88"
+	"parentId":20,
+	"locale":"en",
+	"dateFormat":"dd MMMM yyyy",
+	"openingDate":"07 May 2014",
+	"name":"OBSNew",
+	"officeType":115,
+	"externalId":"10"
 }
 					</code>
 					<code class="method-response">
@@ -10366,8 +11159,13 @@ PUT https://DomainName/api/v1/offices/{officeId}
 PUT offices/1
 Content-Type: application/json 
 Request Body: 
-{ 
-	"name": "Name is updated" 
+{
+	"name":"OBSNew",
+	"externalId":"10",
+	"officeType":115,
+	"locale":"en",
+	"dateFormat":"dd MMMM yyyy",
+	"openingDate":"07 May 2014"
 }
 					</code>
 					<code class="method-response">
@@ -10375,7 +11173,7 @@ Request Body:
     "officeId": 1,
     "resourceId": 1,
     "changes": {
-        "name": "Name is updated"
+       "officeType":116
     }
 }
 					</code>
@@ -11965,7 +12763,7 @@ Request body:
 			</div>
 			
 
-<!-- IP Pooling content starts here -->
+<!-- IP Pooling content ends here -->
 
 <!-- Address content starts here!! -->
 
