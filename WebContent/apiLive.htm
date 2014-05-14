@@ -219,6 +219,22 @@
 								</td>
 								<td></td>
 							</tr>
+							<tr>
+								<td><a href="#activationprocess">Activation Process</a></td>
+								<td>activationprocess</td>
+								<td><a href="#activationprocess_create">Create Activation process</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><a href="#simpleactivation">Simple Activation</a></td>
+								<td>activationprocess</td>
+								<td><a href="#simpleactivation_create">Create Simple Activation</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
 						</table>
 					</div>
 				</div>
@@ -3643,6 +3659,246 @@ No Request Body:
 					</code>
 				</div>
 			</div>
+
+<!-- Activation process api contents starts here!! -->
+
+			<a id="activationprocess" name="activationprocess" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Activation Process</h3>
+					<p>Activation Process can process client creation , hardware allocation and booking order simultaneously</p>
+				</div>
+			</div>
+				
+				<a id="activationprocess_create" name="activation_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a Activationprocess</h4>
+					
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>First Name and Last Name, Mobile Number <br> officeId, Client Category<br>Address1, City, State, Country<br>
+								<br>Item Type, Serial Number ,Provisioning SerialNumber
+								<br>
+								Plan, Contract Period, Billing Frequency
+								<br>
+							</td>
+						</tr>
+					</table>
+						<br />
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Optional Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td> Middle Name, Home Phone, Email, Street, Zipcode</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/activationprocess
+					</code>
+					<code class="method-request">
+POST activationprocess
+Content-Type: application/json Request Body:
+{
+	"client":
+		[
+			{
+			"officeId":1,
+			"clientCategory":20,
+			"firstname":"Rakesh",
+			"lastname":"Kumar",
+			"addressNo":"4-3/22",
+			"city":"Hyderabad",
+			"state":"Andhra Pradesh",
+			"country":"India",
+			"street":"Sr nagar",
+			"phone":"9000190457",
+			"locale":"en",
+			"active":true,
+			"dateFormat":"dd MMMM yyyy",
+			"activationDate":"13 May 2014",
+			"flag":false
+			}
+		]
+	"sale":
+		[
+			{
+			"serialNumber":[]
+			}
+		],
+	"allocate":
+		[
+			{
+			}
+		],
+	"bookorder":
+		[
+			{
+			"billAlign":false,
+			"planCode":10,
+			"contractPeriod":1,
+			"paytermCode":"Monthly",
+			"locale":"en",
+			"isNewplan":true,
+			"dateFormat":"dd MMMM yyyy",
+			"start_date":"13 May 2014"
+			}
+		],
+	"owndevice":
+		[
+			{
+			"itemType":1,
+			"serialNumber":"N55464454",
+			"provisioningSerialNumber":"N55464454",
+			"locale":"en",
+			"dateFormat":"dd MMMM yyyy",
+			"allocationDate":"13 May 2014",
+			"status":"ACTIVE"
+			}
+			]
+	}
+					</code>
+					<code class="method-response">
+{
+	"officeId":1,
+	"clientId":422,
+	"resourceId":422,
+	"resourceIdentifier":"422"
+}
+					</code>
+				</div>
+
+			</div>
+
+<!-- Activation process api contents ends here!! -->
+
+<!-- Simple Activation Contents starts here -->
+
+					<a id="simpleactivation" name="simpleactivation" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Simple Activation</h3>
+					<p>Simple Activation can process client creation, hardware allocation and booking order simultaneously</p>
+				</div>
+			</div>
+				
+				<a id="simpleactivation_create" name="simpleactivation_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a Simple Activation</h4>
+					
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>Full Name, Phone <br> officeId, Client Category, City <br>
+								<br>Item Code, Serial Number, Discount Code
+								<br>
+								Contract Period, Billing Frequency, Start Date, Plan
+								<br>
+							</td>
+						</tr>
+					</table>
+						<br />
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Optional Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td> Middle Name, Home Phone, Email, Street, Zipcode</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/activationprocess
+					</code>
+					<code class="method-request">
+POST activationprocess
+Content-Type: application/json Request Body:
+{
+	"client":
+		[
+			{
+			"officeId":1,
+			"clientCategory":20,
+			"city":"Hyderabad",
+			"state":"Andhra Pradesh",
+			"country":"India",
+			"phone":"944144999",
+			"email":"ashok@gmail.com",
+			"locale":"en",
+			"active":true,
+			"dateFormat":"dd MMMM yyyy",
+			"activationDate":"13 May 2014",
+			"addressNo":"Addr1",
+			"firstname":"Ashok",
+			"lastname":"Lingala",
+			"flag":false
+			}
+		],
+	  "sale":
+	  	[
+	  		{
+	  		"serialNumber":
+	  			[
+	  				{
+	  				"serialNumber":"",
+	  				"status":"allocated",
+	  				"isNewHw":"Y"
+	  				}
+	  			],
+	  		"discountId":1
+	  		}
+	  	],
+	  "allocate":[{}],
+	  "bookorder":
+	  		[
+	  			{
+	  			"billAlign":false,
+	  			"contractPeriod":1,
+	  			"planCode":3,
+	  			"locale":"en",
+	  			"isNewplan":true,
+	  			"dateFormat":"dd MMMM yyyy",
+	  			"start_date":"13 May 2014",
+	  			"paytermCode":"Monthly"
+	  			}
+	  		],
+	  "owndevice":
+	  		[
+	  			{
+	  			"itemType":1,
+	  			"provisioningSerialNumber":"N554644541",
+	  			"locale":"en",
+	  			"dateFormat":"dd MMMM yyyy",
+	  			"allocationDate":"13 May 2014",
+	  			"status":"ACTIVE",
+	  			"serialNumber":"N554644541"
+	  			}
+	  		]
+	 }
+					</code>
+					<code class="method-response">
+{
+	"officeId":1,
+	"clientId":423,
+	"resourceId":423,
+	"resourceIdentifier":"423"
+}
+					</code>
+				</div>
+
+			</div>
+			
+<!-- Simple Activation contents ends here!! -->
 
 			<!-- start of Billing api docs -->
 			<a id="contractDetails" name="contractDetails" class="old-syle-anchor">&nbsp;</a>
