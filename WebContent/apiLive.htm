@@ -478,6 +478,17 @@
 								<td><a href="#promotioncode_update">Update a Promotion Code</a></td>
 								<td><a href="#promotioncode_delete">Delete a Promotion Code</a></td>
 							</tr>
+							
+							
+							<tr class="alt">
+								<td><a href="#taxexemption_details">Tax Exemption</a></td>
+								<td>taxexemption/{clientId}</td>
+								<td></td>
+								<td></td>
+								<td><a href="#taxexemption_update">Update Tax Exemption</a></td>
+								<td></td>
+							</tr>
+							
 						</table>
 					</div>
 				</div>
@@ -9555,6 +9566,47 @@ No Request Body:
 			</div>
 
 <!-- End of Regions -->
+
+<!-- Start of Tax Exemption -->
+<a id="taxexemption_details" name="taxexemption_details" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Taxexemption Details</h3>
+					<p>By default this flag is set to N while client creation no option to set while creation and If this flag is set to Y from update method 
+					    then although the sale of item / service are defined with tax</p>
+				</div>
+			</div>
+			
+		<a id="taxexemption_update" name="taxexemption_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update a Tax Exemption</h4>
+					<p>Updates the client Taxexemption</p>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/taxexemption/{clientId}
+
+					</code>
+					<code class="method-request">
+PUT taxexemption/26
+ Content-Type: application/json 
+Request Body: 
+{
+   "taxExemption":true
+}
+					</code>
+					<code class="method-response">
+{
+	"resourceId": 26,
+	
+}
+					</code>
+				</div>
+				</div>
+
+<!-- End of tax exemption -->
+
 
 <!-- Start of Promotion code Api -->
 <a id="promotioncode_details" name="promotioncode_details" class="old-syle-anchor">&nbsp;</a>
