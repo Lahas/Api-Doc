@@ -1941,6 +1941,26 @@
 								<td><a href="#address_city_update">Update City</a></td>
 								<td><a href="#address_city_delete">Delete City</a></td>
 							</tr>
+							<tr>
+								<td><a href="#advancesearch">Advance Search</a></td>
+								<td>Tickets</td>
+								<td></td>
+								<td><a href="#advancesearch_tickets_list">List of Tickets</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Leads</td>
+								<td></td>
+								<td><a href="#advancesearch_leads_list">List of Leads</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Clients</td>
+								<td></td>
+								<td><a href="#advancesearch_clients_list">List of Clients</a></td>
+							</tr>
 						</table>
 					</div>
 				</div>
@@ -14540,6 +14560,155 @@ No Request Body:
 				</div>
 			</div>
 <!-- Address content ends here!! -->
+
+
+<!-- Address content starts here!! -->
+
+			<a id="advancesearch" name="advancesearch" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Advancesearch</h3>
+					<p>Advancesearch used for Filter Records</p>
+				</div>
+			</div>
+			
+			<a id="advancesearch_tickets_list" name="advancesearch_tickets_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List Tickets</h4>
+					<p>Example Requests:</p>
+					<div>advancesearch?dataFormate=dd+MMMM+yy&limit=15&offset=0&locale=en&searchType=tickets</div>
+					<br>
+					<br>
+					<div>Tickets</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/advancesearch
+					</code>
+					<code class="method-response">
+					
+{"totalFilteredRecords":2,
+	"pageItems":[
+	{
+		"id":1,
+		"clientId":25,
+		"accountNo":"000000016",
+		"clientName":"Raghu2211 ",
+		"category":"Billing Problems",
+		"transactionDate":[2014,8,26],
+		"status":"OPEN",
+		"userName":"billing"
+	},
+	{
+		"id":2,
+		"clientId":27,
+		"accountNo":"000000027",
+		"clientName":"testing ",
+		"category":"Account Problems",
+		"transactionDate":[2014,8,26],
+		"status":"OPEN",
+		"userName":"billing"
+	}
+	]
+}
+					</code>
+				</div>
+			</div>
+			
+			<a id="advancesearch_leads_list" name="advancesearch_leads_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List Leads</h4>
+					<p>Example Requests:</p>
+					<div>advancesearch?dataFormate=dd+MMMM+yy&limit=15&offset=0&locale=en&searchType=leads</div>
+					<br>
+					<br>
+					<div>Leads</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/advancesearch
+					</code>
+					<code class="method-response">
+					
+{
+"totalFilteredRecords":2,
+"pageItems":[
+	{
+		"id":1,
+		"clientId":275,
+		"accountNo":"000000275",
+		"clientName":"asfds afdsf",
+		"transactionDate":[2014,9,15],
+		"status":"Closed",
+		"userName":"billing"
+	},
+	{
+		"id":3,
+		"clientId":264,
+		"accountNo":"000000264",
+		"clientName":"Test1 Test",
+		"category":"News Paper",
+		"transactionDate":[2014,10,31],
+		"status":"Closed",
+		"userName":"billing"
+	}
+	]
+}
+					</code>
+				</div>
+			</div>
+			
+			<a id="advancesearch_clients_list" name="advancesearch_clients_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List Clients</h4>
+					<p>Example Requests:</p>
+					<div>advancesearch?dataFormate=dd+MMMM+yy&limit=15&offset=0&locale=en&searchType=clients</div>
+					<br>
+					<br>
+					<div>Clients</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/advancesearch
+					</code>
+					<code class="method-response">
+					
+{
+"totalFilteredRecords":2,
+	"pageItems":[
+		{
+			"id":1,
+			"clientId":275,
+			"accountNo":"000000275",
+			"clientName":"asfds afdsf",
+			"transactionDate":[2014,9,15],
+			"status":"Closed",
+			"userName":"billing"
+		},
+		{
+			"id":3,
+			"clientId":264,
+			"accountNo":"000000264",
+			"clientName":"Test1 Test",
+			"category":"News Paper",
+			"transactionDate":[2014,10,31],
+			"status":"Closed",
+			"userName":"billing"
+		}
+	]
+}
+					</code>
+				</div>
+			</div>
+
+			
+	
+<!-- Address content ends here!! -->
+
+
 
 <a id="scheduler_jobs" name="scheduler_jobs_list"
 				class="old-syle-anchor">&nbsp;</a>
