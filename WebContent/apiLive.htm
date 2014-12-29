@@ -994,6 +994,16 @@
 								<td><a href="#billmaster_cancel">Cancel Bill</a></td>
 								<td></td>
 							</tr>
+							<tr>
+								<td></td>
+								<td>billmaster/email/{clientId}</td>
+								<td></td>
+								<td></td>
+								<td><a href="#billmaster_email">Send Bill To Email</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							
 							<tr  class="alt">
 								<td><a href="#financialtransaction_details">Financial Transaction</a></td>
 								<td>financialTransactions/{clientId}</td>
@@ -11207,7 +11217,7 @@ GET https://DomainName/api/v1/billmaster/{clientId
 				</div>
 			</div>
 			
-	<a id="billmaster_create" name="adjustment_create" class="old-syle-anchor">&nbsp;</a>
+	<a id="billmaster_create" name="billmaster_create" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
 				<div class="method-description">
 					<h4>Create a Bill</h4>
@@ -11259,7 +11269,7 @@ Request Body:
 GET https://DomainName/api/v1/billmasters/{billId}/print
 					</code>
 					<code class="method-response">
-Download the clent's Bill in Pdf format
+Download the client's Bill in Pdf format
 					</code>
 				</div>
 			</div>	
@@ -11280,7 +11290,44 @@ GET https://DomainName/api/v1/billmasters/{billId}
 Cancel the client's last Bill
 					</code>
 				</div>
+			</div>
+			
+<a id="billmaster_email" name="billmaster_email" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Send Bill To Client Email</h4>
+					<p>Sending client financial transactions over a particular period of time in pdf format</p>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>statementId[billId]</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/billmasters/email/{clientId}
+					</code>
+					<code class="method-request">
+
+Content-Type: application/json 
+Request Body: 
+{
+ "statementId":43
+ }
+					</code>
+					<code class="method-response">
+{
+"resourceId":43,
+"resourceIdentifier":"43"}
+					</code>
+				</div>
 			</div>				
+			
+			
+							
 <!-- end of BillMaster content -->								
 
 <!-- start of Onetime sale content -->
