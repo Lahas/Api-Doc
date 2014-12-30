@@ -478,6 +478,17 @@
 								<td><a href="#promotioncode_update">Update a Promotion Code</a></td>
 								<td><a href="#promotioncode_delete">Delete a Promotion Code</a></td>
 							</tr>
+							
+							
+							<tr class="alt">
+								<td><a href="#taxexemption_details">Tax Exemption</a></td>
+								<td>taxexemption/{clientId}</td>
+								<td></td>
+								<td></td>
+								<td><a href="#taxexemption_update">Update Tax Exemption</a></td>
+								<td></td>
+							</tr>
+							
 						</table>
 					</div>
 				</div>
@@ -974,6 +985,25 @@
 								<td></td>
 								<td></td>
 							</tr>
+							<tr>
+								<td></td>
+								<td>billmaster/{billId}</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><a href="#billmaster_cancel">Cancel Bill</a></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>billmaster/email/{clientId}</td>
+								<td></td>
+								<td></td>
+								<td><a href="#billmaster_email">Send Bill To Email</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							
 							<tr  class="alt">
 								<td><a href="#financialtransaction_details">Financial Transaction</a></td>
 								<td>financialTransactions/{clientId}</td>
@@ -9860,11 +9890,58 @@ No Request Body:
 				</div>
 			</div>
 			
-			
-			
-
 
 <!-- End of Promotion code Api -->
+
+<!-- Start of Tax Exemption -->
+<a id="taxexemption_details" name="taxexemption_details" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Taxexemption Details</h3>
+					<p>By default this flag is set to N while client creation no option to set while creation and If this flag is set to Y from update method 
+					    then although the sale of item / service are defined with tax</p>
+				</div>
+			</div>
+			
+		<a id="taxexemption_update" name="taxexemption_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update a Tax Exemption</h4>
+					<p>Updates the client Taxexemption</p>
+						<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>taxExemption</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/taxexemption/{clientId}
+
+					</code>
+					<code class="method-request">
+PUT taxexemption/26
+ Content-Type: application/json 
+Request Body: 
+{
+   "taxExemption":true
+}
+					</code>
+					<code class="method-response">
+{
+	"resourceId": 26,
+	
+}
+					</code>
+				</div>
+				</div>
+
+<!-- End of tax exemption -->
+
+
 			
 
 <!-- start of orders content-->
@@ -11139,29 +11216,8 @@ GET https://DomainName/api/v1/billmaster/{clientId
 					</code>
 				</div>
 			</div>
-							
-<a id="billmaster_download" name="billmaster_download"
-				class="old-syle-anchor">&nbsp;</a>
-			<div class="method-section">
-				<div class="method-description">
-					<h4>Download a Bill</h4>
-					
-					
-					<p>Example Request:</p>
-					<div>billmaster/581/print</div>
-				</div>
-				<div class="method-example">
-					<code class="method-declaration">
-GET https://DomainName/api/v1/billmasters/{billId}/print
-					</code>
-					<code class="method-response">
-Download the clent's Bill in Pdf format
-					</code>
-				</div>
-			</div>							
-							
 			
-<a id="billmaster_create" name="adjustment_create" class="old-syle-anchor">&nbsp;</a>
+	<a id="billmaster_create" name="billmaster_create" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
 				<div class="method-description">
 					<h4>Create a Bill</h4>
@@ -11197,7 +11253,82 @@ Request Body:
  }
 					</code>
 				</div>
+			</div>			
+			
+							
+<a id="billmaster_download" name="billmaster_download" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Download a Bill</h4>
+
+					<p>Example Request:</p>
+					<div>billmaster/581/print</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/billmasters/{billId}/print
+					</code>
+					<code class="method-response">
+Download the client's Bill in Pdf format
+					</code>
+				</div>
 			</div>	
+			
+							
+<a id="billmaster_cancel" name="billmaster_cancel" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Cancel a Bill</h4>
+					<p>Example Request:</p>
+					<div>billmaster/696</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/billmasters/{billId}
+					</code>
+					<code class="method-response">
+Cancel the client's last Bill
+					</code>
+				</div>
+			</div>
+			
+<a id="billmaster_email" name="billmaster_email" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Send Bill To Client Email</h4>
+					<p>Sending client financial transactions over a particular period of time in pdf format</p>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>statementId[billId]</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/billmasters/email/{clientId}
+					</code>
+					<code class="method-request">
+
+Content-Type: application/json 
+Request Body: 
+{
+ "statementId":43
+ }
+					</code>
+					<code class="method-response">
+{
+"resourceId":43,
+"resourceIdentifier":"43"}
+					</code>
+				</div>
+			</div>				
+			
+			
+							
+<!-- end of BillMaster content -->								
 
 <!-- start of Onetime sale content -->
 			<a id="onetimesale_details" name="onetimesale_details" class="old-syle-anchor">&nbsp;</a>
