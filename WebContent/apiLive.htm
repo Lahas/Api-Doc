@@ -219,14 +219,14 @@
 								</td>
 								<td></td>
 							</tr>
-							<tr>
+							<!-- <tr>
 								<td><a href="#activationprocess">Activation Process</a></td>
 								<td>activationprocess</td>
 								<td><a href="#activationprocess_create">Create Activation process</a></td>
 								<td></td>
 								<td></td>
 								<td></td>
-							</tr>
+							</tr> -->
 							<tr>
 								<td><a href="#simpleactivation">Simple Activation</a></td>
 								<td>activationprocess</td>
@@ -2806,25 +2806,19 @@ GET https://DomainName/api/v1/clients/template
 					</code>
 					<code class="method-response">
 {
-	"activationDate": [2014,
-	4,
-	23],
+	"activationDate": [2015,
+	6,
+	24],
 	"officeId": 1,
 	"balanceAmount": 0,
 	"officeOptions": [{
-		"id": 18,
-		"name": "46456",
-		"nameDecorated": "........46456"
-	},
-	{
-		"id": 4,
-		"name": "Arusha",
-		"nameDecorated": "....Arusha"
-	},
-	{
+		"id": 1,
+		"name": "Head Quaters",
+		"nameDecorated": "Head Quaters"
+	}],
+	"clientCategoryDatas": [{
 		"id": 20,
-		"name": "billing",
-		"nameDecorated": "............billing"
+		"categoryType": "Normal"
 	},
 	{
 		"id": 22,
@@ -2835,40 +2829,53 @@ GET https://DomainName/api/v1/clients/template
 		"categoryType": "VIP"
 	}],
 	"addressTemplateData": {
-		"countryData": ["Tanzania",
-		"India",
-		"aa",
-		"fdf",
-		"Default"],
-		"stateData": ["Dar es Salaam",
-		"Mwanza",
-		"Njombe",
-		"Kagera",
-		
-		
-		"bb"],
-		"cityData": ["Dar es Salaam",
-		"Kibaha",
-		"Tunduma",
-		"Makambako",
-		"cc"],
+		"countryData": ["Qatar"],
+		"stateData": ["Doha"],
+		"cityData": ["Abraj Quartier",
+		"Al Fardan",
+		"Bab Al Riviera",
+		"Bahri Villas North",
+		"Bahri Villas
+ South",
+		"Costas Malaz",
+		"Fanar Fayrous",
+		"Floresta Townhouses",
+		"Giardano Villas",
+		"Isola Dana",
+		"La Plage
+ Villas Central",
+		"La Plage Villas East",
+		"La Plage Villas South",
+		"La Plage Villas West",
+		"Marsa Arabia",
+		"Marsa Malaz",
+		"Medina Centrale",
+		"Perlitas Villas",
+		"Porto Arabia",
+		"Qanat Quartier",
+		"Uncertain",
+		"Viva
+ Bahriya",
+		"Viva Centrale"],
 		"addressOptionsData": [{
 			"id": 1,
-			"code": "address.CategoryType.primary",
+			"code": "address.CategoryType.CategoryType.primary",
 			"value": "PRIMARY"
 		},
 		{
 			"id": 2,
-			"code": "address.CategoryType.billing",
+			"code": "address.CategoryType.CategoryType.billing",
 			"value": "BILLING"
 		}]
 	},
-	"configurationProperty": {
-		"name": "Login",
+	"loginConfigurationProperty": {
+		"name": "login",
 		"enabled": false,
+		"value": "",
 		"id": 13
-	}
-
+	},
+	"groupNameDatas": [],
+	"balanceCheck": false
 }
 					</code>
 				</div>
@@ -2911,23 +2918,23 @@ POST https://DomainName/api/v1/clients
 POST clients
 Content-Type: application/json Request Body:
 {
-	"officeId": 18,
+	"entryType": "IND",
+	"officeId": 1,
 	"clientCategory": 20,
-	"firstname": "First",
-	"middlename": "Client",
-	"lastname": "Test",
-	"phone": "1234567890",
-	"email": "test@obs.comvvdfss",
-	"addressNo": "H.no-3/54",
-	"street": "New Street",
-	"city": "Dar es Salaam",
-	"state": "Dar es Salaam",
-	"country": "Tanzania",
-	"zipCode": "500018",
+	"title": "Mr",
+	"firstname": "Adam",
+	"lastname": "Jose",
+	"phone": "984822338",
+	"email": "adamjose@gmail.com",
+	"addressNo": "2-37/11",
+	"city": "Bahri Villas South",
+	"state": "Doha",
+	"country": "Qatar",
+	"zipCode": "0040123",
 	"locale": "en",
 	"active": true,
 	"dateFormat": "dd MMMM yyyy",
-	"activationDate": "23 April 2014",
+	"activationDate": "24 June 2015",
 	"flag": false
 }
 					</code>
@@ -2990,37 +2997,49 @@ GET https://DomainName/api/v1/clients/{clientId}
 					</code>
 					<code class="method-response">
 {
-	"id": 11822,
-	"accountNo": "000011822",
+	"id": 2,
+	"accountNo": "000000002",
 	"status": {
-		"id": 300,
-		"code": "clientStatusType.active",
-		"value": "Active"
+		"id": 100,
+		"code": "clientStatusType.pending",
+		"value": "New"
 	},
 	"active": false,
-	"activationDate": [2014,
-	4,
-	23],
-	"firstname": "First",
-	"middlename": "Client",
-	"lastname": "Test",
-	"displayName": "First Client Test",
-	"officeId": 18,
-	"officeName": "46456",
-	"email": "test@obs.comvvdfss",
-	"phone": "1234567890",
+	"activationDate": [2015,
+	6,
+	24],
+	"firstname": "Adam",
+	"lastname": "Jose",
+	"displayName": "Adam Jose",
+	"officeId": 1,
+	"officeName": "Head Quaters",
+	"email": "adamjose@gmail.com",
+	"phone": "984822338",
 	"homePhoneNumber": "",
-	"addressNo": "H.no-3/54",
-	"street": "New Street",
-	"city": "Dar es Salaam",
-	"state": "Dar es Salaam",
-	"country": "Tanzania",
-	"zip": "500018",
+	"addressNo": "2-37/11",
+	"city": "Bahri Villas South",
+	"state": "Doha",
+	"country": "Qatar",
+	"zip": "0040123",
 	"balanceAmount": 0,
-	"hwSerialNumber": "No Hardware",
+	"hwSerialNumber": "No Device",
+	"taxExemption": "N",
+	"groups": [],
 	"categoryType": "Normal",
 	"hardwareDetails": [],
-	"currency": "TZS"
+	"balanceCheck": true,
+	"entryType": "IND",
+	"selfcare": {
+		"clientId": 2,
+		"userName": "adamjose@gmail.com",
+		"password": "pzbbybsb",
+		"uniqueReference": "adamjose@gmail.com",
+		"status": "INACTIVE",
+		"isDeleted": false,
+		"deviceId": "",
+		"id": 2
+	},
+	"title": "Mr"
 }
 					</code>
 				</div>
@@ -3113,71 +3132,82 @@ GET https://DomainName/api/v1/clients
 					</code>
 					<code class="method-response">
 {
-	"totalFilteredRecords": 11621,
+	"totalFilteredRecords": 2,
 	"pageItems": [{
 		"id": 1,
 		"accountNo": "000000001",
 		"status": {
 			"id": 300,
-			"code": "clientStatusType.active",
+			"code": "clientStatusType
+.active",
 			"value": "Active"
 		},
 		"active": true,
-		"activationDate": [2013,
-		11,
-		15],
-		"firstname": "Test",
-		"middlename": "Client",
-		"lastname": "Anji",
-		"displayName": "Test Client Anji",
+		"activationDate": [2015,
+		6,
+		18],
+		"firstname": "Karthik",
+		"lastname": "Roy",
+		"displayName": "Karthik Roy",
 		"officeId": 1,
 		"officeName": "Head Quaters",
-		"email": "anji@agape.com",
-		"phone": "685023768",
-		"addressNo": "PO Box : 70029",
-		"street": "Mbezi beach",
-		"city": "Dar es Salaam",
-		"state": "Dar es Salaam",
-		"country": "Tanzania",
-		"zip": "000000",
-		"balanceAmount": 180429.0800,
-		"hwSerialNumber": "N55100104169",
+		"email": "RoyInfo@gmail.com",
+		"phone": "9912451223",
+		"homePhoneNumber": "",
+		"addressNo": "PA10SBS20U003",
+		"street": "18",
+		"city": "PA",
+		"state": "Doha",
+		"country": "Qatar",
+		"zip": "34567",
+		"balanceAmount": 1200.0000,
+		"walletAmount": 0.0000,
+		"hwSerialNumber": "No Device",
+		"taxExemption": "N",
 		"categoryType": "Normal",
-		"currency": "TZS"
+		"balanceCheck": false,
+		"entryType": "IND",
+		"userName": "RoyInfo@gmail.com",
+		"clientPassword": "lwjxfpov",
+		"title": "Mr"
 	},
 	{
 		"id": 2,
 		"accountNo": "000000002",
 		"status": {
-			"id": 300,
-			"code": "clientStatusType.active",
-			"value": "Active"
+			"id": 100,
+			"code": "clientStatusType.pending",
+			"value": "New"
 		},
-		"active": true,
-		"activationDate": [2013,
-		11,
-		20],
-		"firstname": "New",
-		"middlename": "Test",
-		"lastname": "Santosh",
-		"displayName": "New Test Santosh",
+		"active": false,
+		"activationDate": [2015,
+		6,
+		24],
+		"firstname": "Adam",
+		"lastname": "Jose",
+		"displayName": "Adam Jose",
 		"officeId": 1,
 		"officeName": "Head Quaters",
-		"email": "santosh@ting.co.tz",
-		"phone": "99909333444",
-		"addressNo": "New Address",
-		"street": "New Street",
-		"city": "Dar es Salaam",
-		"state": "Dar es Salaam",
-		"country": "Tanzania",
-		"zip": "000983",
-		"balanceAmount": 186752.1500,
-		"hwSerialNumber": "No Hardware",
+		"email": "adamjose@gmail.com",
+		"phone": "984822338",
+		"homePhoneNumber": "",
+		"addressNo": "2-37/11",
+		"city": "Bahri
+ Villas South",
+		"state": "Doha",
+		"country": "Qatar",
+		"zip": "0040123",
+		"balanceAmount": 0,
+		"hwSerialNumber": "No
+ Device",
+		"taxExemption": "N",
 		"categoryType": "Normal",
-		"currency": "TZS"
-	
-    }
-  ]
+		"balanceCheck": false,
+		"entryType": "IND",
+		"userName": "adamjose@gmail.com",
+		"clientPassword": "pzbbybsb",
+		"title": "Mr"
+	}]
 }
 					</code>
 				</div>
@@ -3720,7 +3750,7 @@ No Request Body:
 				</div>
 			</div>
 				
-				<a id="activationprocess_create" name="activation_create" class="old-syle-anchor">&nbsp;</a>
+		<!-- 	<a id="activationprocess_create" name="activation_create" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
 				<div class="method-description">
 					<h4>Create a Activationprocess</h4>
@@ -3824,7 +3854,7 @@ Content-Type: application/json Request Body:
 					</code>
 				</div>
 
-			</div>
+			</div> -->	
 
 <!-- Activation process api contents ends here!! -->
 
@@ -3874,67 +3904,58 @@ POST https://DomainName/api/v1/activationprocess
 POST activationprocess
 Content-Type: application/json Request Body:
 {
-	"client":
-		[
-			{
-			"officeId":1,
-			"clientCategory":20,
-			"city":"Hyderabad",
-			"state":"Andhra Pradesh",
-			"country":"India",
-			"phone":"944144999",
-			"email":"ashok@gmail.com",
-			"locale":"en",
-			"active":true,
-			"dateFormat":"dd MMMM yyyy",
-			"activationDate":"13 May 2014",
-			"addressNo":"Addr1",
-			"firstname":"Ashok",
-			"lastname":"Lingala",
-			"flag":false
-			}
-		],
-	  "sale":
-	  	[
-	  		{
-	  		"serialNumber":
-	  			[
-	  				{
-	  				"serialNumber":"",
-	  				"status":"allocated",
-	  				"isNewHw":"Y"
-	  				}
-	  			],
-	  		"discountId":1
-	  		}
-	  	],
-	  "allocate":[{}],
-	  "bookorder":
-	  		[
-	  			{
-	  			"billAlign":false,
-	  			"contractPeriod":1,
-	  			"planCode":3,
-	  			"locale":"en",
-	  			"isNewplan":true,
-	  			"dateFormat":"dd MMMM yyyy",
-	  			"start_date":"13 May 2014",
-	  			"paytermCode":"Monthly"
-	  			}
-	  		],
-	  "owndevice":
-	  		[
-	  			{
-	  			"itemType":1,
-	  			"provisioningSerialNumber":"N554644541",
-	  			"locale":"en",
-	  			"dateFormat":"dd MMMM yyyy",
-	  			"allocationDate":"13 May 2014",
-	  			"status":"ACTIVE",
-	  			"serialNumber":"N554644541"
-	  			}
-	  		]
-	 }
+	"client": [{
+		"officeId": 1,
+		"clientCategory": 20,
+		"firstname": "sanjay",
+		"lastname": "kumar",
+		"city": "Abraj Quartier",
+		"state": "Doha",
+		"country": "Qatar",
+		"phone": "8519813671",
+		"email": "sanjeev.2826@gmail.com",
+		"locale": "en",
+		"active": true,
+		"dateFormat": "dd MMMM yyyy",
+		"activationDate": "24 June 2015",
+		"entryType": "IND",
+		"addressNo": "Addr1",
+		"flag": false
+	}],
+	"sale": [{
+		"chargeCode": "OTC",
+		"unitPrice": 100,
+		"itemId": 1,
+		"officeId": 1,
+		"discountId": 1,
+		"saleType": "NEWSALE",
+		"quantity": 1,
+		"totalPrice": 100,
+		"locale": "en",
+		"dateFormat": "dd MMMM yyyy",
+		"saleDate": "24 June 2015",
+		"serialNumber": [{
+			"serialNumber": "00:1A:11:01:12:01",
+			"status": "allocated",
+			"itemMasterId": 1,
+			"isNewHw": "Y"
+		}]
+	}],
+	"allocate": [{
+		"itemMasterId": 1
+	}],
+	"bookorder": [{
+		"billAlign": false,
+		"planCode": 1,
+		"contractPeriod": 2,
+		"locale": "en",
+		"isNewplan": true,
+		"dateFormat": "dd MMMM yyyy",
+		"start_date": "24 June 2015",
+		"paytermCode": "Monthly"
+	}],
+	"owndevice": []
+}
 					</code>
 					<code class="method-response">
 {
@@ -10152,99 +10173,80 @@ GET https://DomainName/api/v1/orders/{planId}/template
 					<code class="method-response">
 {
 	"price": 0.0,
-	"startDate": [2013,
-	8,
-	21],
+	"startDate": [2015,
+	6,
+	24],
 	"plandata": [{
-		"id": 27,
-		"planCode": "BASIC",
-		"availableServices": [{
-			"id": 14,
-			"serviceCode": "Channels",
-			"chargeCode": "CH",
-			"code": "BASIC"
-		},
-		
-	{
-		"id": 36,
-		"planCode": "256 KBPS",
-		"availableServices": [{
-			"id": 23,
-			"serviceCode": "256 KBPS",
-			"chargeCode": "256 KBPS",
-			"code": "256 KBPS"
-		}],
-		"start_date": [2013,
-		8,
-		21],
-		"isPrepaid": "N"
-	},
-	{
-		"id": 38,
-		"planCode": "PER",
-		"availableServices": [{
-			"id": 26,
-			"serviceCode": "Star Sports",
-			"chargeCode": "SP",
-			"code": "PER"
-		}],
-		"start_date": [2013,
-		8,
-		21],
-		"isPrepaid": "N"
-	},
-	{
-		"id": 39,
-		"planCode": "IPTV",
-		"availableServices": [{
-			"id": 15,
-			"serviceCode": "5GB Free Storage",
-			"chargeCode": "5GB",
-			"code": "IPTV"
-		},
-		
-	{
-		"id": 40,
-		"planCode": "NPP",
-		"availableServices": [{
-			"id": 28,
-			"serviceCode": "New Service",
-			"chargeCode": "NS",
-			"code": "NPP"
-		}],
-		"start_date": [2013,
-		8,
-		21],
-		"isPrepaid": "N"
-	}],
-	"paytermdata": [{
 		"id": 1,
-		"paytermtype": "Days",
-		"duration": "",
-		"planType": "N"
-	},
-	{
-		"id": 8,
-		"paytermtype": "Once",
-		"duration": "",
-		"planType": "N"
-	}],
-	"subscriptiondata": [{
-		"id": 1,
-		"Contractdata": "Perpectual"
+		"planCode": "Movies",
+		"availableServices": [{
+			"id": 1,
+			"serviceCode": "HBO",
+			"planCode": "Movies",
+			"chargeCode": "Monthly",
+			"serviceDescription": "HBO",
+			"isPrepaid": "Y"
+		},
+		{
+			"id": 2,
+			"serviceCode": "STM",
+			"planCode": "Movies",
+			"chargeCode": "Monthly",
+			"serviceDescription": "Star-Movies",
+			"isPrepaid": "Y"
+		}],
+		"starDate": [2015,
+		6,
+		24],
+		"isPrepaid": "Y"
 	},
 	{
 		"id": 2,
-		"Contractdata": "30 Days"
-	},
-	
-	{
-		"id": 8,
-		"Contractdata": "Yearly"
+		"planCode": "News",
+		"availableServices": [{
+			"id": 3,
+			"serviceCode": "BBC",
+			"planCode": "News",
+			"chargeCode": "Monthly",
+			"serviceDescription": "BBC",
+			"isPrepaid": "Y"
+		}],
+		"starDate": [2015,
+		6,
+		24],
+		"isPrepaid": "Y"
 	}],
-	"contractPeriod": "",
-	"flag": false,
-	"isPrepaid": "N"
+	"paytermdata": [],
+	"subscriptiondata": [{
+		"id": 2,
+		"Contractdata": "1 Month",
+		"subscriptionType": "Month(s)",
+		"priceId": 0
+	},
+	{
+		"id": 5,
+		"Contractdata": "1 Year",
+		"subscriptionType": "Month(s)",
+		"priceId": 0
+	},
+	{
+		"id": 3,
+		"Contractdata": "3 Months",
+		"subscriptionType": "Month(s)",
+		"priceId": 0
+	},
+	{
+		"id": 4,
+		"Contractdata": "6 Months",
+		"subscriptionType": "Month(s)",
+		"priceId": 0
+	},
+	{
+		"id": 1,
+		"Contractdata": "Perpetual",
+		"subscriptionType": "None",
+		"priceId": 0
+	}]
 }
 			</code>
 				</div>
@@ -10267,49 +10269,94 @@ GET https://DomainName/api/v1/orders/{orderId}/orderprice/{clientId}
 {
 	"price": 0.0,
 	"orderPriceData": [{
-		"id": 571,
-		"orderId": 611,
-		"chargeCode": "Channels",
-		"chargeType": "30Days Subscription",
-		"chargeDuration": "30",
-		"durationType": "Day(s)",
-		"price": 50.0000,
-		"clientId": 125,
-		"billStartDate": [2013,
-		8,
-		21],
-		"billingFrequency": "Days"
-	},
-	
-	{
-		"id": 573,
-		"orderId": 611,
-		"chargeCode": "Star Sports",
-		"chargeType": "30Days Subscription",
-		"chargeDuration": "30",
-		"durationType": "Day(s)",
-		"price": 100.0000,
-		"clientId": 125,
-		"billStartDate": [2013,
-		8,
-		21],
-		"billingFrequency": "Days"
+		"id": 3,
+		"orderId": 3,
+		"chargeDuration": "6",
+		"durationType": "Month(s)",
+		"price": 900.0000,
+		"clientId": 2,
+		"billStartDate": [2015,
+		6,
+		24],
+		"billEndDate": [2015,
+		12,
+		23],
+		"billingFrequency": "Halfyearly",
+		"chargeDescription": "Half Yearly Subscription",
+		"serviceDescription": "None"
 	}],
-	"flag": false,
 	"orderHistory": [{
-		"id": 312,
-		"transactionDate": [2013,
-		8,
-		21],
-		"actualDate": [2013,
-		8,
-		21],
-		"provisioningDate": [2013,
-		8,
-		21],
-		"transactioType": "Active",
-		"PrepareRequsetId": 782
-	}]
+		"id": 3,
+		"transactionDate": [2015,
+		6,
+		24],
+		"actualDate": [2015,
+		6,
+		24],
+		"provisioningDate": [2015,
+		6,
+		24],
+		"transactioType": "ACTIVATION",
+		"PrepareRequsetId": 0,
+		"userName": "admin"
+	}],
+	"orderData": {
+		"id": 3,
+		"pdid": 1,
+		"planCode": "Movies",
+		"price": 900.0,
+		"status": "ACTIVE",
+		"startDate": [2015,
+		6,
+		24],
+		"currentDate": [2015,
+		6,
+		24],
+		"endDate": [2015,
+		12,
+		23],
+		"activeDate": [2015,
+		6,
+		24],
+		"contractPeriod": "6 Months",
+		"isPrepaid": "Y",
+		"allowtopup": "N",
+		"userAction": "ACTIVATION",
+		"orderNo": "000000003",
+		"provisioningSys": "None",
+		"groupName": "Movies",
+		"autoRenew": "Y"
+	},
+	"orderServices": [{
+		"id": 4,
+		"orderId": 3,
+		"servicecode": "HBO",
+		"serviceDescription": "HBO",
+		"serviceType": "TV",
+		"serviceId": 1,
+		"isAutoProvision": "Y"
+	},
+	{
+		"id": 5,
+		"orderId": 3,
+		"servicecode": "STM",
+		"serviceDescription": "Star-Movies",
+		"serviceType": "TV",
+		"serviceId": 2,
+		"isAutoProvision": "Y"
+	}],
+	"orderDiscountDatas": [{
+		"id": 3,
+		"priceId": 3,
+		"discountcode": "None",
+		"discountdescription": "None",
+		"discountType": "Flat",
+		"discountAmount": 0.00,
+		"discountstartDate": [2015,
+		4,
+		16]
+	}],
+	"orderAddonsDatas": []
 }
 			</code>
 				</div>
@@ -10419,13 +10466,14 @@ Content-Type: application/json
 Request Body:
 {
 	"billAlign": false,
-	"planCode": 4,
-	"contractPeriod": 5,
-	"paytermCode": "Monthly",
+	"autoRenew": true,
+	"planCode": 1,
+	"contractPeriod": 4,
 	"isNewplan": true,
 	"locale": "en",
 	"dateFormat": "dd MMMM yyyy",
-	"start_date": "23 April 2014"
+	"start_date": "24 June 2015",
+	"paytermCode": "Halfyearly"
 }
                     </code>
                     <code class="method-response">
