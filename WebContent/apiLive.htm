@@ -237,10 +237,16 @@
 							</tr>
 							<tr class="alt">
 								<td><a href="#selfcare">Selfcare</a></td>
-								<td>Change Password</td>
-								<!-- <td><a href="#selfcare_change_password">Selfcare Login</a></td> -->
+								<td>register</td>
+								<td><a href="#selfcare_register">Selfcare Signup</a></td>
 								<td></td>
-								<td><a href="#selfcare_change_password">Selfcare Change password</a></td>
+								<td></td>
+							</tr>
+							<tr class="alt">
+								<td></td>
+								<td>selfregistration</td>
+								<td><a href="#selfcare_selfregistration">Selfcare Registration</a></td>
+								<td></td>
 								<td></td>
 							</tr>
 						</table>
@@ -3998,55 +4004,103 @@ Content-Type: application/json Request Body:
 <!-- Simple Activation contents ends here!! -->
 
 <!--  Selfcare Change Password Content Start here  -->
-<a id="selfcare" name="selfcare_change_password" class="old-syle-anchor">&nbsp;</a>
+<a id="selfcare" name="selfcare" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>SelfCare </h3>
+					<p>Selfcare is a Client portal,using selfcare client can see the his profile ,his subscribed services, additional services,events,statements ,and also tickets.Through selfcare Client can create,change,and discconect the services,and create the events,tickets </p>
+				</div>
+			</div>
+<a id="selfcare_register" name="selfcare_register" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
 				<div class="method-description">
 					<!-- <h3>SelfCare </h3> -->
-					 <h3>Selfcare ChangePassword </h3>
-					<p>Selfcare changepassword can process client password chanages from selfcare portal</p>
+					 <h3>Selfcare SignUp </h3>
+					<p>Selfcare SignUp can process the registration link and that link send through email which is specified in signup</p>
 				</div>
 			</div>
-				
-				<a id="simpleactivation_create" name="simpleactivation_create" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
 				<div class="method-description">
-					<h4>Create a Simple Activation</h4>
+					<h4>Create a Simple Signup</h4>
 					
 					<table class=matrixHeading>
 						<tr class="matrixHeadingBG">
 							<td><div class="billingHeading2">Mandatory Fields</div></td>
 						</tr>
 						<tr class=alt>
-							<td>New Password, Confirm Password 
+							<td>User Name,ReturnUrl 
 							</td>
 						</tr>
 					</table>
-						<br />
-					<!-- <table class=matrixHeading>
-						<tr class="matrixHeadingBG">
-							<td><div class="billingHeading2">Optional Fields</div></td>
-						</tr>
-						<tr class=alt>
-							<td> </td>
-						</tr>
-					</table> -->
 				</div>
 				<div class="method-example">
 					<code class="method-declaration">
-PUT https://DomainName/api/v1/selfcare/changepassword
+POST https://DomainName/api/v1/selfcare/register
 					</code>
 					<code class="method-request">
-PUT ChangePassword
+POST register
 Content-Type: application/json Request Body:
+
 {
-	"password": "sanjay",
-	"uniqueReference": "sanjeev.2826@gmail.com"
+	"userName":"abc@gmail.com",
+	"returnUrl":"DomainName/index.html#/active/abc@gmail.com/"
 }
 					</code>
 					<code class="method-response">
 {
-	"logout": "logout",
-	"id": "18"
+	"clientId":0,
+	"resourceId":551
+}
+					</code>
+				</div>
+
+			</div>
+<a id="selfcare_selfregistration" name="selfcare_selfregistration" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					 <h3>Selfcare Registration </h3>
+					<p>Selfcare Registration can take the complete data of a client process the complete the  registration.</p>
+				</div>
+			</div>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Sample Registration</h4>
+					
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>Customer Name,Mobile Phone,Home Address,Home Postcode,Mac Id,Email, State/Province 
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/activationprocess/selfregistration
+					</code>
+					<code class="method-request">
+POST activationprocess/selfregistration
+Content-Type: application/json Request Body:
+
+{
+	"device":"00:1a:79:1d:d7:6b",
+	"password":"123",
+	"firstname":"Raghu2211",
+	"fullname":".",
+	"address":"Sh01D01A67415",
+	"zipCode":"hyderabad",
+	"city":"hyderabad",
+	"phone":9014358368,
+	"email":"fdsfds1@gmail.com",
+	"deviceAgreementType":"SALE"
+}
+					</code>
+					<code class="method-response">
+{
+	"clientId":1,
+	"resourceId":1
 }
 					</code>
 				</div>
