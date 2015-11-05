@@ -1185,7 +1185,7 @@
 														
 							<tr>
 							<td></td>
-							<td>itemdetails/grn</td>
+							<td>grn</td>
 							<td></td>
 							<td><a href="#itemdetails_grn">retriveGrnDetails</a></td>
 							<td></td>
@@ -1218,6 +1218,24 @@
 							<td><a href="#items_retrieve_single">retrieveSingletemData</a></td>
 							<td><a href="#items_update">updateItem</a></td>
 							<td><a href="#items_delete">deleteItem</a></td>
+							</tr>
+							
+							<tr class="alt">
+							<td><a href="#supplier">Suppliers</a></td>
+							<td>Suppliers</td>
+							<td><a href="#supplier_create">createNewSupplier</a></td>
+							<td><a href="#supplier_list">retrieveAllSuppliers</a></td>
+							<td></td>
+							<td></td>
+							</tr>
+							
+							<tr>
+							<td></td>
+							<td>suppliers/{supplierId}</td>
+							<td></td>
+							<td><a href="#supplier_retrieve_single">retrieveSingletemData</a></td>
+							<td><a href="#supplier_update">updateSupplier</a></td>
+							<td></td>
 							</tr>
 							
 							<tr>
@@ -6930,7 +6948,7 @@ GET https://DomainName/api/v1/itemdetails?limit=15&offset=0
 							<td><div class="billingHeading2">Mandatory Fields</div></td>
 						</tr>
 						<tr class=alt>
-							<td>Supplier Code, Office Id, Item Code, Ordered Quantity</td>
+							<td>Supplier Code, Office Id, Item Code, Ordered Quantity, Purchase No </td>
 						</tr>
 					</table>
 				</div>
@@ -6949,7 +6967,8 @@ Request body:
 	"supplierId":1,
 	"officeId":8,
 	"itemMasterId":1,
-	"orderdQuantity":"1"
+	"orderdQuantity":"1",
+	"purchaseNo":"31312"
 }
 					</code>
 					<code class="method-response">{"resourceId":7} </code>
@@ -7100,12 +7119,12 @@ GET https://DomainName/api/v1/itemdetails/grn/template
 				<div class="method-description">
 					<h4>List GRN</h4>
 					<p>Example Requests:</p>
-					<div>itemdetails/grn</div>
+					<div>grn</div>
 					<br>
 				</div>
 				<div class="method-example">
 					<code class="method-declaration">
-GET https://DomainName/api/v1/itemdetails/grn?limit=15&offset=0
+GET https://DomainName/api/v1/grn?limit=15&offset=0
 					</code>
 					<code class="method-response">
 					
@@ -7126,7 +7145,8 @@ GET https://DomainName/api/v1/itemdetails/grn?limit=15&offset=0
       "balanceQuantity": 4725,
       "itemDescription": "AAL003  Sat Decoder",
       "supplierName": "SMT",
-      "officeName": "Head Quaters"
+      "officeName": "Head Quaters",
+      "purchaseNo":"78778"
     },
     {
       "id": 2,
@@ -7142,7 +7162,8 @@ GET https://DomainName/api/v1/itemdetails/grn?limit=15&offset=0
       "balanceQuantity": 3951,
       "itemDescription": "AAL001 DTT",
       "supplierName": "SMT",
-      "officeName": "Head Quaters"
+      "officeName": "Head Quaters",
+      "purchaseNo":"78779"
     }
   ]
 }
@@ -7359,7 +7380,25 @@ GET https://DomainName/api/v1/items/{itemId}
   ],
   "itemDescription": "AAL003  Sat Decoder",
   "warranty": 12,
-  "itemClass": "HARDWARE"
+  "itemClass": "HARDWARE",
+  "auditDetails":[
+  	{
+  		"id":24,
+  		"itemCode":"1",
+  		"unitPrice":21500,
+  		"warranty":0,
+  		"itemMasterId":13,
+  		"changedDate":[2014,12,29]
+  	},
+  	{
+  		"id":25,
+  		"itemCode":"1",
+  		"unitPrice":200000,
+  		"warranty":0,
+  		"itemMasterId":13,
+  		"changedDate":[2014,12,29]
+  	}
+  ]
 }
 					</code>
 				</div>
@@ -7422,6 +7461,151 @@ No Request Body:
 		
 	
 	<!-- Items content ends here! -->!
+	
+	
+	<!-- Suppliers Content starts here!! -->
+	
+			<a id="supplier" name="supplier" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Suppliers</h3>
+					<p>An API Suppliers</p>
+				</div>
+			</div>
+			
+			<a id="supplier_list" name="supplier_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List Suppliers</h4>
+					<p>Example Requests:</p>
+					<div>suppliers</div>
+					<br>
+					<br>
+					<div>suppliers?limit=15&offset=0</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/suppliers?limit=15&offset=0
+					</code>
+					<code class="method-response">
+{
+  "totalFilteredRecords": 2,
+  "pageItems": [
+    {
+    	"id":1,
+    	"supplierCode":"ANDROID",
+    	"supplierDescription":"android",
+    	"supplierAddress":"Android"
+    },
+    {
+    	"id":2,
+    	"supplierCode":"STP",
+    	"supplierDescription":"SETUP BOX",
+    	"supplierAddress":"HYDERABAD"
+    }
+  ]
+}
+					</code>
+				</div>
+			</div>
+			
+			<a id="supplier_create" name="supplier_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a supplier</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>Supplier Cod, Supplier Description, Supplier Address </td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/suppliers
+					</code>
+					<code class="method-request">
+POST suppliers 
+Content-Type: application/json 
+Request body:
+{
+	"supplierCode":"Test",
+	"supplierDescription":"TestBox",
+	"supplierAddress":"Hyderabad"
+}
+					</code>
+					<code class="method-response">{ "resourceId": 7} </code>
+				</div>
+			</div>
+			
+			
+		<a id="supplier_retrieve_single" name="supplier_retrieve_single" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve a supplier</h4>
+					<p>Example Requests:</p>
+					<div>suppliers/{supplierId}</div>
+					<br>
+					<br>
+					<div>suppliers/1</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/suppliers/{supplierId}
+					</code>
+					<code class="method-response">
+[
+	{
+		"id":1,
+		"supplierCode":"ANDROID",
+		"supplierDescription":"android",
+		"supplierAddress":"Android"
+	}
+]
+					</code>
+				</div>
+			</div>
+			
+			<a id="supplier_update" name="supplier_update" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Update a supplier</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>Supplier Cod, Supplier Description, Supplier Address </td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/suppliers/{supplierId}
+					</code>
+					<code class="method-request">
+PUT suppliers/1
+Content-Type: application/json 
+Request body: 
+{
+	"supplierCode":"ANDROID",
+	"supplierDescription":"android",
+	"supplierAddress":"Android"
+}
+					</code>
+					<code class="method-response">
+{
+	"resourceId":1,
+	"changes":{}
+}
+					</code>
+				</div>
+			</div>		
+	
+	<!-- Suppliers content ends here! -->!
+	
 	
 	<!-- OwnedHardware content starts here!! -->
 	
@@ -14760,6 +14944,7 @@ No Request Body:
 					<br>
 					<div>Tickets</div>
 				</div>
+				
 				<div class="method-example">
 					<code class="method-declaration">
 GET https://DomainName/api/v1/advancesearch
