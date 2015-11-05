@@ -2003,6 +2003,22 @@
 								<td></td>
 								<td><a href="#advancesearch_clients_list">List of Clients</a></td>
 							</tr>
+							<tr>
+								<td><a href="#advancesearch">Property</a></td>
+								<td>Propety Defination</td>
+								<td><a href="#create_property">Create Property</a></td>
+								<td><a href="#list_property">List of All Properties</a></td>
+								<td><a href ="#property_Edit">Edit Property</a></td>
+								<td><a href="#property_delete">Delete Property</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Property Master</td>
+								<td><a href="#create_property_master">Create Property Master</a></td>
+								<td><a href="#allproperties_master_list">List of all Property Masters</a></td>
+								<td><a href ="#property_master_Edit">Edit Property Master</a></td>
+								<td><a href="#property_master-delete">Delete Property Master</a></td>
+							</tr>
 						</table>
 					</div>
 				</div>
@@ -15106,6 +15122,303 @@ GET https://DomainName/api/v1/advancesearch
 			</div>
 
 			
+<a id="create_property" name="create_property" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a New Property</h4>
+					<table class=matrixHeading>
+					<p> Property is representing the address of a particular client</p>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td> Precinct, Parcel, Property Type, Building Code, Floor / Level, Unit Code</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/property					
+					</code>
+					<code class="method-request">
+		POST:  Organization/Property Definition/Create Property 
+		Content-Type: application/json 
+		Request body:
+		{
+			"precinct": "Porto Arabia",
+			"state": "The Pearl Qatar",
+			"country": "QATAR",
+			"parcel": "SP",
+			"street": "Street 01",
+			"propertyType": 206,
+			"buildingCode": "BRW",
+			"floor": "TL",
+			"unitCode": "0008",
+			"propertyCode": "PASPBRWTL0008",
+			"poBox": "543216"
+		}
+		</code>
+		<code class="method-response">{"resourceId":151} </code>				
+				</div>
+			</div>
+
+			<a id="property_Edit" name="property_Edit" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Edit Property</h4>
+					<table class=matrixHeading>
+					<p> If we need to edit the property that property must be free from all clients</p>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>  Precinct, Parcel, Property Type, Building Code, Floor / Level, Unit Code</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+	PUT https://DomainName/property/{property:id}				
+					</code>
+					<code class="method-request">
+	EDIT: Organization/Property Definition/{propertycode}/Edit Property 
+
+		Content-Type: application/json 
+		Request body:
+		{
+			"propertyType": 205,
+			"propertyCode": "duSPT08050014",
+			"unitCode": "0014",
+			"floor": "05",
+			"buildingCode": "T08",
+			"parcel": "SP",
+			"precinct": "Dusseldorf",
+			"street": "123",
+			"poBox": "040506",
+			"state": "Nordrein-westfalen",
+			"country": "Germany",
+			"status": "VACANT"
+		}
+			</code>
+					
+					
+<code class="method-response">{"resourceId":144,"changes":{"unitCode":"0014","propertyCode":"duSPT08050014","country":"Germany"}}</code>				
+				</div>
+			</div>
+			
+			
+			<a id="property_delete" name="property_delete" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Delete Property</h4>
+					<table class=matrixHeading>
+					<p> If we need to delete the property that property must be free from all clients</p>
+						
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+	DELETE https://DomainName/property/{property:id}				
+					</code>
+					
+<code class="method-response">{"resourceId":144,"changes":{},"resourceIdentifier":"144"}</code>				
+				</div>
+			</div>
+			
+			
+			<a id="list_property" name="list_property" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List of Properties</h4>
+					<p> The list capability of properties can support pagination and sorting</p>
+					<h5>Optional Arguments</h5>
+					<dl class="argument-list">
+						<dt>offset</dt>
+						<dd>
+							Integer <span>optional</span>, defaults to 0
+						</dd>
+						<dd>Indicates from what result to start from.</dd>
+						
+						<dt>limit</dt>
+						<dd>
+							Integer <span>optional</span>, defaults to 200
+						</dd>
+						<dd>Restricts the size of results returned. To override the default and return all entries you must explicitly pass a non-positive integer value for limit e.g. limit=0, or limit=-1</dd>
+
+						<dt>orderBy</dt>
+						<dd>
+							String <span>optional</span>, one of <span>Property Code</span>
+						</dd>
+						<dd>Orders the results by the field indicated.</dd>
+
+						<dt>sortBy</dt>
+						<dd>
+							String <span>optional</span>, one of <span>ASC, DESC</span>
+						</dd>
+						<dd>Indicates what way to order results if <i>orderBy</i> is used.</dd>
+						</dl>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+	GET https://DomainName/property/property?limit=15&offset=0	
+					</code>
+			<code class="method-response">{
+				"totalFilteredRecords": 210,
+				"pageItems": [{
+					"id": 1,
+					"description": "Amenities",
+					"propertyCodeType": "Level/Floor",
+					"code": "AM",
+					"referenceValue": ""
+				},
+				{
+					"id": 2,
+					"description": "ATM",
+					"propertyCodeType": "Level/Floor",
+					"code": "AT",
+					"referenceValue": ""
+				}]
+			}</code>				
+					</div>
+				</div>
+			
+			
+			<a id="create_property_master" name="create_property_master" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a New Property Master</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td> Property Code Types, Code, Code Description</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/propertymaster				
+					</code>
+					<code class="method-request">
+		POST:  Organization/Property Definition/Property Master defines 
+		Content-Type: application/json 
+		Request body:
+		{
+			"propertyCodeType": "Parcel",
+			"code": "H1",
+			"description": "parcel-h"
+		}
+			</code>
+					
+					
+<code class="method-response">{"resourceId":217,"changes":{},"resourceIdentifier":"217"}</code>				
+				</div>
+			</div>
+	<a id="property_master_Edit" name="property_master_Edit" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Edit Property Master</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td> Property Code Types, Code, Code Description</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/propertymaster/2				
+					</code>
+					<code class="method-request">
+		PUT:  Organization/Property Definition/Property Master defines 
+		Content-Type: application/json 
+		Request body:
+		{
+			"propertyCodeType": "Parcel",
+			"code": "H1",
+			"description": "parcel-h1"
+		}
+			</code>
+					
+					
+<code class="method-response">{"resourceId":217,"changes":{}}</code>				
+				</div>
+			</div>
+	<a id="property_master-delete" name="property_master-delete" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Delete Property Master</h4>
+					<table class=matrixHeading>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+DELETE https://DomainName/api/v1/propertymaster/{propertymaster:id}				
+					</code>
+<code class="method-response">{"resourceId":1,"changes":{},"resourceIdentifier":"1"}</code>				
+				</div>
+			</div>
+	<a id="allproperties_master_list" name="allproperties_master_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List of Property Masters</h4>
+					<p>The list capability of property master can support pagination and sorting</p>
+					
+					<h5>Optional Arguments</h5>
+					<dl class="argument-list">
+						<dt>offset</dt>
+						<dd>
+							Integer <span>optional</span>, defaults to 0
+						</dd>
+						<dd>Indicates from what result to start from.</dd>
+						
+						<dt>limit</dt>
+						<dd>
+							Integer <span>optional</span>, defaults to 200
+						</dd>
+						<dd>Restricts the size of results returned. To override the default and return all entries you must explicitly pass a non-positive integer value for limit e.g. limit=0, or limit=-1</dd>
+
+						<dt>orderBy</dt>
+						<dd>
+							String <span>optional</span>, one of <span>Property Type, code, Code Description, Reference Value</span>
+						</dd>
+						<dd>Orders the results by the field indicated.</dd>
+
+						<dt>sortBy</dt>
+						<dd>
+							String <span>optional</span>, one of <span>ASC, DESC</span>
+						</dd>
+						<dd>Indicates what way to order results if <i>orderBy</i> is used.</dd>
+						</dl>
+					
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/propertymaster?limit=15&offset=0				
+					</code>
+			<code class="method-response">{
+				"totalFilteredRecords": 210,
+				"pageItems": [{
+					"id": 1,
+					"description": "Amenities",
+					"propertyCodeType": "Level/Floor",
+					"code": "AM",
+					"referenceValue": ""
+				},
+				{
+					"id": 2,
+					"description": "ATM",
+					"propertyCodeType": "Level/Floor",
+					"code": "AT",
+					"referenceValue": ""
+				},
+				]
+			}</code>				
+				</div>
+			</div>
 	
 <!-- Address content ends here!! -->
 
