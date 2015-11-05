@@ -90,7 +90,7 @@
 <body>
 	<div id="page-wrapper">
 		<div id="flybar">
-			<div id="nav-logo">1.7.0.RELEASE API</div>
+			<div id="nav-logo">3.0.1.RELEASE API</div>
 			<div class="flybar-nav">
 				<h2 class="flybar-button">Overview</h2>
 				<div class="flybar-menu-overview">
@@ -241,11 +241,13 @@
 								<td><a href="#selfcare_register">Selfcare Signup</a></td>
 								<td></td>
 								<td></td>
+								<td></td>
 							</tr>
 							<tr class="alt">
 								<td></td>
 								<td>selfregistration</td>
 								<td><a href="#selfcare_selfregistration">Selfcare Registration</a></td>
+								<td></td>
 								<td></td>
 								<td></td>
 							</tr>
@@ -301,7 +303,7 @@
 										</tr>
 									</table></td>
 							</tr>
-							<tr class="alt">
+						<tr class="alt">
 							<td><a href="#chargecodes">ChargeCode</a></td>
 							<td>chargecode</td>
 							<td><a href="#addcharge_code">Add ChargeCode</a></td>
@@ -309,15 +311,16 @@
 							<td></td>
 							<td></td>
 							</tr>
-							<tr>
+						<tr>
 							<td></td>
 							<td>chargecode/{chargeCodeId}</td>
 							<td></td>
 							<td><a href="#getchargecode_for_edit">Get ChargeCode For Edit</a></td>
 							<td></td>
+							<td></td>
 							</tr>
 							
-							<tr>
+						<tr>
 							<td></td>
 							<td>chargecode/template</td>
 							<td></td>
@@ -326,7 +329,7 @@
 							<td></td>
 							</tr>						
 							
-							<tr class="alt">
+						<tr>
 							<td></td>
 							<td>chargecode/{chargeCodeIdForUpdate}</td>
 							<td></td>
@@ -335,7 +338,7 @@
 							<td></td>
 							</tr>
 							
-							<tr>
+							<tr class="alt">
 							<td><a href="#tax_map">TaxMap</a></td>
 							<td>taxmaps</td>
 							<td><a href="#create_taxmap">Create TaxMap</a></td>
@@ -344,7 +347,7 @@
 							<td></td>
 							</tr>
 							
-							<tr class="alt">
+						<tr>
 							<td></td>
 							<td>taxmaps/template</td>
 							<td></td>
@@ -352,7 +355,7 @@
 							<td></td>
 							<td></td>
 							</tr>
-								<tr >
+						<tr >
 							<td></td>
 							<td>taxmap/{chargeCode}/chargeTax</td>
 							<td></td>
@@ -360,7 +363,7 @@
 							<td></td>
 							<td></td>
 							</tr>
-							<tr class="alt">
+					<tr>
 							<td></td>
 							<td>taxmaps/{taxMapId}</td>
 							<td></td>
@@ -368,7 +371,7 @@
 							<td><a href="#update_taxmap_data">Update TaxMapData</a></td>
 							<td></td>
 							</tr>
-							<tr>
+							<tr class="alt">
 								<td><a href="#price_details">Prices</a></td>
 								<td>prices/{planId}</td>
 								<td><a href="#price_create">Cretae a Price</a></td>
@@ -376,7 +379,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr >
 								<td></td>
 								<td>prices/{priceId}/update</td>
 								<td></td>
@@ -384,7 +387,7 @@
 								<td><a href="#price_update">Update a Price</a></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr >
 								<td></td>
 								<td>prices/{priceId}</td>
 								<td></td>
@@ -392,7 +395,7 @@
 								<td></td>
 								<td><a href="#price_delete">Delete a Price</a></td>
 							</tr>
-							<tr class="alt">
+							<tr >
 								<td></td>
 								<td>prices/template?planId={planId}</td>
 								<td></td>
@@ -400,7 +403,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-								<tr>
+								<tr class="alt">
 								<td><a href="#configs">Currency</a></td>
 								<td>currencies</td>
 								<td></td>
@@ -412,7 +415,7 @@
 							</tr>
 							<tr class="alt">
 								<td><a href="#discount_details">Discount</a></td>
-								<td>discounts/{discountId}</td>
+								<td>discount/{discountId}</td>
 								<td></td>
 								<td><a href="#retrieve_discount">Retrieve
 										discount detais</a></td>
@@ -428,9 +431,9 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr >
 								<td></td>
-								<td>discounts/template</td>
+								<td>discount/template</td>
 								<td></td>
 								<td><a href="#discount_template">Discount Templatedata</a></td>
 								<td></td>
@@ -443,6 +446,16 @@
 								<td></td>
 								<td></td>
 								<td></td>
+								
+							</tr>
+							<tr >
+								<td></td>
+								<td>invoice</td>
+								<td></td>
+								<td><a href="#invoice_list">List of invoices</a></td>
+								<td></td>
+								<td></td>
+								
 							</tr>
 							<tr class="alt">
 								<td><a href="#region_details">Regions</a></td>
@@ -460,7 +473,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr >
 								<td></td>
 								<td>regions/{regionId}</td>
 								<td></td>
@@ -468,7 +481,7 @@
 								<td><a href="#region_update">Update a Region</a></td>
 								<td><a href="#region_delete">Delete a Region</a></td>
 							</tr>
-							<tr>
+							<tr class="alt">
 								<td><a href="#promotioncode_details">Promotion Code</a></td>
 								<td>promotioncode</td>
 								<td><a href="#promotioncode_create">Create Promotion Code</a></td>
@@ -476,7 +489,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-						    <tr class="alt">
+						    <tr >
 								<td></td>
 								<td>promotioncode/template</td>
 								<td></td>
@@ -500,6 +513,16 @@
 								<td></td>
 								<td></td>
 								<td><a href="#taxexemption_update">Update Tax Exemption</a></td>
+								<td></td>
+							</tr>
+							
+								
+							<tr class="alt">
+								<td><a href="#usagecharge_details">Usage Charge Details</a></td>
+								<td>charges</td>
+								<td><a href="#usagecharge_create">Create UsageCharges</a></td>
+								<td></td>
+								<td></td>
 								<td></td>
 							</tr>
 							
@@ -955,18 +978,29 @@
 							</tr>
 							<tr>
 								<td></td>							
-								<td>payments/template?clientId={clientId}</td>
+								<td>payments/template</td>
 								<td></td>
 								<td><a href="#payment_create">Retrieve Payment Template</a></td>
 								<td></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr>
 								<td></td>
 								<td>payments/paypal</td>								
 								<td><a href="#online_payment">Create Payment Through Online</a></td>
 								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
+								<tr>
+								<td></td>
+								<td>payments/cancelpayment/{paymentId}</td>								
+								<td></td>
+								<td></td>
+								<td><a href="#cancel_payment">Cancel a Payment</a></td>
+								<td></td>
+							</tr>
+							
 							<tr  class="alt">
 								<td><a href="#adjustment_details">Adjustments</a></td>
 								<td>adjustments</td>
@@ -987,7 +1021,7 @@
 								<td><a href="#billmaster_details">Bill Master</a></td>
 								<td>billmaster/{clientId}</td>
 								<td><a href="#billmaster_create">Create New Bill</a></td>
-								<td><a href="#billmaster_list">List Bills</a></td>
+								<td><a href="#billmaster_list">List of Bills</a></td>
 								<td></td>
 								<td></td>
 							</tr>
@@ -999,6 +1033,25 @@
 								<td></td>
 								<td></td>
 							</tr>
+							
+						<tr>
+						       <td></td>
+								<td>billmaster/invoice/{clientId}/{invoiceId}</td>
+								<td></td>
+								<td><a href="#billmaster_invoice_download">Download invoice</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+									
+						<tr>
+								<td></td>
+								<td>billmaster/payment/{clientId}/{paymentId}</td>
+								<td></td>
+								<td><a href="#billmaster_payment_download">Download payment</a></td>
+								<td></td>
+								<td></td>
+							</tr>				
+							
 							<tr>
 								<td></td>
 								<td>billmaster/{billId}</td>
@@ -1006,7 +1059,6 @@
 								<td></td>
 								<td></td>
 								<td><a href="#billmaster_cancel">Cancel Bill</a></td>
-								<td></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -1015,14 +1067,14 @@
 								<td></td>
 								<td><a href="#billmaster_email">Send Bill To Email</a></td>
 								<td></td>
-								<td></td>
+								
 							</tr>
 							
 							<tr  class="alt">
 								<td><a href="#financialtransaction_details">Financial Transaction</a></td>
 								<td>financialTransactions/{clientId}</td>
 								<td></td>
-								<td><a href="#financialtransaction_list">List Financial Transactions</a></td>
+								<td><a href="#financialtransaction_list">List of Financial Transactions</a></td>
 								<td></td>
 								<td></td>
 							</tr>
@@ -1030,7 +1082,33 @@
 								<td></td>
 								<td>financialTransactions/{invoiceId}/invoice</td>
 								<td></td>
-								<td><a href="#financialtransaction_invoice">List Invoices</a></td>
+								<td><a href="#financialtransaction_invoice">Invoices Details</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							
+							<tr  class="alt">
+								<td><a href="#creditdistribution_details">Credit Distribution</a></td>
+								<td>creditdistributions/{clientId}</td>
+								<td></td>
+								<td><a href="#creditdistribution_list">List of Credit Distributions</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>creditdistributions/template/{clientId}</td>
+								<td></td>
+								<td><a href="#creditdistribution_template">Retrieve Credit Distributions Template</a></td>
+								<td></td>
+								<td></td>
+							</tr>
+							
+							<tr>
+								<td></td>
+								<td>creditdistributions/{clientId}</td>
+								<td><a href="#create_creditdistribution">Create Credit Distribution</a></td>
+								<td></td>
 								<td></td>
 								<td></td>
 							</tr>
@@ -1276,7 +1354,7 @@
 				</div>
 			</div>
 			<div class="flybar-nav">
-				<h2 class="flybar-button">Portfolio</h2>
+				<h2 class="flybar-button">PORTFOLIO</h2>
 				<div id="toc-menu-portfolio" class="flybar-menu">
 					<div class="tocMatrix">
 						<table class=matrixHeading>
@@ -1338,7 +1416,7 @@
 								<td><a href="#contract_update">Update Contract Details</a></td>
 								<td><a href="#contract_delete">Delete Contract</a></td>
 							</tr>
-							<tr class="alt">
+							<tr >
 								<td></td>
 								<td>subscriptions/template</td>
 								<td></td>
@@ -1346,7 +1424,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="alt">
 								<td><a href="#serviceDetails">Services</a></td>
 								<td>servicemasters</td>
 								<td><a href="#create_service">Create New Service</a></td>
@@ -1354,7 +1432,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr>
 								<td></td>
 								<td>servicemasters/template</td>
 								<td></td>
@@ -1362,7 +1440,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-                            <tr class="alt">
+                            <tr>
                                 <td></td>
                                 <td>servicemasters/{serviceId}</td>
                                 <td></td>
@@ -1371,7 +1449,7 @@
                                 <td><a href="#service_delete">Delete Service</a></td>
                             </tr>
 							
-							<tr>
+							<tr class="alt">
 								<td><a href="#plan_details">Plans</a></td>
 								<td>plans</td>
 								<td><a href="#plan_create">Create New Plan</a></td>
@@ -1379,7 +1457,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr>
 								<td></td>
 								<td>plans/template</td>
 								<td></td>
@@ -1387,7 +1465,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr>
 								<td></td>
 								<td>plans/{planId}</td>
 								<td></td>
@@ -1395,7 +1473,7 @@
 								<td><a href="#plan_update">Update a Plan</a></td>
 								<td><a href="#plan_delete">Delete a Plan</a></td>
 							</tr>
-							<tr >
+							<tr class="alt" >
 								<td><a href="#order_details">Orders</a></td>
 								<td>orders/{clientId}</td>
 								<td><a href="#order_create">Create a New Order</a></td>
@@ -1403,7 +1481,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr>
 								<td></td>
 								<td>orders/template</td>
 								<td></td>
@@ -1419,7 +1497,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr>
 								<td></td>
 								<td>orders/{orderId}</td>
 								<td></td>
@@ -1435,7 +1513,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr  class="alt">
+							<tr>
 								<td></td>
 								<td>orders/{orderId}/orderprice</td>
 								<td></td>
@@ -1443,7 +1521,7 @@
 								<td><a href="#order_price_update">Update a Order Price</a></td>
 								<td></td>
 							</tr>
-							<tr  class="alt">
+							<tr>
 								<td></td>
 								<td>orders/renewal</td>
 								<td></td>
@@ -1451,7 +1529,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr >
+							<tr>
 								<td></td>
 								<td>orders/renewal/{orderId}</td>
 								<td><a href="#order_renewal">Renewal  Order</a></td>
@@ -1459,7 +1537,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr  class="alt">
+							<tr>
 								<td></td>
 								<td>orders/disconnect</td>
 								<td></td>
@@ -1475,7 +1553,7 @@
 								<td><a href="#order_reconnect">Reconnect Order</a></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr>
 								<td></td>
 								<td>orders/changePlan/{orderId}</td>
 								<td></td>
@@ -1491,7 +1569,7 @@
 								<td><a href="#order_applypromo">Apply Promo</a></td>
 								<td></td>
 							</tr>
-								<tr class="alt">
+								<tr>
 								<td></td>
 								<td>orders/scheduling/{clientId}</td>
 								<td><a href="#order_scheduling">Schedule Orders</a></td>
@@ -1499,7 +1577,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-								<tr>
+							<tr>
 								<td></td>
 								<td>orders/scheduling/{orderId}</td>
 								<td></td>
@@ -1507,7 +1585,7 @@
 								<td></td>
 								<td><a href="#order_deleteSchuling">Delete Schedule Orders</a></td>
 							</tr>
-							<tr class="alt">
+							<tr>
 								<td></td>
 								<td>orders/extension/{orderId}</td>
 								<td></td>
@@ -1746,7 +1824,7 @@
 								<td><a href="#roles_update">Update a Role</a></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr >
 								<td></td>
 								<td>roles/{roleId}/permissions</td>
 								<td></td>
@@ -1756,7 +1834,7 @@
 										Permissions</a></td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="alt" >
 								<td><a href="#permissions">Permission</a></td>
 								<td>permissions</td>
 								<td></td>
@@ -1781,7 +1859,7 @@
 								<td></td>
 							</tr>
 							
-							<tr>
+							<tr class="alt" >
 								<td><a href="#currency_details">Currency Details</a></td>
 								<td>countrycurrencys</td>
 								<td><a href="#currency_create">Create a CountryCurrency</a></td>
@@ -1789,7 +1867,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr >
 								<td></td>
 								<td>countrycurrencys/template</td>
 								<td></td>
@@ -1818,7 +1896,7 @@
 										Global Configuration</a></td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="alt">
 								<td><a href="#configs_codes">Codes</a></td>
 								<td>codes</td>
 								<td><a href="#configs_codes_create">Create a Code</a></td>
@@ -1826,7 +1904,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr >
 								<td></td>
 								<td>codes/{codeId}</td>
 								<td></td>
@@ -1842,14 +1920,15 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr>
 								<td></td>
 								<td>codes/{codeId}/codevalues/{codevalueId}</td>
 								<td></td>
 								<td><a href="#configs_codes_codevalues_retrieve">Retrieve a Code Value</a></td>
 								<td><a href="#configs_codes_codevalues_update">Update a Code Value</a></td>
+								<td></td>
 							</tr>
-							<tr>
+							<tr class="alt">
 								<td><a href="#messages">Messages</a></td>
 								<td>messages/data</td>
 								<td></td>
@@ -1861,14 +1940,19 @@
 								<td></td>
 								<td>messages</td>
 								<td><a href="#messages_create">Create message</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td></td>
 								<td>messages/template</td>
 								<td></td>
 								<td><a href="#messages_template">message Template</a></td>
+								<td></td>
+								<td></td>
 							</tr>
-							 <tr class="alt">
+							 <tr >
 								<td></td>
 								<td>messages/{messageId}</td>
 								<td></td>
@@ -1876,7 +1960,7 @@
 								<td><a href="#messages_update">Update a Message</a></td>
 								<td><a href="#messages_delete">Delete a Message</a></td>
 							</tr>
-							<tr>
+							<tr class="alt">
 								<td><a href="#randomgenerators">Randomgenerator</a></td>
 								<td>randomgenerators</td>
 								<td><a href="#randomgenerators_create">Create Randomgenerator</a></td>
@@ -1889,8 +1973,10 @@
 								<td>randomgenerators/template</td>
 								<td></td>
 								<td><a href="#randomgenerators_template">Randomgenerator Template</a></td>
+								<td></td>
+								<td></td>
 							</tr>
-							<tr>
+							<tr class="alt" >
 								<td><a href="#hardwaremapping">Hardware Plan Mapping</a></td>
 								<td>hardwaremapping</td>
 								<td><a href="#hardwaremapping_create">Create Hardware Plan Mapping</a></td>
@@ -1903,15 +1989,18 @@
 								<td>hardwaremapping/template</td>
 								<td></td>
 								<td><a href="#hardwaremapping_template">Hardware Plan Mapping Template</a></td>
+								<td></td>
+								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr >
 								<td></td>
 								<td>hardwaremapping/{hardwaremappingId}</td>
 								<td></td>
 								<td><a href="#hardwaremapping_retrieve">Retrieve a Hardware Plan Mapping data</a></td>
 								<td><a href="#hardwaremapping_update">Update a Hardware Plan Mapping</a></td>
+								<td></td>
 							</tr>
-							<tr>
+							<tr class="alt">
 								<td><a href="#smartsearch">Smart Search</a></td>
 								<td>smartsearch</td>
 								<td></td>
@@ -1919,7 +2008,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="alt" >
 								<td><a href="#ippooling">Ippooling</a></td>
 								<td>Ippooling</td>
 								<td><a href="#ippooling_create">Create Ippooling</a></td>
@@ -1927,7 +2016,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="alt">
 								<td><a href="#address">Address</a></td>
 								<td>address</td>
 								<td></td>
@@ -1983,7 +2072,7 @@
 								<td><a href="#address_city_update">Update City</a></td>
 								<td><a href="#address_city_delete">Delete City</a></td>
 							</tr>
-							<tr>
+							<tr class="alt">
 								<td><a href="#advancesearch">Advance Search</a></td>
 								<td>Tickets</td>
 								<td></td>
@@ -1996,12 +2085,16 @@
 								<td>Leads</td>
 								<td></td>
 								<td><a href="#advancesearch_leads_list">List of Leads</a></td>
+								<td></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td></td>
 								<td>Clients</td>
 								<td></td>
 								<td><a href="#advancesearch_clients_list">List of Clients</a></td>
+								<td></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><a href="#advancesearch">Property</a></td>
@@ -2371,7 +2464,7 @@
 										</tr>
 									</table></td>
 							</tr>
-							<tr>
+							<tr class="alt">
 								<td><a href="#reports">Report</a></td>
 								<td>reports</td>
 								<td><a href="#reports_create">Create a Report</a></td>
@@ -2379,7 +2472,7 @@
 								<td></td>
 								<td></td>
 							</tr>
-							<tr class="alt">
+							<tr >
 								<td></td>
 								<td>reports/{id}</td>
 								<td></td>
@@ -2387,7 +2480,7 @@
 								<td><a href="#reports_update">Update a Report</a></td>
 								<td><a href="#reports_delete">Delete a Report</a></td>
 							</tr>
-							<tr>
+							<tr class="alt">
 								<td><a href="#runreports">Run Report</a></td>
 								<td>runreports/{reportName}</td>
 								<td></td>
@@ -9323,7 +9416,7 @@ No Request Body:
 			
 <!-- Disount Api -->
 
-<a id="discount_details" name="discount_details" class="old-syle-anchor">&nbsp;</a>kiran
+<a id="discount_details" name="discount_details" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
 				<div class="method-description">
 					<h3>Discount Details</h3>
@@ -9358,6 +9451,20 @@ No Request Body:
 						<tr>
 							<td class=fielddesc>Represent startDate of discount actviated</td>
 						</tr>
+						<tr class=alt>
+							<td>Discount Details</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent two sub fields like customer category and discount rate</td>
+						</tr>
+						<tr class=alt>
+							<td>Customer Category</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Providing customer category like normal,vip ..etc 
+							It will help to define discount rate</td>
+						</tr>
+						
 						<tr class=alt>
 							<td>discountRate</td>
 						</tr>
@@ -9399,16 +9506,15 @@ No Request Body:
 					</p>
 					
 					<p>Example Request:</p>
-					<div>discounts/template</div>
+					<div>discount/template</div>
 				</div>
 				<div class="method-example">
 					<code class="method-declaration">
-GET https://DomainName/api/v1/discounts/template"
+GET https://DomainName/api/v1/discount/template"
 					</code>
 					<code class="method-response">
 {
-	"id": 0,
-	"status": [{
+	"statusData": [{
 		"id": 1,
 		"code": "deposit.interest.compounding.period.CategoryType.active",
 		"value": "ACTIVE"
@@ -9418,7 +9524,19 @@ GET https://DomainName/api/v1/discounts/template"
 		"code": "deposit.interest.compounding.period.CategoryType.inactive",
 		"value": "INACTIVE"
 	}],
-	"discounTypeData": [{
+	"clientCategoryDatas": [{
+		"id": 20,
+		"mCodeValue": "Normal"
+	},
+	{
+		"id": 21,
+		"mCodeValue": "VIP"
+	},
+	{
+		"id": 22,
+		"mCodeValue": "Staff"
+	}],
+	"discountTypeData": [{
 		"id": 55,
 		"mCodeValue": "Flat"
 	},
@@ -9438,40 +9556,47 @@ GET https://DomainName/api/v1/discounts/template"
 					<p>returns  <i>list</i> of discounts.</p>
 									
 					<p>Example Requests:</p>
-					<div>discounts</div>
+					<div>discount</div>
    				</div>
 				<div class="method-example">
 					<code class="method-declaration">
-GET https://DomainName/obsplatform/api/v1/discounts
+GET https://DomainName/obsplatform/api/v1/discount
 					</code>
 					<code class="method-response">
 
 [{
 	"id": 1,
-	"discountCode": "FULL",
-	"discountDescription": "100Percentage",
-	"discounType": "Percentage",
-	"discountRate": 100,
-	"discountStartDate": [2013,
-	12,
-	1],
-	"discountAmount": 0,
-	"discountedChargeAmount": 0,
-	"discountstatus": "ACTIVE"
+	"discountCode": "None",
+	"discountDescription": "None",
+	"discountType": "Flat",
+	"discountRate": 0,
+	"discountStartDate": [2015,
+	4,
+	16],
+	"discountStatus": "ACTIVE"
 },
 {
-	"id":2,
-	"discountCode": "MCC",
-	"discountDescription": "MCC",
-	"discounType": "Flat",
-	"discountRate": 10,
-	"discountStartDate": [2014,
-	4,
-	23],
-	"discountAmount": 0,
-	"discountedChargeAmount": 0,
-	"discountstatus": "ACTIVE"
-}}
+	"id": 2,
+	"discountCode": "TENP",
+	"discountDescription": "Ten percentage",
+	"discountType": "Percentage",
+	"discountRate": 0,
+	"discountStartDate": [2015,
+	9,
+	7],
+	"discountStatus": "ACTIVE"
+},
+{
+	"id": 3,
+	"discountCode": "FULL",
+	"discountDescription": "100%Discount",
+	"discountType": "Percentage",
+	"discountRate": 0,
+	"discountStartDate": [2015,
+	11,
+	5],
+	"discountStatus": "ACTIVE"
+}]
 					</code>
 				</div>
 			</div>
@@ -9483,11 +9608,11 @@ GET https://DomainName/obsplatform/api/v1/discounts
                     <h4>Retrieve a discount</h4>
                     <p>Returns single discount details</p>
                     <p>Example Requests:</p>
-					<div>discounts/1</div>
+					<div>discount/1</div>
                 </div>
                 <div class="method-example">
                     <code class="method-declaration">
-                        GET https://DomainName/api/v1/discounts/{discountId}
+                        GET https://DomainName/api/v1/discount/{discountId}
                     </code>
                     <code class="method-request">
                         GET discounts/1
@@ -9495,20 +9620,21 @@ GET https://DomainName/obsplatform/api/v1/discounts
                         
                     </code>
                     <code class="method-response">
-                       {
-	"id": 0,
-	"discountCode": "FULL",
-	"discountDescription": "100Percentage",
-	"discounType": "Percentage",
-	"discountRate": 100,
-	"discountStartDate": [2013,
-	12,
-	1],
-	"discountMasterId": 2,
-	"discountAmount": 0,
-	"discountedChargeAmount": 0,
-	"status":"ACTIVE"
-	}
+   {  "id":3,
+     "discountCode":"FULL",
+     "discountDescription":"100%Discount",
+     "discountType":"Percentage",
+     "discountRate":0,
+     "discountStartDate":[2015,11,5],
+     "discountStatus":"ACTIVE",
+     "discountDetailDatas":[
+        {"id":3,
+        "categoryType":"Normal",
+        "categoryId":20,
+        "discountRate":100.00
+        }]
+     
+     }
 
                     </code>
                 </div>
@@ -9518,20 +9644,20 @@ GET https://DomainName/obsplatform/api/v1/discounts
 			<div class="method-section">
 				<div class="method-description">
 					<h4>Create a Discount</h4>
-					<p>Add a new discount.</p>
+					<p>Add a new discount based on customer category</p>
 					<table class=matrixHeading>
 						<tr class="matrixHeadingBG">
 							<td><div class="billingHeading2">Mandatory Fields</div></td>
 						</tr>
 						<tr class=alt>
-							<td>discountCode,discountDescription,startDate,discountRate,discountType,status</td>
+							<td>discountCode,discountDescription,startDate,discountPrices,discountType,status</td>
 						</tr>
 					</table>
 					<br/>
 				</div>
 				<div class="method-example">
 					<code class="method-declaration">
-POST https://DomainName/api/v1/discounts
+POST https://DomainName/api/v1/discount
 					</code>
 					<code class="method-request">
 POST discounts
@@ -9539,21 +9665,24 @@ Content-Type: application/json
 Request body:
 {
 	"discountCode": "FULL",
-	"discountDescription": "100Percentage",
-	"discountRate": 100,
-	"status": "ACTIVE",
+	"discountDescription": "100%Discount",
+	"discountType": "Percentage",
+	"discountStatus": "ACTIVE",
 	"locale": "en",
 	"dateFormat": "dd MMMM yyyy",
-	"startDate": "01 December 2013",
-	"discountType": "Percentage"
+	"startDate": "05 November 2015",
+	"discountRate": 0,
+	"discountPrices": [{
+		"categoryId": 20,
+		"locale": "en",
+		"discountRate": "100"
+	}]
 }
 				</code>
 					<code class="method-response">
 {
-	"resourceId": 3,
-	"changes": {
-		
-	}
+	"resourceId": 3
+	
 }
 					</code>
 					
@@ -9568,7 +9697,7 @@ Request body:
 				</div>
 				<div class="method-example">
 					<code class="method-declaration">
-PUT https://DomainName/api/v1/discounts/{discountId}
+PUT https://DomainName/api/v1/discount/{discountId}
 
 					</code>
 					<code class="method-request">
@@ -9577,22 +9706,27 @@ PUT discounts/3
 Request Body: 
 {
 	"discountCode": "FULL",
-	"discountDescription": "100Percentage",
-	"discountRate": 50,
-	"status": "ACTIVE",
+	"discountDescription": "80%Discount",
+	"discountType": "Flat",
+	"discountRate": 0,
+	"discountStatus": "ACTIVE",
 	"locale": "en",
 	"dateFormat": "dd MMMM yyyy",
-	"startDate": "01 December 2013",
-	"discountType": "Flat"
+	"startDate": "05 November 2015",
+	"discountPrices": [{
+		"categoryId": 20,
+		"id": 3,
+		"discountRate": "80",
+		"locale": "en"
+	}]
 }
 					</code>
 					<code class="method-response">
 {
-	"resourceId": 3,
-	"changes": {
-		"discountRate": 50,
-		"discountType": "Flat"
-	}
+	"resourceId":3,
+	"changes":{"discountDescription":"80%Discount",
+	"discountType":"Percentage"}
+	
 }
 					</code>
 				</div>
@@ -9606,7 +9740,7 @@ Request Body:
 				</div>
 				<div class="method-example">
 					<code class="method-declaration">
-DELETE https://DomainName/api/v1/discounts/{discountId}
+DELETE https://DomainName/api/v1/discount/{discountId}
 					</code>
 					<code class="method-request">
 DELETE discount/1
@@ -9630,7 +9764,7 @@ No Request Body:
 			<div class="method-section">
 				<div class="method-description">
 					<h3>Invoice</h3>
-					<p>The Api concet of <b>Invoice</b> models generate a bills to the customers based on billing frequency
+					<p>The Api concept of <b>Invoice</b> models generate a bills to the customers based on billing frequency
 					<table class=matrixHeading>
 						<tr class="matrixHeadingBG">
 							<td><div class="billingHeading2">Field Descriptions</div></td>
@@ -9675,15 +9809,83 @@ Request body:
 				</code>
 					<code class="method-response">
 {
-	"resourceId": 8,
-	"changes": {
-		
-	}
+	"resourceId": 12,
+	"rollbackTransaction": false
 }
 					</code>
 					
 				</div>
 			</div>
+			
+	<a id="invoice_list" name="invoice_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List of Generated Invoices</h4>
+					<p>returns  <i>list</i> of invoices.</p>
+									
+					<p>Example Requests:</p>
+					<div>invoice/{clientId}</div>
+   				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/obsplatform/api/v1/invoice/13
+					</code>
+					<code class="method-response">
+[{
+	"id": 136,
+	"amount": 1000,
+	"dueAmount": 1000,
+	"billDate": "Aug 22, 2015",
+	"billId": 16
+},
+{
+	"id": 137,
+	"amount": 200,
+	"dueAmount": 19.36,
+	"billDate": "Aug 22, 2015",
+	"billId": 16
+},
+{
+	"id": 151,
+	"amount": 200,
+	"dueAmount": 200,
+	"billDate": "Aug 25, 2015",
+	"billId": 41
+},
+{
+	"id": 152,
+	"amount": 45.16,
+	"dueAmount": -32.24,
+	"billDate": "Aug 25, 2015",
+	"billId": 41
+},
+{
+	"id": 153,
+	"amount": 45.16,
+	"dueAmount": -32.24,
+	"billDate": "Aug 25, 2015",
+	"billId": 41
+},
+{
+	"id": 435,
+	"amount": 504,
+	"dueAmount": 504,
+	"billDate": "Nov 5, 2015",
+	"billId": 0
+},
+{
+	"id": 436,
+	"amount": 504,
+	"dueAmount": 504,
+	"billDate": "Nov 5, 2015",
+	"billId": 0
+}]
+
+					</code>
+				</div>
+			</div>			
+			
+			
 			
 <!-- End of Billing order -->
 
@@ -10239,9 +10441,9 @@ No Request Body:
 <a id="taxexemption_details" name="taxexemption_details" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
 				<div class="method-description">
-					<h3>Taxexemption Details</h3>
-					<p>By default this flag is set to N while client creation no option to set while creation and If this flag is set to Y from update method 
-					    then although the sale of item / service are defined with tax</p>
+					<h3>TaxExemption Details</h3>
+					<p>By default this flag is set to N while creation of customer.
+					If this flag is set to Y from update method then sale of item / service are charge with tax exemption</p>
 				</div>
 			</div>
 			
@@ -10282,8 +10484,59 @@ Request Body:
 				</div>
 
 <!-- End of tax exemption -->
+<!-- Start of usage charge content  -->
+<a id="usagecharge_details" name="usagecharge_details" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Usage Charge Details</h3>
+					<p>Usage charges are fees charged to customer account for the usage base subscriptions</p>
+				</div>
+			</div>
 
 
+<a id="usagecharge_create" name="usagecharge_create" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a UsageCharge</h4>
+					<p>Add a customer UsageCharges which are generate from rating engine.</p>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>clientId,number,duration,cost,time<br></td>
+						</tr>
+					</table>
+					<br/>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/charges
+					</code>
+					<code class="method-request">
+POST regions
+Content-Type: application/json 
+Request body:
+{
+	"clientId": "6",
+	"number": "22222004",
+	"time": "30/07/2015 14:23:58",
+	"destinationNumber": "34637466816",
+	"destinationLocation": "Spain Mobile",
+	"duration": "11",
+	"cost": "0.14",
+	"locale": "en"
+}				</code>
+					<code class="method-response">
+{
+	"resourceId": 55
+}
+					</code>
+					
+				</div>
+			</div>
+			
+<!-- End of usage charges content  -->
 			
 
 <!-- start of orders content-->
@@ -11255,32 +11508,52 @@ GET https://DomainName/api/v1/orders/activeplans/{clientId}
 			<div class="method-section">
 				<div class="method-description">
 					<h4>Payment Template</h4>
+					<h5>Arguments</h5>
+					<dl class="argument-list">
+						<dt>clientId ...</dt>
+						<dd>
+							<span>optional, defaults it send through api</span>
+						</dd>
+						</dl>
 					<p>Example Request:</p>
-					<div>payments/template</div>
+					<div>payments/template?clientId=13</div>
 				</div>
 				
 				<div class="method-example">
 					<code class="method-declaration">
-GET https://DomainName/obsplatform/api/v1/payments/template
+GET https://DomainName/obsplatform/api/v1/payments/template?clientId=13
 					</code>
 					<code class="method-response">
 {
-"data":[
-{"id":23,"paymodeCode":"Cash"},
-{"id":24,"paymodeCode":"Cheque"},
-{"id":25,"paymodeCode":"Credit Card"},
-{"id":26,"paymodeCode":"Debit Card"},
-{"id":27,"paymodeCode":"Online Payment"}
-],
-"paymentDate":[2013,8,21]}
-					</code>
+	"data": [{
+		"id": 23,
+		"mCodeValue": "Cash"
+	},
+	{
+		"id": 24,
+		"mCodeValue": "Cheque"
+	},
+	{
+		"id": 83,
+		"mCodeValue": "M-pesa"
+	},
+	{
+		"id": 103,
+		"mCodeValue": "Manual Mpesa"
+	},
+	{
+		"id": 27,
+		"mCodeValue": "Online Payment"
+	}],
+	"depositDatas": []
+}</code>
 				</div>
 			</div>
 
 <a id="create_payment" name="create_payment" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
 				<div class="method-description">
-					<h4>Manual payment</h4>
+					<h4>Manual payments</h4>
 					<table class=matrixHeading>
 						<tr class="matrixHeadingBG">
 							<td><div class="billingHeading2">Mandatory Fields</div></td>
@@ -11300,19 +11573,14 @@ POST payments/1
 Content-Type: application/json 
 Request Body:
 {
-"clientId":"",
-"chequeNo":"",
-"chequeDate":"",
-"bankName":"",
-"branchName":"",
-"dateFormat":"dd MMMM yyyy",
-"locale":"en",
-"paymentDate":"21 September 2013",
-"paymentCode":"23",
-"amountPaid":"100",
-"isChequeSelected":"no",
-"receiptNo":"20",
-"remarks":"through cash"
+	"isSubscriptionPayment": false,
+	"paymentCode": 27,
+	"amountPaid": "200",
+	"receiptNo": "345RT",
+	"remarks": "ok",
+	"locale": "en",
+	"dateFormat": "dd MMMM yyyy",
+	"paymentDate": "05 November 2015"
 }
 					</code>
 <code class="method-response">
@@ -11373,6 +11641,40 @@ Post https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=xyz@gmail.com&it
 					</code>
 				</div>
 			</div>
+			
+	<a id="cancel_payment" name="cancel_payment" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Cancel a Payment</h4>
+					<p>Cancel the customer's payments if anything wrong in create payment time</p>
+					
+					<p>Example Request:</p>
+					<div>payments/cancelpayment/1</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+PUT https://DomainName/api/v1/payments/cancelpayment/{paymentId}
+					</code>
+					<code class="method-request">
+PUT 
+Content-Type: application/json 
+Request Body: 
+{
+	"cancelRemark":"it's mistaked"
+}
+					</code>
+					<code class="method-response">
+{
+	"resourceId": 21,
+	"changes": {},
+	"resourceIdentifier": "21"
+}		
+					</code>
+				</div>
+			</div>		
+			
+			
+			
 <!-- start of adjustment content -->
 
 <a id="adjustment_details" name="adjustment_details" class="old-syle-anchor">&nbsp;</a>
@@ -11559,29 +11861,32 @@ Request Body:
 				</div>
 				<div class="method-example">
 					<code class="method-declaration">
-GET https://DomainName/api/v1/billmaster/{clientId
+GET https://DomainName/api/v1/billmaster/{clientId}?limit=10&offset=0
 					</code>
 					<code class="method-response">
-[{
-	"id": 581,
-	"amount": 771.9120,
-	"billDate": [2013,
-	8,
-	5],
-	"dueDate": [2013,
-	8,
-	5]
-},
 {
-	"id": 646,
-	"amount": 1371.9120,
-	"billDate": [2013,
-	8,
-	7],
-	"dueDate": [2013,
-	8,
-	7]
-}]
+	"totalFilteredRecords": 2,
+	"pageItems": [{
+		"id": 16,
+		"billDate": [2015,
+		8,
+		22],
+		"dueDate": [2015,
+		9,
+		1],
+		"amount": 1200.00
+	},
+	{
+		"id": 41,
+		"billDate": [2015,
+		9,
+		10],
+		"dueDate": [2015,
+		9,
+		10],
+		"amount": 1270.98
+	}]
+}
 					</code>
 				</div>
 			</div>
@@ -11642,6 +11947,60 @@ Download the client's Bill in Pdf format
 					</code>
 				</div>
 			</div>	
+			
+<a id="billmaster_invoice_download" name="billmaster_invoice_download" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Download a Invoice</h4>
+                    <p>Download the client's particular invoice in Pdf format.
+Whenever email query param flag true that generated invoice pdf file send as a email.</p>
+	<h5>Arguments</h5>
+					<dl class="argument-list">
+						<dt>email ...</dt>
+						<dd>
+							<span>optional, defaults its to true</span>
+						</dd>
+						</dl>
+					<p>Example Request:</p>
+					<div>billmaster/invoice/1/23</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/billmasters/invoice/{clientId}/{invoiceId}?email=true
+					</code>
+					<code class="method-response">
+File generated
+					</code>
+				</div>
+			</div>	
+			
+<a id="billmaster_payment_download" name="billmaster_payment_download" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+		<div class="method-description">
+					<h4>Download a Payment Receipt</h4>
+<p> Download the client's particular payment in Pdf format.
+Whenever email query param flag true that generated payment pdf file send as a email.
+</p>
+<h5>Arguments</h5>
+					<dl class="argument-list">
+						<dt>email ...</dt>
+						<dd>
+							<span>optional, defaults its to true</span>
+						</dd>
+						</dl>
+					<p>Example Request:</p>
+					<div>billmaster/payment/1/23</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/billmasters/payment/{clientId}/{paymentId}?email=true
+					</code>
+					<code class="method-response">
+File generated
+					</code>
+				</div>
+			</div>				
+						
 			
 							
 <a id="billmaster_cancel" name="billmaster_cancel" class="old-syle-anchor">&nbsp;</a>
@@ -12274,8 +12633,17 @@ Request Body:
 <a id="financialtransaction_list" name="financialtransaction_list" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
 				<div class="method-description">
-					<h4>List FinancialTransactions</h4>
+					<h4>List of FinancialTransactions</h4>
 					<p>Returns <i>list</i> of financialtransactions for a Client</p>
+					<h5>Arguments</h5>
+					<dl class="argument-list">
+						<dt>type ...</dt>
+						<dd>
+							<span>optional, type={Invoice.Payment,Adjustment,Journalvocher,Deposit}
+							it use to retrieve specifc type transactions list only</span>
+						</dd>
+						</dl>
+					
 					<p>Example Requests:</p>
 					<div>financialtransactions/176</div>
 				</div>
@@ -12284,7 +12652,9 @@ Request Body:
 GET https://DomainName/api/v1/financialtransactions/{clientId}
 					</code>
 					<code class="method-response">
-[
+{"totalFilteredRecords":3
+
+"pageItems" :[
 {
 	"transactionId": 93,
 	"transactionType": "PAYMENT",
@@ -12316,12 +12686,12 @@ GET https://DomainName/api/v1/financialtransactions/{clientId}
 	"creditAmount": 0.000000
 }
 ]
+}
 					</code>
 				</div>
 			</div>
 
-			<a id="financialtransaction_invoice" name="financialtransaction_invoice"
-				class="old-syle-anchor">&nbsp;</a>
+	<a id="financialtransaction_invoice" name="financialtransaction_invoice" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
 				<div class="method-description">
 					<h4>Retrieve Invoice details</h4>
@@ -12365,10 +12735,210 @@ GET https://DomainName/api/v1/financialtransactions/{tansactionId}/invioice
 }
 					</code>
 				</div>
+			</div>		
+			
+<!-- start of credit distributions  content -->	
+
+<a id="creditdistribution_details" name="creditdistribution_details" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h3>Credit Distribution Details</h3>
+					<p>Credit Distribution use to distribute the Client's payments to different due charges(Invoices)</p>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Field Descriptions</div></td>
+						</tr>
+						<tr class=alt>
+							<td>clientId</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Associated with the Client 
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>DistributionDate</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Date of Distribution
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>PaymentId</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent payment of distribution
+							</td>
+						</tr>
+						<tr class=alt>
+							<td>InvoiceId</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent invoice which is pay by payment
+							</td>
+						</tr>
+						
+						<tr class=alt>
+							<td>Amount</td>
+						</tr>
+						<tr>
+							<td class=fielddesc>Represent amount of Distribution
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>		
+			
+<a id="creditdistribution_list" name="creditdistribution_list" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>List of CreditDistributions</h4>
+					<p>Returns <i>list</i> of creditdistributions for a Client</p>
+					<h5>Arguments</h5>
+					<dl class="argument-list">
+						<dt>limit&offset..</dt>
+						<dd>
+							<span>optional,these param's help to provide a pagination</span>
+						</dd>
+						</dl>
+					
+					<p>Example Requests:</p>
+					<div>creditdistributions/30</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/creditdistributions/{clientId}
+					</code>
+					<code class="method-response">
+{
+	"totalFilteredRecords": 1,
+	"pageItems": [{
+		"id": 6,
+		"distributionDate": [2015,
+		11,
+		5],
+		"paymentId": 24,
+		"invoiceId": 334,
+		"amount": 2500.00
+	}]
+}
+					</code>
+				</div>
+			</div>	
+			
+			
+	<a id="creditdistribution_template" name="creditdistribution_template" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Retrieve Credit Distribution Template</h4>
+					<p>This is a convenience resource. It can be useful to get client
+					    payments and invoices which are not distribute previously.
+					</p>
+					<p>Example Request:</p>
+					<div>creditdistributions/template/30</div>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+GET https://DomainName/api/v1/creditdistributions/template/{clientId}
+					</code>
+					<code class="method-response">
+{
+	"invoiceDatas": [{
+		"id": 335,
+		"amount": 2772,
+		"dueAmount": 2772,
+		"billDate": "Sep 30, 2015",
+		"billId": 0
+	},
+	{
+		"id": 336,
+		"amount": 3780,
+		"dueAmount": 3780,
+		"billDate": "Sep 30, 2015",
+		"billId": 0
+	},
+	{
+		"id": 373,
+		"amount": 400,
+		"dueAmount": 400,
+		"billDate": "Oct 6, 2015",
+		"billId": 0
+	}],
+	"paymentDatas": [{
+		"paymentDate": [2015,
+		11,
+		5],
+		"amountPaid": 400.00,
+		"receiptNo": "ASD7845",
+		"id": 23,
+		"availAmount": 400.00
+	},
+	{
+		"paymentDate": [2015,
+		11,
+		5],
+		"amountPaid": 5300.00,
+		"receiptNo": "DFR457812",
+		"id": 24,
+		"availAmount": 2800.00
+	}]
+}
+					</code>
+				</div>
 			</div>			
+			
+<a id="create_creditdistribution" name="create_creditdistribution" class="old-syle-anchor">&nbsp;</a>
+			<div class="method-section">
+				<div class="method-description">
+					<h4>Create a Credit Distribution</h4>
+					<table class=matrixHeading>
+						<tr class="matrixHeadingBG">
+							<td><div class="billingHeading2">Mandatory Fields</div></td>
+						</tr>
+						<tr class=alt>
+							<td>clientId,paymentId,clientId, amount</td>
+						</tr>
+					</table>
+				</div>
+				<div class="method-example">
+					<code class="method-declaration">
+POST https://DomainName/api/v1/creditdistributions/{clientId}
+					</code>
+					<code class="method-request">
+POST 
+Content-Type: application/json 
+Request Body: 
+{
+	"avialableAmount": 400,
+	"paymentId": 24,
+	"locale": "en",
+	"creditdistributions": [{
+		"invoiceId": 335,
+		"amount": 2400,
+		"paymentId": 24,
+		"clientId": 30,
+		"locale": "en"
+	}]
+}
+					</code>
+					<code class="method-response">
+{
+	"clientId": 30,
+	"resourceId": 7,
+	"changes": {
+		
+	},
+	"resourceIdentifier": "7"
+}
+					</code>
+				</div>
+			</div>	
+			
+			
+								
 
+<!-- end of credit distribution   -->
 
-<!-- start of Onetime sale content -->
+<!-- start of Ticket content -->
 			<a id="Ticket_details" name="Ticket_details" class="old-syle-anchor">&nbsp;</a>
 			<div class="method-section">
 				<div class="method-description">
@@ -18431,7 +19001,7 @@ GET https://DomainName/api/v1/search?query=000000111
 						</table>
 					</td>
 				</tr>
-							<tr class="alt">
+						<tr class="alt">
 							<td><a href="#chargecodes">ChargeCode</a></td>
 							<td>chargecode</td>
 							<td><a href="#addcharge_code">addChargeCode</a></td>
@@ -18439,33 +19009,34 @@ GET https://DomainName/api/v1/search?query=000000111
 							<td></td>
 							<td></td>
 							</tr>
-							<tr>
+						<tr>
 							<td></td>
 							<td>chargecode/{chargeCodeId}</td>
 							<td></td>
 							<td><a href="#getchargecode_for_edit">getChargeCodeForEdit</a></td>
 							<td></td>
-							</tr>
-							
-							<tr>
+							<td></td>
+						  </tr>
+							      
+				    	<tr>
 							<td></td>
 							<td>chargecode/template</td>
 							<td></td>
 							<td><a href="#getchargecode_templaterelated_data">getTemplateRelatedData</a></td>
 							<td></td>
 							<td></td>
-							</tr>						
-							
-							<tr class="alt">
+							<td></td>
+							   </tr>						
+					<tr class="alt">
 							<td></td>
 							<td>chargecode/{chargeCodeIdForUpdate}</td>
 							<td></td>
 							<td></td>
 							<td><a href="#update_charge_code">updateChargeCode</a></td>
 							<td></td>
-							</tr>
+						</tr>
 							
-							<tr>
+					<tr>
 							<td><a href="#client_propsect">Client Prospect</a></td>
 							<td>prospects</td>
 							<td><a href="#create_prospect">Create Prospect</a></td>
